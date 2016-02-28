@@ -19,6 +19,10 @@ public abstract class Orang {
     private String agama;
     private String tempatLahir;
 
+    public Orang(String nama) {
+        this.nama = nama;
+    }
+
     public String getNama() {
         return nama;
     }
