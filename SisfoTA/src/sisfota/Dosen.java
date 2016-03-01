@@ -11,8 +11,21 @@ package sisfota;
  */
 public class Dosen extends Orang {
     private KelompokTA[] topikTA;
+    private int nTopikTA;
+    private final int maxTopikTA;
+    private final int status;
     
-    public void createKelompokTA(String topikTA, int maxAnggota) {
-        KelompokTA kta = new KelompokTA(topikTA, maxAnggota);
+    public Dosen(int maxTopikTA,int status) {
+        this.maxTopikTA = maxTopikTA;
+        if(status == 1 || status==2) {
+            this.status = status;
+        }
+        topikTA = new KelompokTA[maxTopikTA];
+    }
+    
+    public void createKelompokTA(String topik, int maxAnggota) {
+        KelompokTA kta = new KelompokTA(topik, maxAnggota);
+        topikTA[nTopikTA] = kta;
+        nTopikTA++; 
     }
 }
