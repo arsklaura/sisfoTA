@@ -27,8 +27,9 @@ public class Dosen extends Orang {
     }
     
     public void createKelompokTA(String topik, int maxAnggota) {
-        KelompokTA kta = new KelompokTA(topik, maxAnggota);
-        topikTA[nTopikTA] = kta;
-        nTopikTA++; 
+        if(nTopikTA<=maxTopikTA){
+            topikTA[nTopikTA] = new KelompokTA(topik, maxAnggota);
+            nTopikTA++;
+        }
     }
 }

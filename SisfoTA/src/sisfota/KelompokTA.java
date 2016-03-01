@@ -23,8 +23,8 @@ public class KelompokTA {
     
     public void addAnggota(Mahasiswa m) {
         if(nAnggota <= maxAnggota) {
-          anggota[nAnggota] = m;
-          nAnggota++;  
+            anggota[nAnggota] = m;
+            nAnggota++;  
         }  
     }
     public void removeAnggota(Mahasiswa m) {
