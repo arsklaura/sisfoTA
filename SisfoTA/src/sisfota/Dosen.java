@@ -20,6 +20,9 @@ public class Dosen extends Orang {
         if(status == 1 || status==2) {
             this.status = status;
         }
+        else {
+            this.status = 0;
+        }
         topikTA = new KelompokTA[maxTopikTA];
     }
     
