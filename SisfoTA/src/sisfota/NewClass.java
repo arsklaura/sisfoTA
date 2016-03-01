@@ -10,5 +10,5 @@ package sisfota;
  * @author agungrb
  */
 public class NewClass {
-    
+    public int i;
 }
