@@ -14,6 +14,7 @@ public class Dosen extends Orang {
     private int nTopikTA;
     private final int maxTopikTA;
     private final int status;
+    private int kosong;
     
     public Dosen(int maxTopikTA,int status) {
         this.maxTopikTA = maxTopikTA;
