@@ -13,15 +13,17 @@ public class Dosen extends Orang {
     private KelompokTA[] topikTA;
     private int nTopikTA;
     private final int maxTopikTA;
-    private final int status;
+    private final byte statusPembimbing;
+    private long nip;
+    private String jabatan;
     
-    public Dosen(int maxTopikTA,int status) {
+    public Dosen(int maxTopikTA,byte status) {
         this.maxTopikTA = maxTopikTA;
         if(status == 1 || status==2) {
-            this.status = status;
+            this.statusPembimbing = status;
         }
         else {
-            this.status = 0;
+            this.statusPembimbing = 0;
         }
         topikTA = new KelompokTA[maxTopikTA];
     }
