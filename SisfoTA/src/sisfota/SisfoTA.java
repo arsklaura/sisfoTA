@@ -18,5 +18,5 @@ public class SisfoTA {
         // TODO code application logic here
         System.out.println("hello world");
     }
-    
+
 }
