@@ -16,5 +16,5 @@ public class TugasAkhir {
     }
     public Dosen getPembimbing(int i){
             return Pembimbing[i];
-        }
     }
+}
