@@ -15,8 +15,7 @@ public class Dosen extends Orang {
     private final int maxTopikTA;
     private final byte statusPembimbing;
     private long nip;
-    private String jabatan;
-    
+   
     public Dosen(int maxTopikTA,byte status) {
         this.maxTopikTA = maxTopikTA;
         if(status == 1 || status==2) {
