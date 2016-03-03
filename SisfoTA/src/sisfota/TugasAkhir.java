@@ -7,8 +7,14 @@ package sisfota;
 
 /**
  *
- * @author agungrb
+ * @author SD
  */
 public class TugasAkhir {
-    
-}
+    private Dosen[] Pembimbing = new Dosen[2];
+    public void SetPembimbing(Dosen d,int i){
+        Pembimbing[i]=d;
+    }
+    public Dosen getPembimbing(int i){
+            return Pembimbing[i];
+        }
+    }
