@@ -33,4 +33,11 @@ public class Dosen extends Orang {
             nTopikTA++;
         }
     }
+    public void revisiJudulTA (){
+        System.out.println("Judul direvisi ");
+    }
+    public void removeKelompokTA (int i){
+        topikTA[i]= null;
+    }
 }
+    
