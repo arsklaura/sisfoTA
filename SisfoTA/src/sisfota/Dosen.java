@@ -14,9 +14,10 @@ public class Dosen extends Orang {
     private int nTopikTA;
     private final int maxTopikTA;
     private final byte statusPembimbing;
-    private long nip;
+    private final long nip;
    
-    public Dosen(int maxTopikTA,byte status) {
+    public Dosen(long nip, int maxTopikTA, byte status) {
+        this.nip = nip;
         this.maxTopikTA = maxTopikTA;
         if(status == 1 || status==2) {
             this.statusPembimbing = status;
@@ -40,6 +41,11 @@ public class Dosen extends Orang {
         if(noTopikTA<=nTopikTA) {
            topikTA[noTopikTA]= null; 
         }
+    }
+    public void replacePembimbing(Dosen newDosen, int noTopikTA){
+        newDosen.topikTA[newDosen.nTopikTA]= topikTA[noTopikTA];
+        newDosen.nTopikTA++;
+        topikTA[noTopikTA] = null;
     }
 }
     
