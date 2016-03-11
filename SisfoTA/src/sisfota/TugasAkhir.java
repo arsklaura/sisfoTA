@@ -11,10 +11,15 @@ package sisfota;
  */
 public class TugasAkhir {
     private Dosen[] Pembimbing = new Dosen[2];
+    private String judulTA;
+    
+    public TugasAkhir(String judulTA) {
+        this.judulTA = judulTA;
+    }
     public void SetPembimbing(Dosen d,int i){
         Pembimbing[i]=d;
     }
     public Dosen getPembimbing(int i){
-            return Pembimbing[i];
+        return Pembimbing[i];
     }
 }

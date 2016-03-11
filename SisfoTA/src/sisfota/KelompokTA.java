@@ -34,7 +34,7 @@ public class KelompokTA {
             }
         }
     }
-    public void replacePembimbing(){
-        //System.out.println("Dosen dengan status "+getstatus()+ " Telah dipindahkan ");
+    public void replacePembimbing(Dosen d){
+        
     }
 }
