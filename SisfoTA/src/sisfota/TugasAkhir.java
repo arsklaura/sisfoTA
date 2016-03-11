@@ -16,10 +16,10 @@ public class TugasAkhir {
     public TugasAkhir(String judulTA) {
         this.judulTA = judulTA;
     }
-    public void SetPembimbing(Dosen d,int i){
-        pembimbing[i]=d;
+    public void SetPembimbing(Dosen d,int noPembimbing){
+        pembimbing[noPembimbing]=d;
     }
-    public Dosen getPembimbing(int i){
-        return pembimbing[i];
+    public Dosen getPembimbing(int noPembimbing){
+        return pembimbing[noPembimbing];
     }
 }

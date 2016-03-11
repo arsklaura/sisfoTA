@@ -12,12 +12,18 @@ package sisfota;
 public class Mahasiswa extends Orang {
     private TugasAkhir tugasAkhir;
     private int nSKS;
-    private boolean statusKP = false;
-    private long nim;
+    private boolean statusKP;
+    private final long nim;
     
     public Mahasiswa(long nim,int nSKS, boolean statusKP) {
         this.nim = nim;
         this.nSKS = nSKS;
         this.statusKP = statusKP;
+    }
+    
+    public void CreateTA(String judulTA){
+        if(nSKS>=100 && statusKP==true) {
+           tugasAkhir = new TugasAkhir(judulTA); 
+        }
     }
 }
