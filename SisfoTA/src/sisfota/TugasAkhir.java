@@ -18,7 +18,7 @@ public class TugasAkhir {
     }
     public String getPembimbing(){
         for (int i=0; i<=2; i++){
-            return getNama.Pembimbing[i];
+            return getNama().Pembimbing[i];
         }
     }
 }
