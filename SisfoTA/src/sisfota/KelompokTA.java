@@ -34,7 +34,4 @@ public class KelompokTA {
             }
         }
     }
-    public void replacePembimbing(Dosen d){
-        
-    }
 }
