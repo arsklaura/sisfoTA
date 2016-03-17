@@ -26,4 +26,9 @@ public class Mahasiswa extends Orang {
            tugasAkhir = new TugasAkhir(judulTA); 
         }
     }
+
+    public TugasAkhir getTugasAkhir() {
+        return tugasAkhir;
+    }
+    
 }

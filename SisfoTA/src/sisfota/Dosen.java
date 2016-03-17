@@ -34,8 +34,8 @@ public class Dosen extends Orang {
             nTopikTA++;
         }
     }
-    public void revisiJudulTA (Mahasiswa m){
-        
+    public void revisiJudulTA (Mahasiswa m, String judulTA){
+        m.getTugasAkhir().setJudulTA(judulTA);
     }
     public void removeKelompokTA (int noTopikTA){
         if(noTopikTA<=nTopikTA) {

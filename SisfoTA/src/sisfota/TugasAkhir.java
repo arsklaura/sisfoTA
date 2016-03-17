@@ -22,4 +22,13 @@ public class TugasAkhir {
     public Dosen getPembimbing(int noPembimbing){
         return pembimbing[noPembimbing];
     }
+
+    public String getJudulTA() {
+        return judulTA;
+    }
+
+    public void setJudulTA(String judulTA) {
+        this.judulTA = judulTA;
+    }
+    
 }
