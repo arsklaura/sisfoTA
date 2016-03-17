@@ -13,14 +13,14 @@ public class Dosen extends Orang {
     private KelompokTA[] topikTA;
     private int nTopikTA;
     private final int maxTopikTA;
-    private final byte statusPembimbing;
+    private byte statusPembimbing;
     private final long nip;
    
-    public Dosen(long nip, int maxTopikTA, byte status) {
+    public Dosen(long nip, int maxTopikTA, byte statusPembimbing) {
         this.nip = nip;
         this.maxTopikTA = maxTopikTA;
-        if(status == 1 || status==2) {
-            this.statusPembimbing = status;
+        if(statusPembimbing == 1 || statusPembimbing==2) {
+            this.statusPembimbing = statusPembimbing;
         }
         else {
             this.statusPembimbing = 0;
@@ -34,18 +34,26 @@ public class Dosen extends Orang {
             nTopikTA++;
         }
     }
-    public void revisiJudulTA (Mahasiswa m, String judulTA){
-        m.getTugasAkhir().setJudulTA(judulTA);
-    }
+ 
     public void removeKelompokTA (int noTopikTA){
         if(noTopikTA<=nTopikTA) {
            topikTA[noTopikTA]= null; 
         }
     }
-    public void replacePembimbing(Dosen newDosen, int noTopikTA){
-        newDosen.topikTA[newDosen.nTopikTA]= topikTA[noTopikTA];
-        newDosen.nTopikTA++;
-        topikTA[noTopikTA] = null;
-    }
-}
     
+    public void replacePembimbing(Dosen newDosen, int noTopikTA){
+        if(newDosen.nTopikTA <= newDosen.maxTopikTA) {
+           newDosen.topikTA[newDosen.nTopikTA] = topikTA[noTopikTA];
+           newDosen.nTopikTA++;
+           topikTA[noTopikTA] = null; 
+        }
+    }
+    
+    public void revisiJudulTA (int noTopikTA, int noAnggota, String judulTA){
+        if(noTopikTA <= nTopikTA) {
+            if(noAnggota <= topikTA[noTopikTA].getNAnggota()) {
+                topikTA[noTopikTA].getAnggota(noAnggota).getTugasAkhir().setJudulTA(judulTA);
+            }
+        }
+    }
+} 
