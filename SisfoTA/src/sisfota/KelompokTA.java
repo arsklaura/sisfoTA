@@ -29,9 +29,15 @@ public class KelompokTA {
     }
     public void removeAnggota(Mahasiswa m) {
         for(int i=0;i<=anggota.length;i++) {
-            if(anggota[i] == m) {                       //Mahasiswa ditemukan
+            if(anggota[i] == m) {
                 anggota[i] = null;
             }
         }
+    }
+    public Mahasiswa getAnggota(int noAnggota) {
+        return anggota[noAnggota];
+    }
+    public int getNAnggota() {
+        return nAnggota;
     }
 }

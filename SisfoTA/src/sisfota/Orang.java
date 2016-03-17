@@ -9,11 +9,12 @@ package sisfota;
  *
  * @author ZULFA UMI WARDANI
  */
+import java.util.Date;
 
 public abstract class Orang {
     public String nama;
     public long ktp;
-    public String tglLahir;         //Sementara pakai string dulu
+    public Date tglLahir = new Date();
     public String tempatLahir;
     public String agama;
 }
