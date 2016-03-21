@@ -37,7 +37,7 @@ public class Mahasiswa extends Orang implements Serializable {
 
     @Override
     public String toString() {
-        return "Nama : "+nama+"|| NIM : "+nim;
+        return "Nama : "+nama+" || NIM : "+nim;
     }
     
 }

@@ -60,7 +60,7 @@ public class Dosen extends Orang implements Serializable {
 
     @Override
     public String toString() {
-        return "Nama : "+nama+"|| NIP : "+nip;
+        return "Nama : "+nama+" || NIP : "+nip;
     }
     
     

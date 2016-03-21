@@ -10,8 +10,9 @@ package sisfota;
  * @author ZULFA UMI WARDANI
  */
 import java.util.Date;
+import java.io.Serializable;
 
-public abstract class Orang {
+public abstract class Orang implements Serializable {
     public String nama;
     public long ktp;
     public Date tglLahir = new Date();
