@@ -36,7 +36,7 @@ public class Mahasiswa extends Orang {
 
     @Override
     public String toString() {
-        return "Nama : "+nama+" NIM : "+nim;
+        return "Nama : "+nama+"|| NIM : "+nim;
     }
     
 }

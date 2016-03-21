@@ -59,7 +59,7 @@ public class Dosen extends Orang {
 
     @Override
     public String toString() {
-        return "Nama : "+nama+" NIP : "+nip;
+        return "Nama : "+nama+"|| NIP : "+nip;
     }
     
     

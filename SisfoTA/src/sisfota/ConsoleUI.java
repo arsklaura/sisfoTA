@@ -29,6 +29,16 @@ public class ConsoleUI {
         this.app = app;
     }
     
+    private static void pressAnyKeyToContinue() { 
+        System.out.println("Press any key to continue...");
+        try
+        {
+            System.in.read();
+        }  
+        catch(Exception e)
+        {}  
+    }
+    
     public static void showMenu() {
         do{ 
             System.out.println("MENU UTAMA");
@@ -68,6 +78,7 @@ public class ConsoleUI {
                 System.out.print("Topik Maksimum  : ");maxTopikTA = scanAngka.nextInt();
                 app.addDosen(nama, nip, statusPembimbing, maxTopikTA);
                 System.out.println("Registrasi BERHASIL, dsn-"+app.getnDosen());
+                pressAnyKeyToContinue();
                 break;
             case 2 :
             case 3 : showMenu();
@@ -86,10 +97,12 @@ public class ConsoleUI {
             case 1 :
                 System.out.print("ID Dosen    : ");id = scanAngka.nextInt();
                 System.out.println(app.getDosen(id));
+                pressAnyKeyToContinue();
                 break;
             case 2 :
                 System.out.print("ID Mahasiswa    : ");id = scanAngka.nextInt();
                 System.out.println(app.getMahasiswa(id));
+                pressAnyKeyToContinue();
                 break;
             case 3 :
                 showMenu();
