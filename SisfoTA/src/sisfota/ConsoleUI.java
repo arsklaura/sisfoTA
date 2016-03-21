@@ -46,6 +46,8 @@ public class ConsoleUI {
             System.out.println("2. Menu Dosen");
             System.out.println("3. Menu Mahasiswa");
             System.out.println("4. Menu View Data");
+            System.out.println("5. Menyimpan Data");
+            System.out.println("6. Membuka Data");
             System.out.print("Pilihan Anda    : ");
             pil = scanAngka.nextByte();
             switch(pil) {
@@ -57,7 +59,16 @@ public class ConsoleUI {
                 case 4 :
                     showViewData();
                     break;
-                
+                case 5 :
+                    app.saveFileDosen();
+                    System.out.println("Data telah tersimpan");
+                    pressAnyKeyToContinue();
+                    break;
+                case 6 :
+                    app.readFileDosen();
+                    System.out.println("Data telah dibuka");
+                    pressAnyKeyToContinue();
+                    break;
                 default :    
             }
         }while(pil != 0);   
@@ -77,7 +88,7 @@ public class ConsoleUI {
                 System.out.print("Status          : ");statusPembimbing = scanAngka.nextByte();
                 System.out.print("Topik Maksimum  : ");maxTopikTA = scanAngka.nextInt();
                 app.addDosen(nama, nip, statusPembimbing, maxTopikTA);
-                System.out.println("Registrasi BERHASIL, dsn-"+app.getnDosen());
+                System.out.println("Registrasi BERHASIL, ID-"+app.listDosen.size());
                 pressAnyKeyToContinue();
                 break;
             case 2 :

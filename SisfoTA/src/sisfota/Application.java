@@ -4,47 +4,60 @@
  * and open the template in the editor.
  */
 package sisfota;
+import java.util.ArrayList;
+import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author agungrb
  */
 public class Application {
-    Mahasiswa[] listMahasiswa;
-    Dosen[] listDosen;
-    
-    private int nDosen = 0;
-    private int nMahasiswa = 0;
+    ArrayList<Mahasiswa> listMahasiswa;
+    ArrayList<Dosen> listDosen;
     
     public Application() {
-        listMahasiswa = new Mahasiswa[10];
-        listDosen = new Dosen[10];
+        listMahasiswa = new ArrayList();
+        listDosen = new ArrayList();
     }
     
     public void addDosen(String nama, long nip, byte statusPembimbing,int maxTopikTA) {
-        listDosen[nDosen] = new Dosen(nama, nip, statusPembimbing, maxTopikTA);
-        nDosen++;
+        listDosen.add(new Dosen(nama, nip, statusPembimbing, maxTopikTA));
     }
     
     public void addMahasiswa(String nama, long nim, int nSKS, boolean statusKP) {
-        listMahasiswa[nMahasiswa] = new Mahasiswa(nama, nim, nSKS, statusKP);
-        nMahasiswa++;
+        listMahasiswa.add(new Mahasiswa(nama, nim, nSKS, statusKP));
     }
     
     public Dosen getDosen(int noDosen) {
-        return listDosen[noDosen];
+        return listDosen.get(noDosen);
     }
     
     public Mahasiswa getMahasiswa(int noMahasiswa) {
-        return listMahasiswa[noMahasiswa];
+        return listMahasiswa.get(noMahasiswa);
     }
 
-    public int getnDosen() {
-        return nDosen;
+    public void saveFileDosen() {
+        try(FileOutputStream fout = new FileOutputStream("Dosen.txt")) {
+            ObjectOutputStream oout = new ObjectOutputStream(fout);
+            oout.writeObject(listDosen);
+            oout.flush();
+        }catch(IOException e) {
+            
+        }
     }
-
-    public int getnMahasiswa() {
-        return nMahasiswa;
+    
+    public void readFileDosen() {
+        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("Dosen.txt"))) {
+            listDosen = (ArrayList<Dosen>) ois.readObject();
+            ois.close();
+            
+        }catch(IOException e) {
+            
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Application.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-
+    
 }

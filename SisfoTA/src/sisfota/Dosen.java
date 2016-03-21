@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package sisfota;
+import java.io.Serializable;
 
 /**
  *
  * @author agungrb
  */
-public class Dosen extends Orang {
+public class Dosen extends Orang implements Serializable {
     private KelompokTA[] topikTA;
     private int nTopikTA = 0;
     private final int maxTopikTA;

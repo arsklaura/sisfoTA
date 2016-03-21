@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package sisfota;
+import java.io.Serializable;
 
 /**
  *
  * @author SD
  */
-public class Mahasiswa extends Orang {
+public class Mahasiswa extends Orang implements Serializable {
     private TugasAkhir tugasAkhir;
     private int nSKS = 0;
     private boolean statusKP = false;
