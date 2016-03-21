@@ -15,9 +15,9 @@ public class SisfoTA {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        System.out.println("hello world hello world");
-        System.out.println("halo saya disini");
+        Application app = new Application();
+        ConsoleUI cui = new ConsoleUI(app);
+        cui.showMenu();
     }
 
 }

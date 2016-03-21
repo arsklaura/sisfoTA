@@ -11,21 +11,21 @@ package sisfota;
  */
 public class Dosen extends Orang {
     private KelompokTA[] topikTA;
-    private int nTopikTA;
+    private int nTopikTA = 0;
     private final int maxTopikTA;
-    private byte statusPembimbing;
+    private byte statusPembimbing = 0;
     private final long nip;
+    private static int idDosen;
    
-    public Dosen(long nip, int maxTopikTA, byte statusPembimbing) {
+    public Dosen(String nama, long nip, byte statusPembimbing,int maxTopikTA) {
+        this.nama = nama;
         this.nip = nip;
         this.maxTopikTA = maxTopikTA;
         if(statusPembimbing == 1 || statusPembimbing==2) {
             this.statusPembimbing = statusPembimbing;
         }
-        else {
-            this.statusPembimbing = 0;
-        }
         topikTA = new KelompokTA[maxTopikTA];
+        idDosen++;
     }
     
     public void createKelompokTA(String topik, int maxAnggota) {
@@ -37,7 +37,7 @@ public class Dosen extends Orang {
  
     public void removeKelompokTA (int noTopikTA){
         if(noTopikTA<=nTopikTA) {
-           topikTA[noTopikTA]= null; 
+           topikTA[noTopikTA] = null; 
         }
     }
     
@@ -56,4 +56,11 @@ public class Dosen extends Orang {
             }
         }
     }
+
+    @Override
+    public String toString() {
+        return "Nama : "+nama+" NIP : "+nip;
+    }
+    
+    
 } 

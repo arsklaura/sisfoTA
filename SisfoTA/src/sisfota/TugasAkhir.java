@@ -17,7 +17,7 @@ public class TugasAkhir {
         this.judulTA = judulTA;
     }
     public void SetPembimbing(Dosen d,int noPembimbing){
-        pembimbing[noPembimbing]=d;
+        pembimbing[noPembimbing] = d;
     }
     public Dosen getPembimbing(int noPembimbing){
         return pembimbing[noPembimbing];
