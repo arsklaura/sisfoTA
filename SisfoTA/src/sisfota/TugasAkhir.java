@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package sisfota;
+import java.io.Serializable;
 
 /**
  *
  * @author SD
  */
-public class TugasAkhir {
+public class TugasAkhir implements Serializable {
     private Dosen[] pembimbing = new Dosen[2];
     private String judulTA;
     

@@ -16,7 +16,7 @@ public class Dosen extends Orang implements Serializable {
     private final int maxTopikTA;
     private byte statusPembimbing = 0;
     private final long nip;
-    private static int idDosen;
+    private static int idDosen = 1;
    
     public Dosen(String nama, long nip, byte statusPembimbing,int maxTopikTA) {
         this.nama = nama;
@@ -52,7 +52,7 @@ public class Dosen extends Orang implements Serializable {
     
     public void revisiJudulTA (int noTopikTA, int noAnggota, String judulTA){
         if(noTopikTA <= nTopikTA) {
-            if(noAnggota <= topikTA[noTopikTA].getNAnggota()) {
+            if(noAnggota <= topikTA[noTopikTA].getnAnggota()) {
                 topikTA[noTopikTA].getAnggota(noAnggota).getTugasAkhir().setJudulTA(judulTA);
             }
         }

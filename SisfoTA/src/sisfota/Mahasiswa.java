@@ -15,7 +15,7 @@ public class Mahasiswa extends Orang implements Serializable {
     private int nSKS = 0;
     private boolean statusKP = false;
     private final long nim;
-    private static int idMahasiswa;
+    private static int idMahasiswa = 1;
     
     public Mahasiswa(String nama, long nim, int nSKS, boolean statusKP) {
         this.nama = nama;
@@ -26,7 +26,7 @@ public class Mahasiswa extends Orang implements Serializable {
     }
     
     public void CreateTA(String judulTA){
-        if(nSKS>=100 && statusKP) {
+        if(nSKS>=90 && statusKP) {
            tugasAkhir = new TugasAkhir(judulTA); 
         }
     }

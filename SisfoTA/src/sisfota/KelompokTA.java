@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package sisfota;
+import java.io.Serializable;
 
 /**
  *
  * @author agungrb
  */
-public class KelompokTA {
+public class KelompokTA implements Serializable {
     private String topik;
     private Mahasiswa[] anggota;
     private final int maxAnggota;
@@ -37,7 +38,7 @@ public class KelompokTA {
     public Mahasiswa getAnggota(int noAnggota) {
         return anggota[noAnggota];
     }
-    public int getNAnggota() {
+    public int getnAnggota() {
         return nAnggota;
     }
 }

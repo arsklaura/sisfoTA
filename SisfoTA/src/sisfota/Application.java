@@ -6,8 +6,6 @@
 package sisfota;
 import java.util.ArrayList;
 import java.io.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -30,12 +28,12 @@ public class Application {
         listMahasiswa.add(new Mahasiswa(nama, nim, nSKS, statusKP));
     }
     
-    public Dosen getDosen(int noDosen) {
-        return listDosen.get(noDosen);
+    public Dosen getDosen(int idDosen) {
+        return listDosen.get(idDosen-1);
     }
     
-    public Mahasiswa getMahasiswa(int noMahasiswa) {
-        return listMahasiswa.get(noMahasiswa);
+    public Mahasiswa getMahasiswa(int idMahasiswa) {
+        return listMahasiswa.get(idMahasiswa-1);
     }
 
     public void saveFileDosen() {
@@ -53,11 +51,28 @@ public class Application {
             listDosen = (ArrayList<Dosen>) ois.readObject();
             ois.close();
             
-        }catch(IOException e) {
+        }catch(Exception e) {
             
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Application.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
+    public void saveFileMahasiswa() {
+        try(FileOutputStream fout = new FileOutputStream("Mahasiswa.txt")) {
+            ObjectOutputStream oout = new ObjectOutputStream(fout);
+            oout.writeObject(listMahasiswa);
+            oout.flush();
+        }catch(Exception e) {
+            
+        }
+    }
+    
+    public void readFileMahasiswa() {
+        try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("Mahasiswa.txt"))) {
+            listMahasiswa = (ArrayList<Mahasiswa>) ois.readObject();
+            ois.close();
+            
+        }catch(Exception e) {
+            
+        }
+    }
 }
