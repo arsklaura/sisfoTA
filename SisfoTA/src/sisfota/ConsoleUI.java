@@ -40,7 +40,7 @@ public class ConsoleUI {
     }
     
     public static void showMenu() {
-        do{ 
+        do{
             System.out.println("MENU UTAMA");
             System.out.println("1. Registrasi");
             System.out.println("2. Menu Dosen");
@@ -75,71 +75,77 @@ public class ConsoleUI {
                     System.out.println("Pilihan salah");
                     pressAnyKeyToContinue();
             }
-        }while(pil != 0);   
+        }while(pil != 0); 
+        
     }
     private static void showRegistrasi() {
-        System.out.println("Menu Registrasi");
-        System.out.println("1. Registrasi Dosen");
-        System.out.println("2. Registrasi Mahasiswa");
-        System.out.println("3. Kembali");
-        System.out.print("Pilihan Anda    : ");
-        pil = scanAngka.nextByte();
-        switch(pil) {
-            case 1 : 
-                System.out.println("Registrasi Dosen");
-                System.out.print("Nama            : ");nama = scanString.nextLine();
-                System.out.print("NIP             : ");nip = scanAngka.nextLong();
-                System.out.print("Status          : ");statusPembimbing = scanAngka.nextByte();
-                System.out.print("Topik Maksimum  : ");maxTopikTA = scanAngka.nextInt();
-                app.addDosen(nama, nip, statusPembimbing, maxTopikTA);
-                System.out.println("Registrasi BERHASIL, DSN-"+app.listDosen.size());
-                pressAnyKeyToContinue();
-                break;
-            case 2 :
-                System.out.println("Registrasi Mahasiswa");
-                System.out.print("Nama        : ");nama = scanString.nextLine();
-                System.out.print("NIM         : ");nim = scanAngka.nextLong();
-                System.out.print("Jumlah SKS  : ");nSKS = scanAngka.nextInt();
-                System.out.print("Status KP   : ");statusKP = scanBoolean.nextBoolean();
-                app.addMahasiswa(nama, nim, nSKS, statusKP);
-                System.out.println("Registrasi BERHASIL, MHS-"+app.listMahasiswa.size());
-                pressAnyKeyToContinue();
-                break;
-            case 3 : showMenu();
-            default :
-                System.out.println("Pilihan salah");
-                pressAnyKeyToContinue();
-                showRegistrasi();
+        try{
+            System.out.println("Menu Registrasi");
+            System.out.println("1. Registrasi Dosen");
+            System.out.println("2. Registrasi Mahasiswa");
+            System.out.println("3. Kembali");
+            System.out.print("Pilihan Anda    : ");
+            pil = scanAngka.nextByte();
+            switch(pil) {
+                case 1 : 
+                    System.out.println("Registrasi Dosen");
+                    System.out.print("Nama      : ");nama = scanString.nextLine();
+                    System.out.print("NIP       : ");nip = scanAngka.nextLong();
+                    System.out.print("Status    : ");statusPembimbing = scanAngka.nextByte();
+                    System.out.print("Jumlah Kelompok TA : ");maxTopikTA = scanAngka.nextInt();
+                    app.addDosen(nama, nip, statusPembimbing, maxTopikTA);
+                    System.out.println("Registrasi BERHASIL, DSN-"+app.listDosen.size());
+                    pressAnyKeyToContinue();
+                    break;
+                case 2 :
+                    System.out.println("Registrasi Mahasiswa");
+                    System.out.print("Nama        : ");nama = scanString.nextLine();
+                    System.out.print("NIM         : ");nim = scanAngka.nextLong();
+                    System.out.print("Jumlah SKS  : ");nSKS = scanAngka.nextInt();
+                    System.out.print("Status KP [true/false]: ");statusKP = scanBoolean.nextBoolean();
+                    app.addMahasiswa(nama, nim, nSKS, statusKP);
+                    System.out.println("Registrasi BERHASIL, MHS-"+app.listMahasiswa.size());
+                    pressAnyKeyToContinue();
+                    break;
+                case 3 : break;
+                default :
+                    System.out.println("Pilihan salah");
+                    pressAnyKeyToContinue();
+                    showRegistrasi();
+            }
+        }catch(Exception e) {
+            System.out.println("Input anda tidak sesuai");
+            pressAnyKeyToContinue();
+            scanAngka.nextLine();
+            showRegistrasi();
+            
         }
     }
-    
     private static void showViewData() {
         try{
-        System.out.println("Menu Registrasi");
-        System.out.println("1. Lihat Data Dosen");
-        System.out.println("2. Lihat Data Mahasiswa");
-        System.out.println("3. Kembali");
-        System.out.print("Pilihan Anda    : ");
-        pil = scanAngka.nextByte();
-        switch(pil) {
-            case 1 :
-                System.out.print("ID Dosen    : ");id = scanAngka.nextInt();
-                System.out.println(app.getDosen(id));
-                pressAnyKeyToContinue();
-                break;
-            case 2 :
-                System.out.print("ID Mahasiswa    : ");id = scanAngka.nextInt();
-                System.out.println(app.getMahasiswa(id));
-                pressAnyKeyToContinue();
-                break;
-            case 3 :
-                showMenu();
-                break;
-            default :
-                System.out.println("Pilihan salah");
-                pressAnyKeyToContinue();
-                showViewData();
-        }
+            System.out.println("Menu Registrasi");
+            System.out.println("1. Lihat Data Dosen");
+            System.out.println("2. Lihat Data Mahasiswa");
+            System.out.println("3. Kembali");
+            System.out.print("Pilihan Anda    : ");
+            pil = scanAngka.nextByte();
+            switch(pil) {
+                case 1 :
+                    System.out.print("ID Dosen    : ");id = scanAngka.nextInt();
+                    System.out.println(app.getDosen(id));
+                    pressAnyKeyToContinue();
+                    break;
+                case 2 :
+                    System.out.print("ID Mahasiswa    : ");id = scanAngka.nextInt();
+                    System.out.println(app.getMahasiswa(id));
+                    pressAnyKeyToContinue();
+                    break;
+                case 3 : break;
+                default :
+                    System.out.println("Pilihan salah");
+                    pressAnyKeyToContinue();
+                    showViewData();
+            }
         }catch(IndexOutOfBoundsException e) {
             System.out.println("ID tidak terdaftar");
             pressAnyKeyToContinue();
