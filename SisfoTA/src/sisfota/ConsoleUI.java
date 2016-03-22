@@ -13,21 +13,22 @@ import java.util.Scanner;
  */
 public class ConsoleUI {
     
-    static Application app;
+    private static Application app;
     private static byte pil;
     
-    private static String nama,topik;
+    private static String nama,topik,judulTA;
     private static long nim, nip;
     private static byte statusPembimbing;
-    private static int nSKS, maxTopikTA, id, maxAnggota, noTopikTA;
+    private static int nSKS, maxTopikTA, id, maxAnggota, noTopikTA, noAnggota, noPembimbing;
     private static boolean statusKP;
+    private static Dosen newDosen;
     
     private static Mahasiswa mhs;
     private static Dosen dsn;
     
-    static Scanner scanString = new Scanner(System.in);
-    static Scanner scanAngka = new Scanner(System.in);
-    static Scanner scanBoolean = new Scanner(System.in);
+    private static Scanner scanString = new Scanner(System.in);
+    private static Scanner scanAngka = new Scanner(System.in);
+    private static Scanner scanBoolean = new Scanner(System.in);
     
     public ConsoleUI(Application app) {
         this.app = app;
@@ -59,13 +60,12 @@ public class ConsoleUI {
                     showRegistrasi();
                     break;
                 case 2 :
+                    loginDosen();
                     showMenuDosen();
-//                    dsn = null;
-//                    mhs = null;
                     break;
                 case 3 :
+                    loginMahasiswa();
                     showMenuMahasiswa();
-//                    mhs = null;
                 case 4 :
                     showViewData();
                     break;
@@ -174,7 +174,6 @@ public class ConsoleUI {
     }
     
     private static void showMenuDosen() {
-        loginDosen();
         try{
         System.out.println("Menu Dosen");
         System.out.println("1. Buat Kelompok TA");
@@ -204,14 +203,44 @@ public class ConsoleUI {
                 break;
             case 3 :
                 System.out.print("Nomor Kelompok : ");noTopikTA = scanAngka.nextInt();
-                System.out.println("ID Mahasiswa : ");id = scanAngka.nextInt();
+                System.out.print("ID Mahasiswa : ");id = scanAngka.nextInt();
                 mhs = app.getMahasiswa(id);
                 dsn.getTopikTA(noTopikTA).addAnggota(mhs);
+                System.out.println("Berhasil, noAnggota-"+(dsn.getTopikTA(noTopikTA).getnAnggota()-1));
+                pressAnyKeyToContinue();
+                showMenuDosen();
+                break;
+            case 4 :
+                System.out.print("Nomor Kelompok : ");noTopikTA = scanAngka.nextInt();
+                System.out.print("ID Mahasiswa : ");id = scanAngka.nextInt();
+                mhs = app.getMahasiswa(id);
+                dsn.getTopikTA(noTopikTA).removeAnggota(mhs);
+                System.out.println("Berhasil, noAnggota-"+dsn.getTopikTA(noTopikTA).getnAnggota());
+                pressAnyKeyToContinue();
+                showMenuDosen();
+                break;
+            case 5 :
+                System.out.print("Nomor Kelompok : ");noTopikTA = scanAngka.nextInt();
+                System.out.print("Nomor Anggota : ");noAnggota = scanAngka.nextInt();
+                System.out.print("Judul TA :");judulTA = scanString.nextLine();
+                mhs = app.getMahasiswa(id);
+                dsn.revisiJudulTA(noTopikTA, noAnggota, judulTA);
+                System.out.println("Berhasil");
+                pressAnyKeyToContinue();
+                showMenuDosen();
+                break;
+            case 6 :
+                System.out.println("Nomor Kelompok :");noTopikTA = scanAngka.nextInt();
+                System.out.println("ID Dosen baru : ");id = scanAngka.nextInt();
+                newDosen = app.getDosen(id);
+                dsn.replacePembimbing(newDosen, noTopikTA);
                 System.out.println("Berhasil");
                 pressAnyKeyToContinue();
                 showMenuDosen();
                 break;
             case 7 :
+                mhs = null;
+                dsn = null;
                 showMenu();
                 break;
             default :
@@ -219,7 +248,7 @@ public class ConsoleUI {
                 pressAnyKeyToContinue();
                 showMenuDosen();
         }
-        }catch(IndexOutOfBoundsException e) {
+        }catch(Exception e) {
             System.out.println("Gagal");
             pressAnyKeyToContinue();
             showMenuDosen();
@@ -227,6 +256,7 @@ public class ConsoleUI {
     }
     
     private static void showMenuMahasiswa() {
+        try{
         System.out.println("Menu Mahasiswa");
         System.out.println("1. Buat Tugas Akhir");
         System.out.println("2. Daftar Tugas Akhir");
@@ -235,7 +265,31 @@ public class ConsoleUI {
         pil = scanAngka.nextByte();
         switch(pil) {
             case 1 :
-                
+                System.out.print("Judul tugas akhir : ");judulTA = scanString.nextLine();
+                mhs.CreateTA(judulTA);
+                System.out.println("Berhasil");
+                pressAnyKeyToContinue();
+                showMenuMahasiswa();
+                break;
+            case 2 :
+                System.out.print("ID Dosen : ");id = scanAngka.nextInt();
+                System.out.print("No Pembimbing [0/1/2] : ");noPembimbing = scanAngka.nextInt();
+                dsn = app.getDosen(id);
+                mhs.getTugasAkhir().SetPembimbing(dsn, noPembimbing);
+                System.out.println("Berhasil");
+                pressAnyKeyToContinue();
+                showMenuMahasiswa();
+                break;
+            case 3 :
+                mhs = null;
+                dsn = null;
+                showMenu();
+                break;
+        }
+        }catch(Exception e) {
+            System.out.println("Gagal");
+            pressAnyKeyToContinue();
+            showMenuMahasiswa();
         }
     }
     private static void loginDosen() {
@@ -248,13 +302,32 @@ public class ConsoleUI {
         catch(IndexOutOfBoundsException e) {
             System.out.println("ID tidak terdaftar");
             pressAnyKeyToContinue();
-            showMenuDosen();
+            loginDosen();
         }
         catch(InputMismatchException e) {
             System.out.println("ID harus berupa angka");
             pressAnyKeyToContinue();
             scanAngka.nextLine();
-            showMenuDosen();
+            loginDosen();
+        }
+    }
+    private static void loginMahasiswa() {
+        try{
+        System.out.print("ID Mahasiswa : ");id = scanAngka.nextInt();
+        mhs = app.getMahasiswa(id);
+        System.out.println("Selamat Datang,"+mhs.nama);
+        pressAnyKeyToContinue();
+        }
+        catch(IndexOutOfBoundsException e) {
+            System.out.println("ID tidak terdaftar");
+            pressAnyKeyToContinue();
+            loginMahasiswa();
+        }
+        catch(InputMismatchException e) {
+            System.out.println("ID harus berupa angka");
+            pressAnyKeyToContinue();
+            scanAngka.nextLine();
+            loginMahasiswa();
         }
     }
 }

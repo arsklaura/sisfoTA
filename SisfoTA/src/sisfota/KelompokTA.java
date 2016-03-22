@@ -41,4 +41,6 @@ public class KelompokTA implements Serializable {
     public int getnAnggota() {
         return nAnggota;
     }
+    
+    
 }
