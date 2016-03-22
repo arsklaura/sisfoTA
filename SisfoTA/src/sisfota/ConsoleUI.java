@@ -4,7 +4,8 @@
  * and open the template in the editor.
  */
 package sisfota;
-import java.util.*;
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 /**
  *
@@ -48,7 +49,7 @@ public class ConsoleUI {
             System.out.println("4. Menu Lihat Data");
             System.out.println("5. Simpan Data");
             System.out.println("6. Buka Data");
-            System.out.print("Pilihan Anda    : ");
+            System.out.print("Pilihan Anda  : ");
             pil = scanAngka.nextByte();
             switch(pil) {
                 case 1 :
@@ -84,14 +85,14 @@ public class ConsoleUI {
             System.out.println("1. Registrasi Dosen");
             System.out.println("2. Registrasi Mahasiswa");
             System.out.println("3. Kembali");
-            System.out.print("Pilihan Anda    : ");
+            System.out.print("Pilihan Anda  : ");
             pil = scanAngka.nextByte();
             switch(pil) {
                 case 1 : 
                     System.out.println("Registrasi Dosen");
-                    System.out.print("Nama      : ");nama = scanString.nextLine();
-                    System.out.print("NIP       : ");nip = scanAngka.nextLong();
-                    System.out.print("Status    : ");statusPembimbing = scanAngka.nextByte();
+                    System.out.print("Nama  : ");nama = scanString.nextLine();
+                    System.out.print("NIP   : ");nip = scanAngka.nextLong();
+                    System.out.print("Status [1/2] : ");statusPembimbing = scanAngka.nextByte();
                     System.out.print("Jumlah Kelompok TA : ");maxTopikTA = scanAngka.nextInt();
                     app.addDosen(nama, nip, statusPembimbing, maxTopikTA);
                     System.out.println("Registrasi BERHASIL, DSN-"+app.listDosen.size());
@@ -99,10 +100,10 @@ public class ConsoleUI {
                     break;
                 case 2 :
                     System.out.println("Registrasi Mahasiswa");
-                    System.out.print("Nama        : ");nama = scanString.nextLine();
-                    System.out.print("NIM         : ");nim = scanAngka.nextLong();
-                    System.out.print("Jumlah SKS  : ");nSKS = scanAngka.nextInt();
-                    System.out.print("Status KP [true/false]: ");statusKP = scanBoolean.nextBoolean();
+                    System.out.print("Nama  : ");nama = scanString.nextLine();
+                    System.out.print("NIM   : ");nim = scanAngka.nextLong();
+                    System.out.print("Jumlah SKS : ");nSKS = scanAngka.nextInt();
+                    System.out.print("Status KP [true/false] : ");statusKP = scanBoolean.nextBoolean();
                     app.addMahasiswa(nama, nim, nSKS, statusKP);
                     System.out.println("Registrasi BERHASIL, MHS-"+app.listMahasiswa.size());
                     pressAnyKeyToContinue();
@@ -127,16 +128,16 @@ public class ConsoleUI {
             System.out.println("1. Lihat Data Dosen");
             System.out.println("2. Lihat Data Mahasiswa");
             System.out.println("3. Kembali");
-            System.out.print("Pilihan Anda    : ");
+            System.out.print("Pilihan Anda  : ");
             pil = scanAngka.nextByte();
             switch(pil) {
                 case 1 :
-                    System.out.print("ID Dosen    : ");id = scanAngka.nextInt();
+                    System.out.print("ID Dosen  : ");id = scanAngka.nextInt();
                     System.out.println(app.getDosen(id));
                     pressAnyKeyToContinue();
                     break;
                 case 2 :
-                    System.out.print("ID Mahasiswa    : ");id = scanAngka.nextInt();
+                    System.out.print("ID Mahasiswa  : ");id = scanAngka.nextInt();
                     System.out.println(app.getMahasiswa(id));
                     pressAnyKeyToContinue();
                     break;
@@ -160,10 +161,18 @@ public class ConsoleUI {
     }
     
     private static void showMenuDosen() {
-        
+        System.out.println("Menu Dosen");
+        System.out.println("1. Buat Kelompok TA");
+        System.out.println("2. Hapus Kelompok TA");
+        System.out.println("3. Tambah Anggota");
+        System.out.println("4. Hapus Anggota");
+        System.out.println("5. Revisi Judul TA");
+        System.out.println("6. Ganti Pembimbing");
     }
     
     private static void showMenuMahasiswa() {
-        
+        System.out.println("Menu Mahasiswa");
+        System.out.println("1. Buat Tugas Akhir");
+        System.out.println("2. Daftar Tugas Akhir");
     }
 }
