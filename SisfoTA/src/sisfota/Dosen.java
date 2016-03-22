@@ -62,6 +62,15 @@ public class Dosen extends Orang implements Serializable {
     public String toString() {
         return "Nama : "+nama+" || NIP : "+nip;
     }
+
+    public int getnTopikTA() {
+        return nTopikTA;
+    }
+    
+    public KelompokTA getTopikTA(int noTopikTA) {
+        return topikTA[noTopikTA];
+    }
+    
     
     
 } 
