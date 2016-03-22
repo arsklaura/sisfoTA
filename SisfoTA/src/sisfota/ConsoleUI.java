@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package sisfota;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  *
@@ -113,8 +113,8 @@ public class ConsoleUI {
                     pressAnyKeyToContinue();
                     showRegistrasi();
             }
-        }catch(Exception e) {
-            System.out.println("Input anda tidak sesuai");
+        }catch(InputMismatchException e) {
+            System.out.println("Inputan tidak sesuai");
             pressAnyKeyToContinue();
             scanAngka.nextLine();
             showRegistrasi();
@@ -149,6 +149,12 @@ public class ConsoleUI {
         }catch(IndexOutOfBoundsException e) {
             System.out.println("ID tidak terdaftar");
             pressAnyKeyToContinue();
+            showViewData();
+        }
+        catch(InputMismatchException e) {
+            System.out.println("ID harus berupa angka");
+            pressAnyKeyToContinue();
+            scanAngka.nextLine();
             showViewData();
         }
     }
