@@ -249,6 +249,7 @@ public class ConsoleUI {
                 showMenuDosen();
                 break;
             case 7 :
+                newDosen = null;
                 mhs = null;
                 dsn = null;
                 showMenu();
@@ -281,7 +282,7 @@ public class ConsoleUI {
                 break;
             case 2 :
                 System.out.print("ID Dosen : ");id = scanAngka.nextInt();
-                System.out.print("No Pembimbing [0/1/2] : ");noPembimbing = scanAngka.nextInt();
+                System.out.print("No Pembimbing [0/1] : ");noPembimbing = scanAngka.nextInt();
                 dsn = app.getDosen(id);
                 if(mhs.getTugasAkhir().SetPembimbing(dsn, noPembimbing)) {
                     System.out.println("Berhasil");

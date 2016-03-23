@@ -40,11 +40,19 @@ public class Mahasiswa extends Orang implements Serializable {
     @Override
     public String toString() {
         if(tugasAkhir != null) {
-            return "Mhs-"+nama+", "+nim+", judul TA: "+tugasAkhir.getJudulTA();
+            if(tugasAkhir.getPembimbing(0) != null || tugasAkhir.getPembimbing(1) != null) {
+                return nama+", "+nim+", judul TA: "+tugasAkhir.getJudulTA()+", Sudah ada pembimbing";
+            }
+            else {
+                return nama+", "+nim+", judul TA: "+tugasAkhir.getJudulTA()+", Belum ada pembimbing";
+            }
         }
         else {
-            return "Mhs-"+nama+", "+nim+" Belum punya TA";
+            return nama+", "+nim+" Belum punya TA"+", Belum ada pembimbing";
         }
+    }
+    public void viewData() {
+        
     }
     
 }
