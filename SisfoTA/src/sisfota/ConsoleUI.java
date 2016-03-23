@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package sisfota;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -47,16 +46,18 @@ public class ConsoleUI {
     public static void showMenu() {
         do{
             try{
-                System.out.println("MENU UTAMA");
+                System.out.println("==MENU UTAMA==");
                 System.out.println("1. Registrasi");
                 System.out.println("2. Menu Dosen");
                 System.out.println("3. Menu Mahasiswa");
                 System.out.println("4. Menu Lihat Data");
                 System.out.println("5. Simpan Data");
                 System.out.println("6. Buka Data");
+                System.out.println("0. Keluar");
                 System.out.print("Pilihan Anda  : ");
                 pil = scanAngka.nextByte();
                 switch(pil) {
+                    case 0 : break;
                     case 1 :
                         showRegistrasi();
                         break;
@@ -73,7 +74,7 @@ public class ConsoleUI {
                     case 5 :
                         app.saveFileDosen();
                         app.saveFileMahasiswa();
-                        System.out.println("Data telah tersimpan");
+                        System.out.println("Data telah disimpan");
                         pressAnyKeyToContinue();
                         break;
                     case 6 :
@@ -94,7 +95,7 @@ public class ConsoleUI {
     }
     
     private static void showRegistrasi() {
-        System.out.println("Menu Registrasi");
+        System.out.println("==Menu Registrasi==");
         System.out.println("1. Registrasi Dosen");
         System.out.println("2. Registrasi Mahasiswa");
         System.out.println("3. Kembali");
@@ -102,24 +103,24 @@ public class ConsoleUI {
         pil = scanAngka.nextByte();
         switch(pil) {
             case 1 : 
-                System.out.println("Registrasi Dosen");
+                System.out.println("==Registrasi Dosen==");
                 System.out.print("Nama  : ");nama = scanString.nextLine();
                 System.out.print("NIP   : ");nip = scanAngka.nextLong();
                 System.out.print("Status [1/2] : ");statusPembimbing = scanAngka.nextByte();
                 System.out.print("Jumlah Kelompok TA : ");maxTopikTA = scanAngka.nextInt();
                 app.addDosen(nama, nip, statusPembimbing, maxTopikTA);
-                System.out.println("Registrasi BERHASIL, DSN-"+app.listDosen.size());
+                System.out.println("Registrasi BERHASIL, DSN-"+app.getListDosen().size());
                 pressAnyKeyToContinue();
                 showRegistrasi();
                 break;
             case 2 :
-                System.out.println("Registrasi Mahasiswa");
+                System.out.println("==Registrasi Mahasiswa==");
                 System.out.print("Nama  : ");nama = scanString.nextLine();
                 System.out.print("NIM   : ");nim = scanAngka.nextLong();
                 System.out.print("Jumlah SKS : ");nSKS = scanAngka.nextInt();
                 System.out.print("Status KP [true/false] : ");statusKP = scanBoolean.nextBoolean();
                 app.addMahasiswa(nama, nim, nSKS, statusKP);
-                System.out.println("Registrasi BERHASIL, MHS-"+app.listMahasiswa.size());
+                System.out.println("Registrasi BERHASIL, MHS-"+app.getListMahasiswa().size());
                 pressAnyKeyToContinue();
                 showRegistrasi();
                 break;
@@ -130,8 +131,9 @@ public class ConsoleUI {
                 showRegistrasi();
         }
     }
+    
     private static void showViewData() {
-        System.out.println("Menu Registrasi");
+        System.out.println("==Menu Lihat Data==");
         System.out.println("1. Lihat Data Dosen");
         System.out.println("2. Lihat Data Mahasiswa");
         System.out.println("3. Kembali");
@@ -159,7 +161,7 @@ public class ConsoleUI {
     }
     
     private static void showMenuDosen() {
-        System.out.println("Menu Dosen");
+        System.out.println("==Menu Dosen==");
         System.out.println("1. Buat Kelompok TA");
         System.out.println("2. Hapus Kelompok TA");
         System.out.println("3. Tambah Anggota");
@@ -173,15 +175,23 @@ public class ConsoleUI {
             case 1 :
                 System.out.print("Judul Topik : ");topik = scanString.nextLine();
                 System.out.print("Jumlah Anggota : ");maxAnggota = scanAngka.nextInt();
-                dsn.createKelompokTA(topik, maxAnggota);
-                System.out.println("Berhasil, noKelompok-"+(dsn.getnTopikTA()-1));
+                if(dsn.createKelompokTA(topik, maxAnggota)) {
+                    System.out.println("Berhasil, noKelompok-"+(dsn.getnTopikTA()-1));
+                }
+                else {
+                    System.out.println("Gagal");
+                }
                 pressAnyKeyToContinue();
                 showMenuDosen();
                 break;
             case 2 :
                 System.out.print("Nomor Kelompok : ");noTopikTA = scanAngka.nextInt();
-                dsn.removeKelompokTA(noTopikTA);
-                System.out.println("Berhasil, noKelompok-"+noTopikTA);
+                if(dsn.removeKelompokTA(noTopikTA)) {
+                    System.out.println("Berhasil, noKelompok-"+noTopikTA);
+                }
+                else {
+                    System.out.println("Gagal");
+                }
                 pressAnyKeyToContinue();
                 showMenuDosen();
                 break;
@@ -189,17 +199,24 @@ public class ConsoleUI {
                 System.out.print("Nomor Kelompok : ");noTopikTA = scanAngka.nextInt();
                 System.out.print("ID Mahasiswa : ");id = scanAngka.nextInt();
                 mhs = app.getMahasiswa(id);
-                dsn.getTopikTA(noTopikTA).addAnggota(mhs);
-                System.out.println("Berhasil, noAnggota-"+(dsn.getTopikTA(noTopikTA).getnAnggota()-1));
+                if(dsn.getTopikTA(noTopikTA).addAnggota(mhs)) {
+                   System.out.println("Berhasil, noAnggota-"+(dsn.getTopikTA(noTopikTA).getnAnggota()-1)); 
+                }
+                else {
+                    System.out.println("Gagal");
+                }
                 pressAnyKeyToContinue();
                 showMenuDosen();
                 break;
             case 4 :
                 System.out.print("Nomor Kelompok : ");noTopikTA = scanAngka.nextInt();
-                System.out.print("ID Mahasiswa : ");id = scanAngka.nextInt();
-                mhs = app.getMahasiswa(id);
-                dsn.getTopikTA(noTopikTA).removeAnggota(mhs);
-                System.out.println("Berhasil, noAnggota-"+dsn.getTopikTA(noTopikTA).getnAnggota());
+                System.out.print("Nomor Anggota : ");noAnggota = scanAngka.nextInt();
+                if(dsn.getTopikTA(noTopikTA).removeAnggota(noAnggota)) {
+                    System.out.println("Berhasil, noAnggota-"+dsn.getTopikTA(noTopikTA).getnAnggota());
+                }
+                else {
+                    System.out.println("Gagal");
+                }
                 pressAnyKeyToContinue();
                 showMenuDosen();
                 break;
@@ -208,8 +225,12 @@ public class ConsoleUI {
                 System.out.print("Nomor Anggota : ");noAnggota = scanAngka.nextInt();
                 System.out.print("Judul TA :");judulTA = scanString.nextLine();
                 mhs = app.getMahasiswa(id);
-                dsn.revisiJudulTA(noTopikTA, noAnggota, judulTA);
-                System.out.println("Berhasil");
+                if(dsn.revisiJudulTA(noTopikTA, noAnggota, judulTA)) {
+                   System.out.println("Berhasil, judul TA "+mhs.nama+" telah diganti"); 
+                }
+                else {
+                    System.out.println("Gagal");
+                }
                 pressAnyKeyToContinue();
                 showMenuDosen();
                 break;
@@ -217,8 +238,12 @@ public class ConsoleUI {
                 System.out.println("Nomor Kelompok :");noTopikTA = scanAngka.nextInt();
                 System.out.println("ID Dosen baru : ");id = scanAngka.nextInt();
                 newDosen = app.getDosen(id);
-                dsn.replacePembimbing(newDosen, noTopikTA);
-                System.out.println("Berhasil");
+                if(dsn.replacePembimbing(newDosen, noTopikTA)) {
+                    System.out.println("Berhasil");
+                }
+                else {
+                    System.out.println("Gagal");
+                }
                 pressAnyKeyToContinue();
                 showMenuDosen();
                 break;
@@ -235,7 +260,7 @@ public class ConsoleUI {
     }
     
     private static void showMenuMahasiswa() {
-        System.out.println("Menu Mahasiswa");
+        System.out.println("==Menu Mahasiswa==");
         System.out.println("1. Buat Tugas Akhir");
         System.out.println("2. Daftar Tugas Akhir");
         System.out.println("3. Kembali");
@@ -244,8 +269,12 @@ public class ConsoleUI {
         switch(pil) {
             case 1 :
                 System.out.print("Judul tugas akhir : ");judulTA = scanString.nextLine();
-                mhs.CreateTA(judulTA);
-                System.out.println("Berhasil");
+                if(mhs.createTA(judulTA)) {
+                    System.out.println("Berhasil");
+                }
+                else {
+                    System.out.println("Gagal");
+                }
                 pressAnyKeyToContinue();
                 showMenuMahasiswa();
                 break;
@@ -253,8 +282,12 @@ public class ConsoleUI {
                 System.out.print("ID Dosen : ");id = scanAngka.nextInt();
                 System.out.print("No Pembimbing [0/1/2] : ");noPembimbing = scanAngka.nextInt();
                 dsn = app.getDosen(id);
-                mhs.getTugasAkhir().SetPembimbing(dsn, noPembimbing);
-                System.out.println("Berhasil");
+                if(mhs.getTugasAkhir().SetPembimbing(dsn, noPembimbing)) {
+                    System.out.println("Berhasil");
+                }
+                else {
+                    System.out.println("Gagal");
+                }
                 pressAnyKeyToContinue();
                 showMenuMahasiswa();
                 break;
@@ -265,16 +298,18 @@ public class ConsoleUI {
                 break;
         }
     }
+    
     private static void loginDosen() {
         System.out.print("ID Dosen : ");id = scanAngka.nextInt();
         dsn = app.getDosen(id);
-        System.out.println("Selamat Datang,"+dsn.nama);
+        System.out.println("Selamat Datang, "+dsn.nama);
         pressAnyKeyToContinue();      
     }
+    
     private static void loginMahasiswa() {
         System.out.print("ID Mahasiswa : ");id = scanAngka.nextInt();
         mhs = app.getMahasiswa(id);
-        System.out.println("Selamat Datang,"+mhs.nama);
+        System.out.println("Selamat Datang, "+mhs.nama);
         pressAnyKeyToContinue();
     }
 }

@@ -29,32 +29,51 @@ public class Dosen extends Orang implements Serializable {
         idDosen++;
     }
     
-    public void createKelompokTA(String topik, int maxAnggota) {
-        if(nTopikTA<=maxTopikTA){
+    public boolean createKelompokTA(String topik, int maxAnggota) {
+        if(nTopikTA < maxTopikTA){
             topikTA[nTopikTA] = new KelompokTA(topik, maxAnggota);
             nTopikTA++;
+            return true;
+        }
+        else {
+            return false;
         }
     }
  
-    public void removeKelompokTA (int noTopikTA){
-        if(noTopikTA<=nTopikTA) {
-           topikTA[noTopikTA] = null; 
+    public boolean removeKelompokTA (int noTopikTA){
+        if(noTopikTA < nTopikTA) {
+           topikTA[noTopikTA] = null;
+           return true;
+        }
+        else {
+            return false;
         }
     }
     
-    public void replacePembimbing(Dosen newDosen, int noTopikTA){
+    public boolean replacePembimbing(Dosen newDosen, int noTopikTA){
         if(newDosen.nTopikTA <= newDosen.maxTopikTA) {
            newDosen.topikTA[newDosen.nTopikTA] = topikTA[noTopikTA];
            newDosen.nTopikTA++;
-           topikTA[noTopikTA] = null; 
+           topikTA[noTopikTA] = null;
+           return true;
+        }
+        else {
+            return false;
         }
     }
     
-    public void revisiJudulTA (int noTopikTA, int noAnggota, String judulTA){
+    public boolean revisiJudulTA (int noTopikTA, int noAnggota, String judulTA){
         if(noTopikTA <= nTopikTA) {
             if(noAnggota <= topikTA[noTopikTA].getnAnggota()) {
                 topikTA[noTopikTA].getAnggota(noAnggota).getTugasAkhir().setJudulTA(judulTA);
+                return true;
             }
+            else {
+                return false;
+            }
+        }
+        else {
+            return false;
         }
     }
 

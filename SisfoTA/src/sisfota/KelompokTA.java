@@ -22,17 +22,23 @@ public class KelompokTA implements Serializable {
         anggota = new Mahasiswa[maxAnggota];
     }
     
-    public void addAnggota(Mahasiswa m) {
-        if(nAnggota <= maxAnggota) {
+    public boolean addAnggota(Mahasiswa m) {
+        if(nAnggota < maxAnggota) {
             anggota[nAnggota] = m;
-            nAnggota++;  
+            nAnggota++; 
+            return true;
         }  
+        else {
+            return false;
+        }
     }
-    public void removeAnggota(Mahasiswa m) {
-        for(int i=0;i<=anggota.length;i++) {
-            if(anggota[i] == m) {
-                anggota[i] = null;
-            }
+    public boolean removeAnggota(int noAnggota) {
+        if(noAnggota < nAnggota) {
+            anggota[noAnggota] = null;
+            return true;
+        }
+        else {
+            return false;
         }
     }
     public Mahasiswa getAnggota(int noAnggota) {

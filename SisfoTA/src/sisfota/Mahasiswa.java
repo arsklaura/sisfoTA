@@ -25,9 +25,13 @@ public class Mahasiswa extends Orang implements Serializable {
         idMahasiswa++;
     }
     
-    public void CreateTA(String judulTA){
+    public boolean createTA(String judulTA){
         if(nSKS>=90 && statusKP) {
            tugasAkhir = new TugasAkhir(judulTA); 
+           return true;
+        }
+        else {
+            return false;
         }
     }
     

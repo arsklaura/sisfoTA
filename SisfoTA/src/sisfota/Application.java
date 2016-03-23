@@ -5,15 +5,18 @@
  */
 package sisfota;
 import java.util.ArrayList;
-import java.io.*;
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import java.io.ObjectOutputStream;
+import java.io.ObjectInputStream;
 
 /**
  *
  * @author agungrb
  */
 public class Application {
-    ArrayList<Mahasiswa> listMahasiswa;
-    ArrayList<Dosen> listDosen;
+    private ArrayList<Mahasiswa> listMahasiswa;
+    private ArrayList<Dosen> listDosen;
     
     public Application() {
         listMahasiswa = new ArrayList();
@@ -41,7 +44,7 @@ public class Application {
             ObjectOutputStream oout = new ObjectOutputStream(fout);
             oout.writeObject(listDosen);
             oout.flush();
-        }catch(IOException e) {
+        }catch(Exception e) {
             
         }
     }
@@ -74,5 +77,13 @@ public class Application {
         }catch(Exception e) {
             
         }
+    }
+    
+    public ArrayList getListMahasiswa() {
+        return listMahasiswa;
+    }
+    
+    public ArrayList getListDosen() {
+        return listDosen;
     }
 }

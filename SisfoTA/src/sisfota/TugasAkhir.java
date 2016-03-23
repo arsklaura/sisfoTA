@@ -17,8 +17,14 @@ public class TugasAkhir implements Serializable {
     public TugasAkhir(String judulTA) {
         this.judulTA = judulTA;
     }
-    public void SetPembimbing(Dosen d,int noPembimbing){
-        pembimbing[noPembimbing] = d;
+    public boolean SetPembimbing(Dosen d,int noPembimbing){
+        if(d != null) {
+            pembimbing[noPembimbing] = d;
+            return true;
+        }
+        else {
+            return false;
+        } 
     }
     public Dosen getPembimbing(int noPembimbing){
         return pembimbing[noPembimbing];
