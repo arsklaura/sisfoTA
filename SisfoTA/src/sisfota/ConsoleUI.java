@@ -68,6 +68,7 @@ public class ConsoleUI {
                     case 3 :
                         loginMahasiswa();
                         showMenuMahasiswa();
+                        break;
                     case 4 :
                         showViewData();
                         break;

@@ -16,7 +16,6 @@ public class Dosen extends Orang implements Serializable {
     private final int maxTopikTA;
     private byte statusPembimbing = 0;
     private final long nip;
-    private static int idDosen = 1;
    
     public Dosen(String nama, long nip, byte statusPembimbing,int maxTopikTA) {
         this.nama = nama;
@@ -26,7 +25,6 @@ public class Dosen extends Orang implements Serializable {
             this.statusPembimbing = statusPembimbing;
         }
         topikTA = new KelompokTA[maxTopikTA];
-        idDosen++;
     }
     
     public boolean createKelompokTA(String topik, int maxAnggota) {
@@ -79,7 +77,8 @@ public class Dosen extends Orang implements Serializable {
 
     @Override
     public String toString() {
-        return "Nama : "+nama+" || NIP : "+nip;
+        return "Dsn-"+nama+", "+nip+", Ada "+nTopikTA+" Kelompok TA yg terdaftar"; 
+
     }
 
     public int getnTopikTA() {

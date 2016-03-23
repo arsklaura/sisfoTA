@@ -15,14 +15,12 @@ public class Mahasiswa extends Orang implements Serializable {
     private int nSKS = 0;
     private boolean statusKP = false;
     private final long nim;
-    private static int idMahasiswa = 1;
     
     public Mahasiswa(String nama, long nim, int nSKS, boolean statusKP) {
         this.nama = nama;
         this.nim = nim;
         this.nSKS = nSKS;
         this.statusKP = statusKP;
-        idMahasiswa++;
     }
     
     public boolean createTA(String judulTA){
@@ -41,7 +39,12 @@ public class Mahasiswa extends Orang implements Serializable {
 
     @Override
     public String toString() {
-        return "Nama : "+nama+" || NIM : "+nim;
+        if(tugasAkhir != null) {
+            return "Mhs-"+nama+", "+nim+", judul TA: "+tugasAkhir.getJudulTA();
+        }
+        else {
+            return "Mhs-"+nama+", "+nim+" Belum punya TA";
+        }
     }
     
 }
