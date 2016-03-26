@@ -221,8 +221,8 @@ public class ConsoleUI {
             case 5 :
                 System.out.print("Nomor Kelompok : ");noTopikTA = scanAngka.nextInt();
                 System.out.print("Nomor Anggota : ");noAnggota = scanAngka.nextInt();
-                System.out.print("Judul TA :");judulTA = scanString.nextLine();
-                mhs = app.getMahasiswa(id);
+                System.out.print("Judul TA baru :");judulTA = scanString.nextLine();
+                mhs = dsn.getTopikTA(noTopikTA).getAnggota(noAnggota);
                 if(dsn.revisiJudulTA(noTopikTA, noAnggota, judulTA)) {
                    System.out.println("Berhasil, judul TA "+mhs.nama+" telah diganti"); 
                 }
@@ -233,11 +233,11 @@ public class ConsoleUI {
                 showMenuDosen();
                 break;
             case 6 :
-                System.out.println("Nomor Kelompok :");noTopikTA = scanAngka.nextInt();
-                System.out.println("ID Dosen baru : ");id = scanAngka.nextInt();
+                System.out.print("Nomor Kelompok :");noTopikTA = scanAngka.nextInt();
+                System.out.print("ID Dosen baru : ");id = scanAngka.nextInt();
                 newDosen = app.getDosen(id);
                 if(dsn.replacePembimbing(newDosen, noTopikTA)) {
-                    System.out.println("Berhasil");
+                    System.out.println("Berhasil, dipindah ke "+newDosen.nama);
                 }
                 else {
                     System.out.println("Gagal");
