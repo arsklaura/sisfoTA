@@ -77,7 +77,7 @@ public class Dosen extends Orang implements Serializable {
 
     @Override
     public String toString() {
-        return nama+", "+nip+", Ada "+nTopikTA+" Kelompok TA yg terdaftar"; 
+        return nama+"||"+nip+", Ada "+nTopikTA+" Kelompok TA yg terdaftar"; 
 
     }
 
@@ -87,12 +87,5 @@ public class Dosen extends Orang implements Serializable {
     
     public KelompokTA getTopikTA(int noTopikTA) {
         return topikTA[noTopikTA];
-    }
-    
-    public void viewData() {
-        
-    }
-    
-    
-    
+    }  
 } 

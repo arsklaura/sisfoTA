@@ -14,6 +14,7 @@ public class ConsoleUI {
     
     private static Application app;
     private static byte pil;
+    private static char yn;
     
     private static String nama,topik,judulTA;
     private static long nim, nip;
@@ -26,8 +27,8 @@ public class ConsoleUI {
     private static Dosen dsn;
     
     private static Scanner scanString = new Scanner(System.in);
+    private static Scanner scanChar = new Scanner(System.in);
     private static Scanner scanAngka = new Scanner(System.in);
-    private static Scanner scanBoolean = new Scanner(System.in);
     
     public ConsoleUI(Application app) {
         this.app = app;
@@ -51,8 +52,7 @@ public class ConsoleUI {
                 System.out.println("2. Menu Dosen");
                 System.out.println("3. Menu Mahasiswa");
                 System.out.println("4. Menu Lihat Data");
-                System.out.println("5. Simpan Data");
-                System.out.println("6. Buka Data");
+                System.out.println("5. Menu File");
                 System.out.println("0. Keluar");
                 System.out.print("Pilihan Anda  : ");
                 pil = scanAngka.nextByte();
@@ -73,16 +73,7 @@ public class ConsoleUI {
                         showViewData();
                         break;
                     case 5 :
-                        app.saveFileDosen();
-                        app.saveFileMahasiswa();
-                        System.out.println("Data telah disimpan");
-                        pressAnyKeyToContinue();
-                        break;
-                    case 6 :
-                        app.readFileDosen();
-                        app.readFileMahasiswa();
-                        System.out.println("Data telah dibuka");
-                        pressAnyKeyToContinue();
+                        showMenuFile();
                         break;
                     default :  
                         System.out.println("Pilihan salah");
@@ -119,7 +110,13 @@ public class ConsoleUI {
                 System.out.print("Nama  : ");nama = scanString.nextLine();
                 System.out.print("NIM   : ");nim = scanAngka.nextLong();
                 System.out.print("Jumlah SKS : ");nSKS = scanAngka.nextInt();
-                System.out.print("Status KP [true/false] : ");statusKP = scanBoolean.nextBoolean();
+                System.out.print("Status KP [y/n] : ");yn = scanChar.next().charAt(0);
+                if(yn == 'y') {
+                    statusKP = true;
+                }
+                else {
+                    statusKP = false;
+                }
                 app.addMahasiswa(nama, nim, nSKS, statusKP);
                 System.out.println("Registrasi BERHASIL, MHS-"+app.getListMahasiswa().size());
                 pressAnyKeyToContinue();
@@ -313,5 +310,36 @@ public class ConsoleUI {
         mhs = app.getMahasiswa(id);
         System.out.println("Selamat Datang, "+mhs.nama);
         pressAnyKeyToContinue();
+    }
+    
+    private static void showMenuFile() {
+        System.out.println("Menu File");
+        System.out.println("1. Save file");
+        System.out.println("2. Open file");
+        System.out.print("Pilihan Anda  : ");
+        pil = scanAngka.nextByte();
+        switch(pil) {
+            case 1 :
+                System.out.print("Anda yakin? [y/n]: ");yn = scanChar.next().charAt(0);
+                if(yn == 'y') {
+                    app.saveFileDosen();
+                    app.saveFileMahasiswa();
+                    System.out.println("Berhasil");
+                }
+                pressAnyKeyToContinue();
+                break;
+            case 2:
+                System.out.print("Anda yakin? [y/n]: ");yn = scanChar.next().charAt(0);
+                if(yn == 'y') {
+                    app.readFileDosen();
+                    app.readFileMahasiswa();
+                    System.out.println("Berhasil");  
+                }
+                pressAnyKeyToContinue();
+                break;
+            default :
+                System.out.println("Pilihan salah");
+                pressAnyKeyToContinue();
+        }
     }
 }
