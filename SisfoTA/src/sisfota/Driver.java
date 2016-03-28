@@ -9,8 +9,7 @@ package sisfota;
  *
  * @author agungrb
  */
-public class SisfoTA {
-
+public class Driver {
     /**
      * @param args the command line arguments
      */
@@ -20,5 +19,4 @@ public class SisfoTA {
         ConsoleUI ui = new ConsoleUI(app, io);
         ui.showMenu();
     }
-
 }
