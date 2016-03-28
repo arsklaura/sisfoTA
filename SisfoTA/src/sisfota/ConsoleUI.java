@@ -13,6 +13,8 @@ import java.util.Scanner;
 public class ConsoleUI {
     
     private Application app;
+    private FileIO io;
+    
     private byte pil;
     private char yn;
     
@@ -31,8 +33,9 @@ public class ConsoleUI {
     private Scanner scanChar = new Scanner(System.in);
     private Scanner scanAngka = new Scanner(System.in);
     
-    public ConsoleUI(Application app) {
+    public ConsoleUI(Application app, FileIO io) {
         this.app = app;
+        this.io = io;
     } 
     
     private static void pressAnyKeyToContinue() { 
@@ -102,7 +105,7 @@ public class ConsoleUI {
                 System.out.print("Status [1/2] : ");statusPembimbing = scanAngka.nextByte();
                 System.out.print("Jumlah Kelompok TA : ");maxTopikTA = scanAngka.nextInt();
                 app.addDosen(nama, nip, statusPembimbing, maxTopikTA);
-                System.out.println("Registrasi BERHASIL, DSN-"+app.getListDosen().size());
+                System.out.println("Registrasi BERHASIL, DSN-"+app.listDosen.size());
                 pressAnyKeyToContinue();
                 showRegistrasi();
                 break;
@@ -119,7 +122,7 @@ public class ConsoleUI {
                     statusKP = false;
                 }
                 app.addMahasiswa(nama, nim, nSKS, statusKP);
-                System.out.println("Registrasi BERHASIL, MHS-"+app.getListMahasiswa().size());
+                System.out.println("Registrasi BERHASIL, MHS-"+app.listMahasiswa.size());
                 pressAnyKeyToContinue();
                 showRegistrasi();
                 break;
@@ -323,8 +326,8 @@ public class ConsoleUI {
             case 1 :
                 System.out.print("Anda yakin? [y/n]: ");yn = scanChar.next().charAt(0);
                 if(yn == 'y') {
-                    app.saveFileDosen();
-                    app.saveFileMahasiswa();
+                    io.saveFileDosen();
+                    io.saveFileMahasiswa();
                     System.out.println("Berhasil");
                 }
                 pressAnyKeyToContinue();
@@ -332,8 +335,8 @@ public class ConsoleUI {
             case 2:
                 System.out.print("Anda yakin? [y/n]: ");yn = scanChar.next().charAt(0);
                 if(yn == 'y') {
-                    app.readFileDosen();
-                    app.readFileMahasiswa();
+                    io.readFileDosen();
+                    io.readFileMahasiswa();
                     System.out.println("Berhasil");  
                 }
                 pressAnyKeyToContinue();

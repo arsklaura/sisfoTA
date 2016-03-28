@@ -16,8 +16,9 @@ public class SisfoTA {
      */
     public static void main(String[] args) {
         Application app = new Application();
-        ConsoleUI cui = new ConsoleUI(app);
-        cui.showMenu();
+        FileIO io = new FileIO(app);
+        ConsoleUI ui = new ConsoleUI(app, io);
+        ui.showMenu();
     }
 
 }
