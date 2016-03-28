@@ -12,27 +12,28 @@ import java.util.Scanner;
  */
 public class ConsoleUI {
     
-    private static Application app;
-    private static byte pil;
-    private static char yn;
+    private Application app;
+    private byte pil;
+    private char yn;
     
-    private static String nama,topik,judulTA;
-    private static long nim, nip;
-    private static byte statusPembimbing;
-    private static int nSKS, maxTopikTA, id, maxAnggota, noTopikTA, noAnggota, noPembimbing;
-    private static boolean statusKP;
-    private static Dosen newDosen;
+    private String nama,topik,judulTA;
+    private long nim, nip;
+    private byte statusPembimbing;
+    private int nSKS, maxTopikTA, id, maxAnggota, noTopikTA, 
+            noAnggota, noPembimbing;
+    private boolean statusKP;
+    private Dosen newDosen;
     
-    private static Mahasiswa mhs;
-    private static Dosen dsn;
+    private Mahasiswa mhs;
+    private Dosen dsn;
     
-    private static Scanner scanString = new Scanner(System.in);
-    private static Scanner scanChar = new Scanner(System.in);
-    private static Scanner scanAngka = new Scanner(System.in);
+    private Scanner scanString = new Scanner(System.in);
+    private Scanner scanChar = new Scanner(System.in);
+    private Scanner scanAngka = new Scanner(System.in);
     
     public ConsoleUI(Application app) {
         this.app = app;
-    }
+    } 
     
     private static void pressAnyKeyToContinue() { 
         System.out.println("Press any key to continue...");
@@ -44,7 +45,7 @@ public class ConsoleUI {
         {}  
     }
     
-    public static void showMenu() {
+    public void showMenu() {
         do{
             try{
                 System.out.println("==MENU UTAMA==");
@@ -86,7 +87,7 @@ public class ConsoleUI {
         }while(pil != 0);  
     }
     
-    private static void showRegistrasi() {
+    private void showRegistrasi() {
         System.out.println("==Menu Registrasi==");
         System.out.println("1. Registrasi Dosen");
         System.out.println("2. Registrasi Mahasiswa");
@@ -130,7 +131,7 @@ public class ConsoleUI {
         }
     }
     
-    private static void showViewData() {
+    private void showViewData() {
         System.out.println("==Menu Lihat Data==");
         System.out.println("1. Lihat Data Dosen");
         System.out.println("2. Lihat Data Mahasiswa");
@@ -158,7 +159,7 @@ public class ConsoleUI {
         }
     }
     
-    private static void showMenuDosen() {
+    private void showMenuDosen() {
         System.out.println("==Menu Dosen==");
         System.out.println("1. Buat Kelompok TA");
         System.out.println("2. Hapus Kelompok TA");
@@ -258,7 +259,7 @@ public class ConsoleUI {
         }
     }
     
-    private static void showMenuMahasiswa() {
+    private void showMenuMahasiswa() {
         System.out.println("==Menu Mahasiswa==");
         System.out.println("1. Buat Tugas Akhir");
         System.out.println("2. Daftar Tugas Akhir");
@@ -298,21 +299,21 @@ public class ConsoleUI {
         }
     }
     
-    private static void loginDosen() {
+    private void loginDosen() {
         System.out.print("ID Dosen : ");id = scanAngka.nextInt();
         dsn = app.getDosen(id);
         System.out.println("Selamat Datang, "+dsn.nama);
         pressAnyKeyToContinue();      
     }
     
-    private static void loginMahasiswa() {
+    private void loginMahasiswa() {
         System.out.print("ID Mahasiswa : ");id = scanAngka.nextInt();
         mhs = app.getMahasiswa(id);
         System.out.println("Selamat Datang, "+mhs.nama);
         pressAnyKeyToContinue();
     }
     
-    private static void showMenuFile() {
+    private void showMenuFile() {
         System.out.println("Menu File");
         System.out.println("1. Save file");
         System.out.println("2. Open file");
