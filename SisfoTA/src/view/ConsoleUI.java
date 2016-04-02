@@ -3,8 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sisfota;
+package view;
+import application.Application;
 import java.util.Scanner;
+import model.Dosen;
+import application.FileIO;
+import model.Mahasiswa;
 
 /**
  *

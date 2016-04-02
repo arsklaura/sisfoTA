@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sisfota;
+package view;
 
 /**
  *
  * @author agungrb
  */
-public class Controller {
+public class View {
     
 }

@@ -3,16 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sisfota;
+package application;
 import java.util.ArrayList;
+import model.Dosen;
+import model.Mahasiswa;
 
 /**
  *
  * @author agungrb
  */
 public class Application {
-    ArrayList<Mahasiswa> listMahasiswa;
-    ArrayList<Dosen> listDosen;
+    public ArrayList<Mahasiswa> listMahasiswa;
+    public ArrayList<Dosen> listDosen;
     
     public Application() {
         listMahasiswa = new ArrayList();
