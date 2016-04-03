@@ -42,18 +42,29 @@ public class View extends javax.swing.JFrame {
         btnOKBerhasil = new javax.swing.JButton();
         txFieldBerhasil = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
-        panelRegMahasiswa = new javax.swing.JPanel();
-        txFieldNamaMahasiswa = new javax.swing.JTextField();
-        txFieldNIM = new javax.swing.JTextField();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        btnCancelRegMahasiswa = new javax.swing.JButton();
-        btnSubmitRegMahasiswa = new javax.swing.JButton();
-        jLabel13 = new javax.swing.JLabel();
-        cmBoxStatusKP = new javax.swing.JComboBox<>();
-        txFieldJumlahSKS = new javax.swing.JTextField();
+        panelViewDataDosen = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        txFieldShowNamaDosen = new javax.swing.JTextField();
+        txFieldShowStatusDosen = new javax.swing.JTextField();
+        txFieldShowJumlahKelompokTA = new javax.swing.JTextField();
+        btnOKViewDataDosen = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
+        txFieldGetIdDosen = new javax.swing.JTextField();
+        txFieldShowNIP = new javax.swing.JTextField();
+        panelLoginDosen = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        txFieldIdDosen = new javax.swing.JTextField();
+        pswFieldDosen = new javax.swing.JPasswordField();
+        btnLoginDosen = new javax.swing.JButton();
+        panelLoginMahasiswa = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        txFieldIdMahasiswa = new javax.swing.JTextField();
+        pswFieldMahasiswa = new javax.swing.JPasswordField();
+        btnLoginMahasiswa = new javax.swing.JButton();
         panelRegDosen = new javax.swing.JPanel();
         txFieldNamaDosen = new javax.swing.JTextField();
         txFieldNIP = new javax.swing.JTextField();
@@ -66,16 +77,18 @@ public class View extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         cmBoxStatusPembimbing = new javax.swing.JComboBox<>();
         jLabel16 = new javax.swing.JLabel();
-        panelLoginMahasiswa = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        txFieldIdMahasiswa = new javax.swing.JTextField();
-        pswFieldMahasiswa = new javax.swing.JPasswordField();
-        btnLoginMahasiswa = new javax.swing.JButton();
-        panelLoginDosen = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        txFieldIdDosen = new javax.swing.JTextField();
-        pswFieldDosen = new javax.swing.JPasswordField();
-        btnLoginDosen = new javax.swing.JButton();
+        panelRegMahasiswa = new javax.swing.JPanel();
+        txFieldNamaMahasiswa = new javax.swing.JTextField();
+        txFieldNIM = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        btnCancelRegMahasiswa = new javax.swing.JButton();
+        btnSubmitRegMahasiswa = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        cmBoxStatusKP = new javax.swing.JComboBox<>();
+        txFieldJumlahSKS = new javax.swing.JTextField();
         menuBar = new javax.swing.JMenuBar();
         menuFile = new javax.swing.JMenu();
         menuBukaFile = new javax.swing.JMenuItem();
@@ -190,6 +203,320 @@ public class View extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistem Informasi TA");
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel6.setText("Lihat Data Dosen");
+
+        txFieldShowNamaDosen.setEditable(false);
+        txFieldShowNamaDosen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txFieldShowNamaDosenActionPerformed(evt);
+            }
+        });
+
+        txFieldShowStatusDosen.setEditable(false);
+        txFieldShowStatusDosen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txFieldShowStatusDosenActionPerformed(evt);
+            }
+        });
+
+        txFieldShowJumlahKelompokTA.setEditable(false);
+        txFieldShowJumlahKelompokTA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txFieldShowJumlahKelompokTAActionPerformed(evt);
+            }
+        });
+
+        btnOKViewDataDosen.setText("OK");
+        btnOKViewDataDosen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOKViewDataDosenActionPerformed(evt);
+            }
+        });
+
+        jLabel18.setText("Pembimbing ke-");
+
+        jLabel19.setText("Jumlah Kelompok TA");
+
+        jLabel20.setText("NIP");
+
+        jLabel21.setText("Nama");
+
+        jLabel22.setText("ID Dosen");
+
+        txFieldGetIdDosen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txFieldGetIdDosenActionPerformed(evt);
+            }
+        });
+
+        txFieldShowNIP.setEditable(false);
+        txFieldShowNIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txFieldShowNIPActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelViewDataDosenLayout = new javax.swing.GroupLayout(panelViewDataDosen);
+        panelViewDataDosen.setLayout(panelViewDataDosenLayout);
+        panelViewDataDosenLayout.setHorizontalGroup(
+            panelViewDataDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelViewDataDosenLayout.createSequentialGroup()
+                .addGroup(panelViewDataDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelViewDataDosenLayout.createSequentialGroup()
+                        .addGap(123, 123, 123)
+                        .addComponent(jLabel6))
+                    .addGroup(panelViewDataDosenLayout.createSequentialGroup()
+                        .addGap(145, 145, 145)
+                        .addComponent(btnOKViewDataDosen)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelViewDataDosenLayout.createSequentialGroup()
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addGroup(panelViewDataDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(panelViewDataDosenLayout.createSequentialGroup()
+                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txFieldGetIdDosen, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelViewDataDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelViewDataDosenLayout.createSequentialGroup()
+                            .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txFieldShowJumlahKelompokTA, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelViewDataDosenLayout.createSequentialGroup()
+                            .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txFieldShowNIP, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelViewDataDosenLayout.createSequentialGroup()
+                            .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txFieldShowNamaDosen, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelViewDataDosenLayout.createSequentialGroup()
+                            .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txFieldShowStatusDosen, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(18, 18, 18))
+        );
+        panelViewDataDosenLayout.setVerticalGroup(
+            panelViewDataDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelViewDataDosenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addGroup(panelViewDataDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txFieldGetIdDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelViewDataDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txFieldShowNamaDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel21))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelViewDataDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel20)
+                    .addComponent(txFieldShowNIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelViewDataDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel18)
+                    .addComponent(txFieldShowStatusDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelViewDataDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txFieldShowJumlahKelompokTA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel19))
+                .addGap(18, 18, 18)
+                .addComponent(btnOKViewDataDosen)
+                .addGap(31, 31, 31))
+        );
+
+        panelLoginDosen.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setText("MENU LOGIN DOSEN");
+
+        txFieldIdDosen.setText("ID Dosen");
+
+        pswFieldDosen.setText("password");
+
+        btnLoginDosen.setText("Login");
+
+        javax.swing.GroupLayout panelLoginDosenLayout = new javax.swing.GroupLayout(panelLoginDosen);
+        panelLoginDosen.setLayout(panelLoginDosenLayout);
+        panelLoginDosenLayout.setHorizontalGroup(
+            panelLoginDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelLoginDosenLayout.createSequentialGroup()
+                .addGroup(panelLoginDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelLoginDosenLayout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addGroup(panelLoginDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txFieldIdDosen, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pswFieldDosen, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(panelLoginDosenLayout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(btnLoginDosen)))
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+        panelLoginDosenLayout.setVerticalGroup(
+            panelLoginDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelLoginDosenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txFieldIdDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(pswFieldDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnLoginDosen)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel2.setText("MENU LOGIN MAHASISWA");
+
+        txFieldIdMahasiswa.setText("ID Mahasiswa");
+
+        pswFieldMahasiswa.setText("password");
+
+        btnLoginMahasiswa.setText("Login");
+
+        javax.swing.GroupLayout panelLoginMahasiswaLayout = new javax.swing.GroupLayout(panelLoginMahasiswa);
+        panelLoginMahasiswa.setLayout(panelLoginMahasiswaLayout);
+        panelLoginMahasiswaLayout.setHorizontalGroup(
+            panelLoginMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelLoginMahasiswaLayout.createSequentialGroup()
+                .addGroup(panelLoginMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelLoginMahasiswaLayout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addGroup(panelLoginMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txFieldIdMahasiswa, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pswFieldMahasiswa, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(panelLoginMahasiswaLayout.createSequentialGroup()
+                        .addGap(97, 97, 97)
+                        .addComponent(btnLoginMahasiswa)))
+                .addContainerGap(49, Short.MAX_VALUE))
+        );
+        panelLoginMahasiswaLayout.setVerticalGroup(
+            panelLoginMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelLoginMahasiswaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txFieldIdMahasiswa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(pswFieldMahasiswa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnLoginMahasiswa)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        txFieldNamaDosen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txFieldNamaDosenActionPerformed(evt);
+            }
+        });
+
+        txFieldNIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txFieldNIPActionPerformed(evt);
+            }
+        });
+
+        txFieldJumlahKelompokTA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txFieldJumlahKelompokTAActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("Nama");
+
+        jLabel5.setText("NIP");
+
+        jLabel7.setText("Jumlah Kelompok TA");
+
+        btnCancelRegDosen.setText("Cancel");
+        btnCancelRegDosen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelRegDosenActionPerformed(evt);
+            }
+        });
+
+        btnSubmitRegDosen.setText("Submit");
+        btnSubmitRegDosen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitRegDosenActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel8.setText("REGISTRASI DOSEN");
+
+        cmBoxStatusPembimbing.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2" }));
+
+        jLabel16.setText("Pembimbing ke-");
+
+        javax.swing.GroupLayout panelRegDosenLayout = new javax.swing.GroupLayout(panelRegDosen);
+        panelRegDosen.setLayout(panelRegDosenLayout);
+        panelRegDosenLayout.setHorizontalGroup(
+            panelRegDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegDosenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelRegDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegDosenLayout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txFieldNamaDosen, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegDosenLayout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txFieldNIP, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegDosenLayout.createSequentialGroup()
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(cmBoxStatusPembimbing, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(panelRegDosenLayout.createSequentialGroup()
+                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txFieldJumlahKelompokTA, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(30, 30, 30))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegDosenLayout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addComponent(btnSubmitRegDosen)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnCancelRegDosen)
+                .addGap(99, 99, 99))
+            .addGroup(panelRegDosenLayout.createSequentialGroup()
+                .addGap(124, 124, 124)
+                .addComponent(jLabel8)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelRegDosenLayout.setVerticalGroup(
+            panelRegDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRegDosenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelRegDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txFieldNamaDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelRegDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txFieldNIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelRegDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cmBoxStatusPembimbing, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelRegDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txFieldJumlahKelompokTA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addGap(38, 38, 38)
+                .addGroup(panelRegDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCancelRegDosen)
+                    .addComponent(btnSubmitRegDosen))
+                .addGap(47, 47, 47))
+        );
 
         txFieldNamaMahasiswa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -306,197 +633,6 @@ public class View extends javax.swing.JFrame {
                 .addGap(47, 47, 47))
         );
 
-        txFieldNamaDosen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txFieldNamaDosenActionPerformed(evt);
-            }
-        });
-
-        txFieldNIP.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txFieldNIPActionPerformed(evt);
-            }
-        });
-
-        txFieldJumlahKelompokTA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txFieldJumlahKelompokTAActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setText("Nama");
-
-        jLabel5.setText("NIP");
-
-        jLabel7.setText("Jumlah Kelompok TA");
-
-        btnCancelRegDosen.setText("Cancel");
-        btnCancelRegDosen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCancelRegDosenActionPerformed(evt);
-            }
-        });
-
-        btnSubmitRegDosen.setText("Submit");
-        btnSubmitRegDosen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSubmitRegDosenActionPerformed(evt);
-            }
-        });
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel8.setText("REGISTRASI DOSEN");
-
-        cmBoxStatusPembimbing.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2" }));
-
-        jLabel16.setText("Pembimbing ke-");
-
-        javax.swing.GroupLayout panelRegDosenLayout = new javax.swing.GroupLayout(panelRegDosen);
-        panelRegDosen.setLayout(panelRegDosenLayout);
-        panelRegDosenLayout.setHorizontalGroup(
-            panelRegDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegDosenLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(panelRegDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegDosenLayout.createSequentialGroup()
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txFieldNamaDosen, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegDosenLayout.createSequentialGroup()
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txFieldNIP, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegDosenLayout.createSequentialGroup()
-                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(cmBoxStatusPembimbing, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(panelRegDosenLayout.createSequentialGroup()
-                        .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txFieldJumlahKelompokTA, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(30, 30, 30))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegDosenLayout.createSequentialGroup()
-                .addGap(77, 77, 77)
-                .addComponent(btnSubmitRegDosen)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnCancelRegDosen)
-                .addGap(99, 99, 99))
-            .addGroup(panelRegDosenLayout.createSequentialGroup()
-                .addGap(124, 124, 124)
-                .addComponent(jLabel8)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        panelRegDosenLayout.setVerticalGroup(
-            panelRegDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRegDosenLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(panelRegDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txFieldNamaDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelRegDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txFieldNIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelRegDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmBoxStatusPembimbing, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(panelRegDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txFieldJumlahKelompokTA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addGap(38, 38, 38)
-                .addGroup(panelRegDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCancelRegDosen)
-                    .addComponent(btnSubmitRegDosen))
-                .addGap(47, 47, 47))
-        );
-
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel2.setText("MENU LOGIN MAHASISWA");
-
-        txFieldIdMahasiswa.setText("ID Mahasiswa");
-
-        pswFieldMahasiswa.setText("password");
-
-        btnLoginMahasiswa.setText("Login");
-
-        javax.swing.GroupLayout panelLoginMahasiswaLayout = new javax.swing.GroupLayout(panelLoginMahasiswa);
-        panelLoginMahasiswa.setLayout(panelLoginMahasiswaLayout);
-        panelLoginMahasiswaLayout.setHorizontalGroup(
-            panelLoginMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelLoginMahasiswaLayout.createSequentialGroup()
-                .addGroup(panelLoginMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelLoginMahasiswaLayout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addGroup(panelLoginMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txFieldIdMahasiswa, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pswFieldMahasiswa, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(panelLoginMahasiswaLayout.createSequentialGroup()
-                        .addGap(97, 97, 97)
-                        .addComponent(btnLoginMahasiswa)))
-                .addContainerGap(49, Short.MAX_VALUE))
-        );
-        panelLoginMahasiswaLayout.setVerticalGroup(
-            panelLoginMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelLoginMahasiswaLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txFieldIdMahasiswa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(pswFieldMahasiswa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnLoginMahasiswa)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        panelLoginDosen.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText("MENU LOGIN DOSEN");
-
-        txFieldIdDosen.setText("ID Dosen");
-
-        pswFieldDosen.setText("password");
-
-        btnLoginDosen.setText("Login");
-
-        javax.swing.GroupLayout panelLoginDosenLayout = new javax.swing.GroupLayout(panelLoginDosen);
-        panelLoginDosen.setLayout(panelLoginDosenLayout);
-        panelLoginDosenLayout.setHorizontalGroup(
-            panelLoginDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelLoginDosenLayout.createSequentialGroup()
-                .addGroup(panelLoginDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelLoginDosenLayout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addGroup(panelLoginDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txFieldIdDosen, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pswFieldDosen, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(panelLoginDosenLayout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(btnLoginDosen)))
-                .addContainerGap(48, Short.MAX_VALUE))
-        );
-        panelLoginDosenLayout.setVerticalGroup(
-            panelLoginDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelLoginDosenLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txFieldIdDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(pswFieldDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnLoginDosen)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
         menuFile.setText("File");
 
         menuBukaFile.setText("Buka file");
@@ -546,17 +682,15 @@ public class View extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 376, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelViewDataDosen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(panelRegMahasiswa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(panelRegDosen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(panelLoginDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -564,23 +698,26 @@ public class View extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(panelLoginDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap()
+                    .addComponent(panelRegDosen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(panelRegMahasiswa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 262, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(panelViewDataDosen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(panelRegMahasiswa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(panelRegDosen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(panelLoginDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -588,9 +725,14 @@ public class View extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(panelLoginDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap()
+                    .addComponent(panelRegDosen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(panelRegMahasiswa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
         );
 
         pack();
@@ -644,6 +786,30 @@ public class View extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnOKBerhasilActionPerformed
 
+    private void txFieldShowNamaDosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txFieldShowNamaDosenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txFieldShowNamaDosenActionPerformed
+
+    private void txFieldShowStatusDosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txFieldShowStatusDosenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txFieldShowStatusDosenActionPerformed
+
+    private void txFieldShowJumlahKelompokTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txFieldShowJumlahKelompokTAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txFieldShowJumlahKelompokTAActionPerformed
+
+    private void btnOKViewDataDosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOKViewDataDosenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnOKViewDataDosenActionPerformed
+
+    private void txFieldGetIdDosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txFieldGetIdDosenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txFieldGetIdDosenActionPerformed
+
+    private void txFieldShowNIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txFieldShowNIPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txFieldShowNIPActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -678,7 +844,7 @@ public class View extends javax.swing.JFrame {
         return Long.parseLong(txFieldNIP.getText());
     }
     public int getCmBoxStatusPembimbing() {
-        return cmBoxStatusPembimbing.getSelectedIndex();
+        return cmBoxStatusPembimbing.getSelectedIndex()+1;
     }
     public boolean getCmBoxStatusKP() {
         if(cmBoxStatusKP.getSelectedIndex() == 0) {
@@ -687,6 +853,9 @@ public class View extends javax.swing.JFrame {
         else {
             return false;
         }
+    }
+    public int getTxFieldGetIdDosen() {
+        return Integer.parseInt(txFieldGetIdDosen.getText());
     }
     
     
@@ -732,9 +901,16 @@ public class View extends javax.swing.JFrame {
     public Object getBtnSubmitRegMahasiswa() {
         return btnSubmitRegMahasiswa;
     }
-    
-  
-    
+    public Object getMenuViewDataDosen() {
+        return menuViewDataDosen;
+    }
+    public Object getMenuViewDataMahasiswa() {
+        return MenuViewDataMahasiswa;
+    }
+    public Object getBtnOKViewDataDosen() {
+        return btnOKViewDataDosen;
+    }
+
     public JPanel getPanelLoginDosen() {
         return panelLoginDosen;
     }
@@ -750,11 +926,12 @@ public class View extends javax.swing.JFrame {
     public JPanel getPanelRegMahasiswa() {
         return panelRegMahasiswa;
     }
-
     public JDialog getDialogBerhasil() {
         return dialogBerhasil;
     }
-    
+    public JPanel getPanelViewDataDosen() {
+        return panelViewDataDosen;
+    }
     
     
     public void setTxFieldSelamatDatang(String nama) {
@@ -763,6 +940,19 @@ public class View extends javax.swing.JFrame {
     public void setTxFieldBerhasil(String id) {
         txFieldBerhasil.setText(id);
     }
+    public void setTxFieldShowNamaDosen(String nama) {
+        txFieldShowNamaDosen.setText(nama);
+    }
+    public void setTxFieldShowNIP(long nip) {
+        txFieldShowNIP.setText(Long.toString(nip));
+    }
+    public void setTxFieldShowStatusDosen(int status) {
+        txFieldShowStatusDosen.setText(Integer.toString(status));
+    }
+    public void setTxFieldShowJumlahKelompokTA(int jumlah) {
+        txFieldShowJumlahKelompokTA.setText(Integer.toString(jumlah));
+    }
+    
     
     public void addListener(ActionListener e) {
         btnLoginDosen.addActionListener(e);
@@ -779,6 +969,9 @@ public class View extends javax.swing.JFrame {
         btnSubmitRegMahasiswa.addActionListener(e);
         menuRegMahasiswa.addActionListener(e);
         btnOKBerhasil.addActionListener(e);
+        btnOKViewDataDosen.addActionListener(e);
+        menuViewDataDosen.addActionListener(e);
+        MenuViewDataMahasiswa.addActionListener(e);
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -789,6 +982,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JButton btnLoginMahasiswa;
     private javax.swing.JButton btnOKBerhasil;
     private javax.swing.JButton btnOKSelamatDatang;
+    private javax.swing.JButton btnOKViewDataDosen;
     private javax.swing.JButton btnSubmitRegDosen;
     private javax.swing.JButton btnSubmitRegMahasiswa;
     private javax.swing.JComboBox<String> cmBoxStatusKP;
@@ -803,10 +997,16 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -827,9 +1027,11 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel panelLoginMahasiswa;
     private javax.swing.JPanel panelRegDosen;
     private javax.swing.JPanel panelRegMahasiswa;
+    private javax.swing.JPanel panelViewDataDosen;
     private javax.swing.JPasswordField pswFieldDosen;
     private javax.swing.JPasswordField pswFieldMahasiswa;
     private javax.swing.JTextField txFieldBerhasil;
+    private javax.swing.JTextField txFieldGetIdDosen;
     private javax.swing.JTextField txFieldIdDosen;
     private javax.swing.JTextField txFieldIdMahasiswa;
     private javax.swing.JTextField txFieldJumlahKelompokTA;
@@ -839,5 +1041,9 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JTextField txFieldNamaDosen;
     private javax.swing.JTextField txFieldNamaMahasiswa;
     private javax.swing.JTextField txFieldSelamatDatang;
+    private javax.swing.JTextField txFieldShowJumlahKelompokTA;
+    private javax.swing.JTextField txFieldShowNIP;
+    private javax.swing.JTextField txFieldShowNamaDosen;
+    private javax.swing.JTextField txFieldShowStatusDosen;
     // End of variables declaration//GEN-END:variables
 }

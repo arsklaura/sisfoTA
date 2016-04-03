@@ -87,5 +87,10 @@ public class Dosen extends Orang implements Serializable {
     
     public KelompokTA getTopikTA(int noTopikTA) {
         return topikTA[noTopikTA];
-    }  
+    } 
+
+    public long getNip() {
+        return nip;
+    }
+    
 } 

@@ -32,6 +32,7 @@ public class Controller implements ActionListener {
         view.getPanelLoginMahasiswa().setVisible(false);
         view.getPanelRegDosen().setVisible(false);
         view.getPanelRegMahasiswa().setVisible(false);
+        view.getPanelViewDataDosen().setVisible(false);
         view.addListener(this);
         this.app = app;
         this.io = io;
@@ -53,6 +54,7 @@ public class Controller implements ActionListener {
             view.getPanelLoginMahasiswa().setVisible(false);
             view.getPanelRegDosen().setVisible(false);
             view.getPanelRegMahasiswa().setVisible(false);
+            view.getPanelViewDataDosen().setVisible(false);
             view.getPanelLoginDosen().setVisible(true);
         }
         else if(source.equals(view.getBtnLoginDosen())) {
@@ -76,6 +78,7 @@ public class Controller implements ActionListener {
             view.getPanelLoginDosen().setVisible(false);
             view.getPanelRegDosen().setVisible(false);
             view.getPanelRegMahasiswa().setVisible(false);
+            view.getPanelViewDataDosen().setVisible(false);
             view.getPanelLoginMahasiswa().setVisible(true);
         }
         else if(source.equals(view.getBtnLoginMahasiswa())) {
@@ -96,6 +99,7 @@ public class Controller implements ActionListener {
             view.getPanelLoginDosen().setVisible(false);
             view.getPanelLoginMahasiswa().setVisible(false);
             view.getPanelRegMahasiswa().setVisible(false);
+            view.getPanelViewDataDosen().setVisible(false);
             view.getPanelRegDosen().setVisible(true);
         }
         else if(source.equals(view.getBtnSubmitRegDosen())) {
@@ -103,7 +107,7 @@ public class Controller implements ActionListener {
                 view.getPanelRegDosen().setVisible(false);
                 app.addDosen(view.getTxFieldNamaDosen(),
                         view.getTxFieldNIP(),
-                        view.getCmBoxStatusPembimbing()+1,
+                        view.getCmBoxStatusPembimbing(),
                         view.getTxFieldJumlahKelompokTA());
                 view.setTxFieldBerhasil(Integer.toString(app.listDosen.size()));
                 view.getPanelRegDosen().setVisible(false);
@@ -121,6 +125,7 @@ public class Controller implements ActionListener {
             view.getPanelLoginDosen().setVisible(false);
             view.getPanelLoginMahasiswa().setVisible(false);
             view.getPanelRegDosen().setVisible(false);
+            view.getPanelViewDataDosen().setVisible(false);
             view.getPanelRegMahasiswa().setVisible(true);
         }
         else if(source.equals(view.getBtnSubmitRegMahasiswa())) {
@@ -137,6 +142,26 @@ public class Controller implements ActionListener {
         }
         else if(source.equals(view.getBtnCancelRegMahasiswa())) {
             view.getPanelRegMahasiswa().setVisible(false);
+        }
+        else if(source.equals(view.getMenuViewDataDosen())) {
+            view.getPanelLoginDosen().setVisible(false);
+            view.getPanelLoginMahasiswa().setVisible(false);
+            view.getPanelRegDosen().setVisible(false);
+            view.getPanelRegMahasiswa().setVisible(false);
+            view.getPanelViewDataDosen().setVisible(true);
+        }
+        else if(source.equals(view.getBtnOKViewDataDosen())) {
+            try {
+                int id = view.getTxFieldGetIdDosen();
+                view.setTxFieldShowNamaDosen(app.getDosen(id).nama);
+                view.setTxFieldShowNIP(app.getDosen(id).getNip());
+                view.setTxFieldShowNamaDosen(app.getDosen(id).nama);
+                view.setTxFieldShowJumlahKelompokTA(app.getDosen(id).getnTopikTA());
+            } catch (Exception e) {
+            } 
+        }
+        else if(source.equals(view.getBtnOKViewDataDosen())) {
+            view.getPanelViewDataDosen().setVisible(false);
         }
     }
 }
