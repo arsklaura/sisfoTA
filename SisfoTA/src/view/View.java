@@ -6,6 +6,9 @@
 package view;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JDialog;
+import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 /**
@@ -33,29 +36,46 @@ public class View extends javax.swing.JFrame {
         dialogSelamatDatang = new javax.swing.JDialog();
         jLabel3 = new javax.swing.JLabel();
         txFieldSelamatDatang = new javax.swing.JTextField();
-        btnOK = new javax.swing.JButton();
+        btnOKSelamatDatang = new javax.swing.JButton();
+        dialogBerhasil = new javax.swing.JDialog();
+        jLabel14 = new javax.swing.JLabel();
+        btnOKBerhasil = new javax.swing.JButton();
+        txFieldBerhasil = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        panelRegMahasiswa = new javax.swing.JPanel();
+        txFieldNamaMahasiswa = new javax.swing.JTextField();
+        txFieldNIM = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        btnCancelRegMahasiswa = new javax.swing.JButton();
+        btnSubmitRegMahasiswa = new javax.swing.JButton();
+        jLabel13 = new javax.swing.JLabel();
+        cmBoxStatusKP = new javax.swing.JComboBox<>();
+        txFieldJumlahSKS = new javax.swing.JTextField();
         panelRegDosen = new javax.swing.JPanel();
         txFieldNamaDosen = new javax.swing.JTextField();
         txFieldNIP = new javax.swing.JTextField();
-        txFieldStatusPembimbing = new javax.swing.JTextField();
         txFieldJumlahKelompokTA = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         btnCancelRegDosen = new javax.swing.JButton();
         btnSubmitRegDosen = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
-        panelLoginDosen = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        txFieldIdDosen = new javax.swing.JTextField();
-        pswFieldDosen = new javax.swing.JPasswordField();
-        btnLoginDosen = new javax.swing.JButton();
+        cmBoxStatusPembimbing = new javax.swing.JComboBox<>();
+        jLabel16 = new javax.swing.JLabel();
         panelLoginMahasiswa = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         txFieldIdMahasiswa = new javax.swing.JTextField();
         pswFieldMahasiswa = new javax.swing.JPasswordField();
         btnLoginMahasiswa = new javax.swing.JButton();
+        panelLoginDosen = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        txFieldIdDosen = new javax.swing.JTextField();
+        pswFieldDosen = new javax.swing.JPasswordField();
+        btnLoginDosen = new javax.swing.JButton();
         menuBar = new javax.swing.JMenuBar();
         menuFile = new javax.swing.JMenu();
         menuBukaFile = new javax.swing.JMenuItem();
@@ -72,7 +92,8 @@ public class View extends javax.swing.JFrame {
         menuLogout = new javax.swing.JMenu();
 
         dialogSelamatDatang.setResizable(false);
-        dialogSelamatDatang.setSize(new java.awt.Dimension(186, 130));
+        dialogSelamatDatang.setSize(new java.awt.Dimension(185, 130));
+        dialogSelamatDatang.setType(java.awt.Window.Type.POPUP);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Selamat Datang");
@@ -82,7 +103,7 @@ public class View extends javax.swing.JFrame {
         txFieldSelamatDatang.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         txFieldSelamatDatang.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        btnOK.setText("OK");
+        btnOKSelamatDatang.setText("OK");
 
         javax.swing.GroupLayout dialogSelamatDatangLayout = new javax.swing.GroupLayout(dialogSelamatDatang.getContentPane());
         dialogSelamatDatang.getContentPane().setLayout(dialogSelamatDatangLayout);
@@ -95,8 +116,8 @@ public class View extends javax.swing.JFrame {
                         .addComponent(jLabel3))
                     .addGroup(dialogSelamatDatangLayout.createSequentialGroup()
                         .addGap(67, 67, 67)
-                        .addComponent(btnOK)))
-                .addContainerGap(45, Short.MAX_VALUE))
+                        .addComponent(btnOKSelamatDatang)))
+                .addContainerGap(40, Short.MAX_VALUE))
             .addComponent(txFieldSelamatDatang)
         );
         dialogSelamatDatangLayout.setVerticalGroup(
@@ -107,12 +128,183 @@ public class View extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txFieldSelamatDatang, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnOK)
+                .addComponent(btnOKSelamatDatang)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        dialogBerhasil.setTitle("Notifikasi");
+        dialogBerhasil.setPreferredSize(new java.awt.Dimension(181, 109));
+        dialogBerhasil.setSize(new java.awt.Dimension(181, 109));
+        dialogBerhasil.setType(java.awt.Window.Type.POPUP);
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel14.setText("Registrasi Berhasil");
+
+        btnOKBerhasil.setText("OK");
+        btnOKBerhasil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOKBerhasilActionPerformed(evt);
+            }
+        });
+
+        txFieldBerhasil.setEditable(false);
+        txFieldBerhasil.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        txFieldBerhasil.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel15.setText("Nomor: ");
+
+        javax.swing.GroupLayout dialogBerhasilLayout = new javax.swing.GroupLayout(dialogBerhasil.getContentPane());
+        dialogBerhasil.getContentPane().setLayout(dialogBerhasilLayout);
+        dialogBerhasilLayout.setHorizontalGroup(
+            dialogBerhasilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dialogBerhasilLayout.createSequentialGroup()
+                .addGap(67, 67, 67)
+                .addComponent(btnOKBerhasil)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dialogBerhasilLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(dialogBerhasilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dialogBerhasilLayout.createSequentialGroup()
+                        .addGap(0, 34, Short.MAX_VALUE)
+                        .addComponent(jLabel14)
+                        .addGap(43, 43, 43))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dialogBerhasilLayout.createSequentialGroup()
+                        .addComponent(jLabel15)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txFieldBerhasil)
+                        .addContainerGap())))
+        );
+        dialogBerhasilLayout.setVerticalGroup(
+            dialogBerhasilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dialogBerhasilLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(dialogBerhasilLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txFieldBerhasil, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                    .addComponent(jLabel15))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnOKBerhasil)
+                .addContainerGap())
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Sistem Informasi TA");
+
+        txFieldNamaMahasiswa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txFieldNamaMahasiswaActionPerformed(evt);
+            }
+        });
+
+        txFieldNIM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txFieldNIMActionPerformed(evt);
+            }
+        });
+
+        jLabel9.setText("Nama");
+
+        jLabel10.setText("NIM");
+
+        jLabel11.setText("Jumlah SKS");
+
+        jLabel12.setText("Status KP");
+
+        btnCancelRegMahasiswa.setText("Cancel");
+        btnCancelRegMahasiswa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCancelRegMahasiswaActionPerformed(evt);
+            }
+        });
+
+        btnSubmitRegMahasiswa.setText("Submit");
+        btnSubmitRegMahasiswa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubmitRegMahasiswaActionPerformed(evt);
+            }
+        });
+
+        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel13.setText("REGISTRASI MAHASISWA");
+
+        cmBoxStatusKP.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "sudah", "belum" }));
+        cmBoxStatusKP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmBoxStatusKPActionPerformed(evt);
+            }
+        });
+
+        txFieldJumlahSKS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txFieldJumlahSKSActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelRegMahasiswaLayout = new javax.swing.GroupLayout(panelRegMahasiswa);
+        panelRegMahasiswa.setLayout(panelRegMahasiswaLayout);
+        panelRegMahasiswaLayout.setHorizontalGroup(
+            panelRegMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegMahasiswaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(panelRegMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelRegMahasiswaLayout.createSequentialGroup()
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txFieldNamaMahasiswa, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelRegMahasiswaLayout.createSequentialGroup()
+                        .addGroup(panelRegMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelRegMahasiswaLayout.createSequentialGroup()
+                                .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(72, 72, 72))
+                            .addGroup(panelRegMahasiswaLayout.createSequentialGroup()
+                                .addGroup(panelRegMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(panelRegMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(cmBoxStatusKP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txFieldNIM, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                            .addComponent(txFieldJumlahSKS, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE))))
+                .addGap(30, 30, 30))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegMahasiswaLayout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addComponent(btnSubmitRegMahasiswa)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnCancelRegMahasiswa)
+                .addGap(99, 99, 99))
+            .addGroup(panelRegMahasiswaLayout.createSequentialGroup()
+                .addGap(124, 124, 124)
+                .addComponent(jLabel13)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelRegMahasiswaLayout.setVerticalGroup(
+            panelRegMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRegMahasiswaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelRegMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txFieldNamaMahasiswa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelRegMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txFieldNIM, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelRegMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(txFieldJumlahSKS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelRegMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel12)
+                    .addComponent(cmBoxStatusKP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
+                .addGroup(panelRegMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCancelRegMahasiswa)
+                    .addComponent(btnSubmitRegMahasiswa))
+                .addGap(47, 47, 47))
+        );
 
         txFieldNamaDosen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,12 +318,6 @@ public class View extends javax.swing.JFrame {
             }
         });
 
-        txFieldStatusPembimbing.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txFieldStatusPembimbingActionPerformed(evt);
-            }
-        });
-
         txFieldJumlahKelompokTA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txFieldJumlahKelompokTAActionPerformed(evt);
@@ -141,8 +327,6 @@ public class View extends javax.swing.JFrame {
         jLabel4.setText("Nama");
 
         jLabel5.setText("NIP");
-
-        jLabel6.setText("Status Pembimbing");
 
         jLabel7.setText("Jumlah Kelompok TA");
 
@@ -163,6 +347,10 @@ public class View extends javax.swing.JFrame {
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel8.setText("REGISTRASI DOSEN");
 
+        cmBoxStatusPembimbing.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2" }));
+
+        jLabel16.setText("Pembimbing ke-");
+
         javax.swing.GroupLayout panelRegDosenLayout = new javax.swing.GroupLayout(panelRegDosen);
         panelRegDosen.setLayout(panelRegDosenLayout);
         panelRegDosenLayout.setHorizontalGroup(
@@ -172,16 +360,17 @@ public class View extends javax.swing.JFrame {
                 .addGroup(panelRegDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegDosenLayout.createSequentialGroup()
                         .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txFieldNamaDosen, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegDosenLayout.createSequentialGroup()
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txFieldNIP, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelRegDosenLayout.createSequentialGroup()
-                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(txFieldStatusPembimbing, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(cmBoxStatusPembimbing, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(panelRegDosenLayout.createSequentialGroup()
                         .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -203,7 +392,7 @@ public class View extends javax.swing.JFrame {
             .addGroup(panelRegDosenLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel8)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelRegDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txFieldNamaDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
@@ -213,8 +402,8 @@ public class View extends javax.swing.JFrame {
                     .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelRegDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txFieldStatusPembimbing, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
+                    .addComponent(cmBoxStatusPembimbing, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(panelRegDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txFieldJumlahKelompokTA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -224,46 +413,6 @@ public class View extends javax.swing.JFrame {
                     .addComponent(btnCancelRegDosen)
                     .addComponent(btnSubmitRegDosen))
                 .addGap(47, 47, 47))
-        );
-
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel1.setText("MENU LOGIN DOSEN");
-
-        txFieldIdDosen.setText("ID Dosen");
-
-        pswFieldDosen.setText("password");
-
-        btnLoginDosen.setText("Login");
-
-        javax.swing.GroupLayout panelLoginDosenLayout = new javax.swing.GroupLayout(panelLoginDosen);
-        panelLoginDosen.setLayout(panelLoginDosenLayout);
-        panelLoginDosenLayout.setHorizontalGroup(
-            panelLoginDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelLoginDosenLayout.createSequentialGroup()
-                .addGroup(panelLoginDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(panelLoginDosenLayout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addGroup(panelLoginDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txFieldIdDosen, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pswFieldDosen, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(panelLoginDosenLayout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(btnLoginDosen)))
-                .addContainerGap(48, Short.MAX_VALUE))
-        );
-        panelLoginDosenLayout.setVerticalGroup(
-            panelLoginDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelLoginDosenLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txFieldIdDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(pswFieldDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnLoginDosen)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
@@ -303,6 +452,48 @@ public class View extends javax.swing.JFrame {
                 .addComponent(pswFieldMahasiswa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnLoginMahasiswa)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        panelLoginDosen.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setText("MENU LOGIN DOSEN");
+
+        txFieldIdDosen.setText("ID Dosen");
+
+        pswFieldDosen.setText("password");
+
+        btnLoginDosen.setText("Login");
+
+        javax.swing.GroupLayout panelLoginDosenLayout = new javax.swing.GroupLayout(panelLoginDosen);
+        panelLoginDosen.setLayout(panelLoginDosenLayout);
+        panelLoginDosenLayout.setHorizontalGroup(
+            panelLoginDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelLoginDosenLayout.createSequentialGroup()
+                .addGroup(panelLoginDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelLoginDosenLayout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addGroup(panelLoginDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txFieldIdDosen, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(pswFieldDosen, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addGroup(panelLoginDosenLayout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(btnLoginDosen)))
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
+        panelLoginDosenLayout.setVerticalGroup(
+            panelLoginDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelLoginDosenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(txFieldIdDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(pswFieldDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnLoginDosen)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -355,36 +546,50 @@ public class View extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelRegDosen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 376, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(panelLoginDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap()
+                    .addComponent(panelRegMahasiswa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(panelRegDosen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(panelLoginMahasiswa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(panelLoginDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(panelRegDosen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGap(0, 262, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(panelLoginDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addContainerGap()
+                    .addComponent(panelRegMahasiswa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(panelRegDosen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(panelLoginMahasiswa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(panelLoginDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
@@ -399,10 +604,6 @@ public class View extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txFieldNIPActionPerformed
 
-    private void txFieldStatusPembimbingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txFieldStatusPembimbingActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txFieldStatusPembimbingActionPerformed
-
     private void txFieldJumlahKelompokTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txFieldJumlahKelompokTAActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txFieldJumlahKelompokTAActionPerformed
@@ -414,6 +615,34 @@ public class View extends javax.swing.JFrame {
     private void btnSubmitRegDosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitRegDosenActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSubmitRegDosenActionPerformed
+
+    private void btnSubmitRegMahasiswaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitRegMahasiswaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSubmitRegMahasiswaActionPerformed
+
+    private void btnCancelRegMahasiswaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelRegMahasiswaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCancelRegMahasiswaActionPerformed
+
+    private void txFieldNIMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txFieldNIMActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txFieldNIMActionPerformed
+
+    private void txFieldNamaMahasiswaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txFieldNamaMahasiswaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txFieldNamaMahasiswaActionPerformed
+
+    private void txFieldJumlahSKSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txFieldJumlahSKSActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txFieldJumlahSKSActionPerformed
+
+    private void cmBoxStatusKPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmBoxStatusKPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmBoxStatusKPActionPerformed
+
+    private void btnOKBerhasilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOKBerhasilActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnOKBerhasilActionPerformed
 
     /**
      * @param args the command line arguments
@@ -433,23 +662,40 @@ public class View extends javax.swing.JFrame {
     public String getTxFieldNamaDosen() {
         return txFieldNamaDosen.getText();
     }
-
+    public int getTxFieldJumlahSKS() {
+        return Integer.parseInt(txFieldJumlahSKS.getText());
+    }
+    public long getTxFieldNIM() {
+        return Long.parseLong(txFieldNIM.getText());
+    }
+    public String getTxFieldNamaMahasiswa() {
+        return txFieldNamaMahasiswa.getText();
+    } 
     public int getTxFieldJumlahKelompokTA() {
         return Integer.parseInt(txFieldJumlahKelompokTA.getText());
     }
-
     public long getTxFieldNIP() {
         return Long.parseLong(txFieldNIP.getText());
     }
-
-    public int getTxFieldStatusPembimbing() {
-        return Integer.parseInt(txFieldStatusPembimbing.getText());
+    public int getCmBoxStatusPembimbing() {
+        return cmBoxStatusPembimbing.getSelectedIndex();
+    }
+    public boolean getCmBoxStatusKP() {
+        if(cmBoxStatusKP.getSelectedIndex() == 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
     
     
-    public Object getBtnOK() {
-        return btnOK;
+    public Object getBtnOKSelamatDatang() {
+        return btnOKSelamatDatang;
     }
+    public Object getBtnOKBerhasil() {
+        return btnOKBerhasil;
+    }   
     public Object getBtnLoginDosen() {
         return btnLoginDosen;
     }
@@ -471,31 +717,51 @@ public class View extends javax.swing.JFrame {
     public Object getMenuRegDosen() {
         return menuRegDosen;
     }
-
     public Object getBtnCancelRegDosen() {
         return btnCancelRegDosen;
     }
-
     public Object getBtnSubmitRegDosen() {
         return btnSubmitRegDosen;
     }
+    public Object getMenuRegMahasiswa() {
+        return menuRegMahasiswa;
+    }
+    public Object getBtnCancelRegMahasiswa() {
+        return btnCancelRegMahasiswa;
+    }
+    public Object getBtnSubmitRegMahasiswa() {
+        return btnSubmitRegMahasiswa;
+    }
     
+  
     
-    public javax.swing.JPanel getPanelLoginDosen() {
+    public JPanel getPanelLoginDosen() {
         return panelLoginDosen;
     }
-    public javax.swing.JPanel getPanelLoginMahasiswa() {
+    public JPanel getPanelLoginMahasiswa() {
         return panelLoginMahasiswa;
     }
-    public javax.swing.JDialog getDialogSelamatDatang() {
+    public JDialog getDialogSelamatDatang() {
         return dialogSelamatDatang;
     }
-    public javax.swing.JPanel getPanelRegDosen() {
+    public JPanel getPanelRegDosen() {
         return panelRegDosen;
     }
+    public JPanel getPanelRegMahasiswa() {
+        return panelRegMahasiswa;
+    }
+
+    public JDialog getDialogBerhasil() {
+        return dialogBerhasil;
+    }
     
-    public void setTxFieldNama(String nama) {
+    
+    
+    public void setTxFieldSelamatDatang(String nama) {
         txFieldSelamatDatang.setText(nama);
+    }
+    public void setTxFieldBerhasil(String id) {
+        txFieldBerhasil.setText(id);
     }
     
     public void addListener(ActionListener e) {
@@ -505,28 +771,45 @@ public class View extends javax.swing.JFrame {
         menuSimpanFile.addActionListener(e);
         menuLoginDosen.addActionListener(e);
         menuLoginMahasiswa.addActionListener(e);
-        btnOK.addActionListener(e);
+        btnOKSelamatDatang.addActionListener(e);
         menuRegDosen.addActionListener(e);
         btnSubmitRegDosen.addActionListener(e);
         btnCancelRegDosen.addActionListener(e);
+        btnCancelRegMahasiswa.addActionListener(e);
+        btnSubmitRegMahasiswa.addActionListener(e);
+        menuRegMahasiswa.addActionListener(e);
+        btnOKBerhasil.addActionListener(e);
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem MenuViewDataMahasiswa;
     private javax.swing.JButton btnCancelRegDosen;
+    private javax.swing.JButton btnCancelRegMahasiswa;
     private javax.swing.JButton btnLoginDosen;
     private javax.swing.JButton btnLoginMahasiswa;
-    private javax.swing.JButton btnOK;
+    private javax.swing.JButton btnOKBerhasil;
+    private javax.swing.JButton btnOKSelamatDatang;
     private javax.swing.JButton btnSubmitRegDosen;
+    private javax.swing.JButton btnSubmitRegMahasiswa;
+    private javax.swing.JComboBox<String> cmBoxStatusKP;
+    private javax.swing.JComboBox<String> cmBoxStatusPembimbing;
+    private javax.swing.JDialog dialogBerhasil;
     private javax.swing.JDialog dialogSelamatDatang;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem menuBukaFile;
     private javax.swing.JMenu menuFile;
@@ -543,14 +826,18 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JPanel panelLoginDosen;
     private javax.swing.JPanel panelLoginMahasiswa;
     private javax.swing.JPanel panelRegDosen;
+    private javax.swing.JPanel panelRegMahasiswa;
     private javax.swing.JPasswordField pswFieldDosen;
     private javax.swing.JPasswordField pswFieldMahasiswa;
+    private javax.swing.JTextField txFieldBerhasil;
     private javax.swing.JTextField txFieldIdDosen;
     private javax.swing.JTextField txFieldIdMahasiswa;
     private javax.swing.JTextField txFieldJumlahKelompokTA;
+    private javax.swing.JTextField txFieldJumlahSKS;
+    private javax.swing.JTextField txFieldNIM;
     private javax.swing.JTextField txFieldNIP;
     private javax.swing.JTextField txFieldNamaDosen;
+    private javax.swing.JTextField txFieldNamaMahasiswa;
     private javax.swing.JTextField txFieldSelamatDatang;
-    private javax.swing.JTextField txFieldStatusPembimbing;
     // End of variables declaration//GEN-END:variables
 }
