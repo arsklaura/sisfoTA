@@ -4,10 +4,10 @@
  * and open the template in the editor.
  */
 package view;
-import application.Application;
+import model.Application;
 import java.util.Scanner;
 import model.Dosen;
-import application.FileIO;
+import model.FileIO;
 import model.Mahasiswa;
 
 /**
@@ -24,9 +24,8 @@ public class ConsoleUI {
     
     private String nama,topik,judulTA;
     private long nim, nip;
-    private byte statusPembimbing;
     private int nSKS, maxTopikTA, id, maxAnggota, noTopikTA, 
-            noAnggota, noPembimbing;
+            noAnggota, noPembimbing, statusPembimbing;
     private boolean statusKP;
     private Dosen newDosen;
     
@@ -106,7 +105,7 @@ public class ConsoleUI {
                 System.out.println("==Registrasi Dosen==");
                 System.out.print("Nama  : ");nama = scanString.nextLine();
                 System.out.print("NIP   : ");nip = scanAngka.nextLong();
-                System.out.print("Status [1/2] : ");statusPembimbing = scanAngka.nextByte();
+                System.out.print("Status [1/2] : ");statusPembimbing = scanAngka.nextInt();
                 System.out.print("Jumlah Kelompok TA : ");maxTopikTA = scanAngka.nextInt();
                 app.addDosen(nama, nip, statusPembimbing, maxTopikTA);
                 System.out.println("Registrasi BERHASIL, DSN-"+app.listDosen.size());

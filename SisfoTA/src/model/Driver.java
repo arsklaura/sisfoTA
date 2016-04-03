@@ -5,9 +5,10 @@
  */
 package model;
 
-import application.FileIO;
+import model.FileIO;
 import view.ConsoleUI;
-import application.Application;
+import model.Application;
+import control.Controller;
 
 /**
  *
@@ -20,7 +21,14 @@ public class Driver {
     public static void main(String[] args) {
         Application app = new Application();
         FileIO io = new FileIO(app);
-        ConsoleUI ui = new ConsoleUI(app, io);
-        ui.showMenu();
+        Controller control = new Controller(app, io);
+        
+        app.addDosen("alim", 1234, 2, 5);
+        app.addDosen("zul", 1234, 2, 5);
+        app.addMahasiswa("agung", 1301144142, 100, true);
+        app.addMahasiswa("budi", 1301144142, 100, true);
+               
+//        ConsoleUI ui = new ConsoleUI(app, io);
+//        ui.showMenu();
     }
 }

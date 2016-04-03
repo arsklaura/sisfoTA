@@ -13,6 +13,7 @@ import java.util.Date;
 import java.io.Serializable;
 
 public abstract class Orang implements Serializable {
+    public String password;
     public String nama;
     public long ktp;
     public Date tglLahir = new Date();

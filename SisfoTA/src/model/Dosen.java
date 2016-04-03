@@ -14,10 +14,10 @@ public class Dosen extends Orang implements Serializable {
     private KelompokTA[] topikTA;
     private int nTopikTA = 0;
     private final int maxTopikTA;
-    private byte statusPembimbing = 0;
+    private int statusPembimbing = 0;
     private final long nip;
    
-    public Dosen(String nama, long nip, byte statusPembimbing,int maxTopikTA) {
+    public Dosen(String nama, long nip, int statusPembimbing,int maxTopikTA) {
         this.nama = nama;
         this.nip = nip;
         this.maxTopikTA = maxTopikTA;

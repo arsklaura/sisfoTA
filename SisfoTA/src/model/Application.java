@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package application;
+package model;
 import java.util.ArrayList;
 import model.Dosen;
 import model.Mahasiswa;
@@ -21,7 +21,7 @@ public class Application {
         listDosen = new ArrayList();
     }
     
-    public void addDosen(String nama, long nip, byte statusPembimbing,int maxTopikTA) {
+    public void addDosen(String nama, long nip, int statusPembimbing,int maxTopikTA) {
         listDosen.add(new Dosen(nama, nip, statusPembimbing, maxTopikTA));
     }
     
