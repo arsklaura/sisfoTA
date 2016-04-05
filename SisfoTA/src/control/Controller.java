@@ -118,7 +118,6 @@ public class Controller implements ActionListener {
                 } 
             } catch (Exception e) {
                 view.getDialogUserPswSalah().setVisible(true);
-                view.getPanelLoginDosen().setVisible(false);
             } 
         }
         else if(source.equals(view.getBtnLoginMahasiswa())) {
@@ -133,7 +132,6 @@ public class Controller implements ActionListener {
                 } 
             } catch (Exception e) {
                 view.getDialogUserPswSalah().setVisible(true);
-                view.getPanelLoginMahasiswa().setVisible(false);
             } 
         }
         else if(source.equals(view.getBtnOKBerhasil())) {
