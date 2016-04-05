@@ -43,6 +43,8 @@ public class View extends javax.swing.JFrame {
         btnOKBerhasil = new javax.swing.JButton();
         txFieldBerhasil = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
+        frameOlahDataDosen = new javax.swing.JFrame();
+        frameOlahDataMahasiswa = new javax.swing.JFrame();
         panelViewDataMahasiswa = new javax.swing.JPanel();
         txFieldGetIdMahasiswa = new javax.swing.JTextField();
         txFieldShowNIM = new javax.swing.JTextField();
@@ -212,6 +214,28 @@ public class View extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnOKBerhasil)
                 .addContainerGap())
+        );
+
+        javax.swing.GroupLayout frameOlahDataDosenLayout = new javax.swing.GroupLayout(frameOlahDataDosen.getContentPane());
+        frameOlahDataDosen.getContentPane().setLayout(frameOlahDataDosenLayout);
+        frameOlahDataDosenLayout.setHorizontalGroup(
+            frameOlahDataDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        frameOlahDataDosenLayout.setVerticalGroup(
+            frameOlahDataDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout frameOlahDataMahasiswaLayout = new javax.swing.GroupLayout(frameOlahDataMahasiswa.getContentPane());
+        frameOlahDataMahasiswa.getContentPane().setLayout(frameOlahDataMahasiswaLayout);
+        frameOlahDataMahasiswaLayout.setHorizontalGroup(
+            frameOlahDataMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        frameOlahDataMahasiswaLayout.setVerticalGroup(
+            frameOlahDataMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1190,6 +1214,8 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmBoxStatusPembimbing;
     private javax.swing.JDialog dialogRegistrasiBerhasil;
     private javax.swing.JDialog dialogSelamatDatang;
+    private javax.swing.JFrame frameOlahDataDosen;
+    private javax.swing.JFrame frameOlahDataMahasiswa;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
