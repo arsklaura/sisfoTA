@@ -230,7 +230,7 @@
                 <Property name="text" type="java.lang.String" value="Data Dosen"/>
               </Properties>
             </MenuItem>
-            <MenuItem class="javax.swing.JMenuItem" name="MenuViewDataMahasiswa">
+            <MenuItem class="javax.swing.JMenuItem" name="menuViewDataMahasiswa">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Data Mahasiswa"/>
               </Properties>

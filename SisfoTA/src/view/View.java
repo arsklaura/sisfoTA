@@ -115,7 +115,7 @@ public class View extends javax.swing.JFrame {
         menuRegMahasiswa = new javax.swing.JMenuItem();
         menuView = new javax.swing.JMenu();
         menuViewDataDosen = new javax.swing.JMenuItem();
-        MenuViewDataMahasiswa = new javax.swing.JMenuItem();
+        menuViewDataMahasiswa = new javax.swing.JMenuItem();
         menuLogout = new javax.swing.JMenu();
 
         dialogSelamatDatang.setResizable(false);
@@ -794,8 +794,8 @@ public class View extends javax.swing.JFrame {
         menuViewDataDosen.setText("Data Dosen");
         menuView.add(menuViewDataDosen);
 
-        MenuViewDataMahasiswa.setText("Data Mahasiswa");
-        menuView.add(MenuViewDataMahasiswa);
+        menuViewDataMahasiswa.setText("Data Mahasiswa");
+        menuView.add(menuViewDataMahasiswa);
 
         menuBar.add(menuView);
 
@@ -973,6 +973,8 @@ public class View extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
+    
+    //GETTER TEXT FIELD AND COMBO BOX
     public int getTxFieldIdDosen() {
         return Integer.parseInt(txFieldIdDosen.getText());
     }
@@ -1022,7 +1024,7 @@ public class View extends javax.swing.JFrame {
     }
     
     
-    
+    //GETTER MENU AND BUTTON
     public Object getBtnOKSelamatDatang() {
         return btnOKSelamatDatang;
     }
@@ -1069,22 +1071,20 @@ public class View extends javax.swing.JFrame {
         return menuViewDataDosen;
     }
     public Object getMenuViewDataMahasiswa() {
-        return MenuViewDataMahasiswa;
+        return menuViewDataMahasiswa;
     }
     public Object getBtnOKViewDataDosen() {
         return btnOKViewDataDosen;
     }
-
-    public JButton getBtnOKViewDataMahasiswa() {
+    public Object getBtnOKViewDataMahasiswa() {
         return btnOKViewDataMahasiswa;
     }
-
     public Object getMenuLogout() {
         return menuLogout;
     }
     
     
-
+    //GETTER PANEL
     public JPanel getPanelLoginDosen() {
         return panelLoginDosen;
     }
@@ -1110,7 +1110,7 @@ public class View extends javax.swing.JFrame {
         return panelViewDataMahasiswa;
     }
     
-    
+    //SETTER TEXT FIELD
     public void setTxFieldSelamatDatang(String nama) {
         txFieldSelamatDatang.setText(nama);
     }
@@ -1129,19 +1129,15 @@ public class View extends javax.swing.JFrame {
     public void setTxFieldShowJumlahKelompokTA(int jumlah) {
         txFieldShowJumlahKelompokTA.setText(Integer.toString(jumlah));
     }
-
     public void setTxFieldShowJumlahSKS(int jumlahSKS) {
         txFieldShowJumlahSKS.setText(Integer.toString(jumlahSKS));
     }
-
     public void setTxFieldShowNIM(long nim) {
         txFieldShowNIM.setText(Long.toString(nim));
     }
-
     public void setTxFieldShowNamaMahasiswa(String nama) {
         txFieldShowNamaMahasiswa.setText(nama);
     }
-
     public void setTxFieldShowStatusKP(boolean statusKP) {
         if(statusKP) {
             txFieldShowStatusKP.setText("Sudah");
@@ -1154,31 +1150,32 @@ public class View extends javax.swing.JFrame {
     
     
     public void addListener(ActionListener e) {
-        btnLoginDosen.addActionListener(e);
-        btnLoginMahasiswa.addActionListener(e);
+        menuViewDataDosen.addActionListener(e);
+        menuViewDataMahasiswa.addActionListener(e);
         menuBukaFile.addActionListener(e);
         menuSimpanFile.addActionListener(e);
-        menuLoginDosen.addActionListener(e);
         menuLoginMahasiswa.addActionListener(e);
-        btnOKSelamatDatang.addActionListener(e);
+        menuLoginDosen.addActionListener(e);
         menuRegDosen.addActionListener(e);
+        menuLogout.addActionListener(e);
+        menuRegMahasiswa.addActionListener(e);
+        
+        btnLoginDosen.addActionListener(e);
+        btnLoginMahasiswa.addActionListener(e);
+        btnOKSelamatDatang.addActionListener(e);
         btnSubmitRegDosen.addActionListener(e);
         btnCancelRegDosen.addActionListener(e);
         btnCancelRegMahasiswa.addActionListener(e);
         btnSubmitRegMahasiswa.addActionListener(e);
-        menuRegMahasiswa.addActionListener(e);
         btnOKBerhasil.addActionListener(e);
         btnOKViewDataDosen.addActionListener(e);
-        menuViewDataDosen.addActionListener(e);
-        MenuViewDataMahasiswa.addActionListener(e);
+        
         cmBoxStatusPembimbing.addActionListener(e);
-        cmBoxStatusKP.addActionListener(e);
         btnOKViewDataMahasiswa.addActionListener(e);
-        menuLogout.addActionListener(e);
+        cmBoxStatusKP.addActionListener(e);
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem MenuViewDataMahasiswa;
     private javax.swing.JButton btnCancelRegDosen;
     private javax.swing.JButton btnCancelRegMahasiswa;
     private javax.swing.JButton btnLoginDosen;
@@ -1233,6 +1230,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuSimpanFile;
     private javax.swing.JMenu menuView;
     private javax.swing.JMenuItem menuViewDataDosen;
+    private javax.swing.JMenuItem menuViewDataMahasiswa;
     private javax.swing.JPanel panelLoginDosen;
     private javax.swing.JPanel panelLoginMahasiswa;
     private javax.swing.JPanel panelRegDosen;
