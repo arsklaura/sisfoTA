@@ -92,5 +92,9 @@ public class Dosen extends Orang implements Serializable {
     public long getNip() {
         return nip;
     }
+
+    public int getStatusPembimbing() {
+        return statusPembimbing;
+    }
     
 } 

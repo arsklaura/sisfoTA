@@ -33,6 +33,7 @@ public class Controller implements ActionListener {
         view.getPanelRegDosen().setVisible(false);
         view.getPanelRegMahasiswa().setVisible(false);
         view.getPanelViewDataDosen().setVisible(false);
+        view.getPanelViewDataMahasiswa().setVisible(false);
         view.addListener(this);
         this.app = app;
         this.io = io;
@@ -55,6 +56,7 @@ public class Controller implements ActionListener {
             view.getPanelRegDosen().setVisible(false);
             view.getPanelRegMahasiswa().setVisible(false);
             view.getPanelViewDataDosen().setVisible(false);
+            view.getPanelViewDataMahasiswa().setVisible(false);
             view.getPanelLoginDosen().setVisible(true);
         }
         else if(source.equals(view.getBtnLoginDosen())) {
@@ -79,6 +81,7 @@ public class Controller implements ActionListener {
             view.getPanelRegDosen().setVisible(false);
             view.getPanelRegMahasiswa().setVisible(false);
             view.getPanelViewDataDosen().setVisible(false);
+            view.getPanelViewDataMahasiswa().setVisible(false);
             view.getPanelLoginMahasiswa().setVisible(true);
         }
         else if(source.equals(view.getBtnLoginMahasiswa())) {
@@ -100,10 +103,12 @@ public class Controller implements ActionListener {
             view.getPanelLoginMahasiswa().setVisible(false);
             view.getPanelRegMahasiswa().setVisible(false);
             view.getPanelViewDataDosen().setVisible(false);
+            view.getPanelViewDataMahasiswa().setVisible(false);
             view.getPanelRegDosen().setVisible(true);
         }
         else if(source.equals(view.getBtnSubmitRegDosen())) {
             try {
+                System.out.println(view.getCmBoxStatusPembimbing());
                 view.getPanelRegDosen().setVisible(false);
                 app.addDosen(view.getTxFieldNamaDosen(),
                         view.getTxFieldNIP(),
@@ -126,6 +131,7 @@ public class Controller implements ActionListener {
             view.getPanelLoginMahasiswa().setVisible(false);
             view.getPanelRegDosen().setVisible(false);
             view.getPanelViewDataDosen().setVisible(false);
+            view.getPanelViewDataMahasiswa().setVisible(false);
             view.getPanelRegMahasiswa().setVisible(true);
         }
         else if(source.equals(view.getBtnSubmitRegMahasiswa())) {
@@ -148,6 +154,7 @@ public class Controller implements ActionListener {
             view.getPanelLoginMahasiswa().setVisible(false);
             view.getPanelRegDosen().setVisible(false);
             view.getPanelRegMahasiswa().setVisible(false);
+            view.getPanelViewDataMahasiswa().setVisible(false);
             view.getPanelViewDataDosen().setVisible(true);
         }
         else if(source.equals(view.getBtnOKViewDataDosen())) {
@@ -157,11 +164,30 @@ public class Controller implements ActionListener {
                 view.setTxFieldShowNIP(app.getDosen(id).getNip());
                 view.setTxFieldShowNamaDosen(app.getDosen(id).nama);
                 view.setTxFieldShowJumlahKelompokTA(app.getDosen(id).getnTopikTA());
+                view.setTxFieldShowStatusDosen(app.getDosen(id).getStatusPembimbing());
             } catch (Exception e) {
             } 
         }
-        else if(source.equals(view.getBtnOKViewDataDosen())) {
+        else if(source.equals(view.getMenuViewDataMahasiswa())) {
+            view.getPanelLoginDosen().setVisible(false);
+            view.getPanelLoginMahasiswa().setVisible(false);
+            view.getPanelRegDosen().setVisible(false);
+            view.getPanelRegMahasiswa().setVisible(false);
             view.getPanelViewDataDosen().setVisible(false);
+            view.getPanelViewDataMahasiswa().setVisible(true);
+        }
+        else if(source.equals(view.getBtnOKViewDataMahasiswa())) {
+            try {
+                int id = view.getTxFieldGetIdMahasiswa();
+                view.setTxFieldShowNamaMahasiswa(app.getMahasiswa(id).nama);
+                view.setTxFieldShowNIM(app.getMahasiswa(id).getNim());
+                view.setTxFieldShowJumlahSKS(app.getMahasiswa(id).getnSKS());
+                view.setTxFieldShowStatusKP(app.getMahasiswa(id).getStatusKP());
+            } catch (Exception e) {
+            }  
+        }else if(source.equals(view.getMenuLogout())) {
+            dsn = null;
+            mhs = null;
         }
     }
 }

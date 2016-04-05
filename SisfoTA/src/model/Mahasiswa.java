@@ -50,5 +50,18 @@ public class Mahasiswa extends Orang implements Serializable {
         else {
             return nama+"||"+nim+", belum punya TA"+", belum ada pembimbing";
         }
-    }  
+    }
+
+    public int getnSKS() {
+        return nSKS;
+    }
+
+    public boolean getStatusKP() {
+        return statusKP;
+    }
+
+    public long getNim() {
+        return nim;
+    }
+    
 }

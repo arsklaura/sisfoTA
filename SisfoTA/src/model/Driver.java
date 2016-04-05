@@ -24,9 +24,9 @@ public class Driver {
         Controller control = new Controller(app, io);
         
         app.addDosen("alim", 1234, 2, 5);
-        app.addDosen("zul", 1234, 2, 5);
+        app.addDosen("zul", 4321, 1, 4);
         app.addMahasiswa("agung", 1301144142, 100, true);
-        app.addMahasiswa("budi", 1301144142, 100, true);
+        app.addMahasiswa("budi", 1441231, 90, false);
                
 //        ConsoleUI ui = new ConsoleUI(app, io);
 //        ui.showMenu();
