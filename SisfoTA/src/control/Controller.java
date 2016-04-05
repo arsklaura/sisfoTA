@@ -43,6 +43,7 @@ public class Controller implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         Object source = ae.getSource();
         
+        //GET MENU
         if(source.equals(view.getMenuBukaFile())) {
             io.readFileDosen();
             io.readFileMahasiswa();
@@ -59,6 +60,52 @@ public class Controller implements ActionListener {
             view.getPanelViewDataMahasiswa().setVisible(false);
             view.getPanelLoginDosen().setVisible(true);
         }
+        else if(source.equals(view.getMenuLoginMahasiswa())) {
+            view.getPanelLoginDosen().setVisible(false);
+            view.getPanelRegDosen().setVisible(false);
+            view.getPanelRegMahasiswa().setVisible(false);
+            view.getPanelViewDataDosen().setVisible(false);
+            view.getPanelViewDataMahasiswa().setVisible(false);
+            view.getPanelLoginMahasiswa().setVisible(true);
+        }
+        else if(source.equals(view.getMenuRegDosen())) {
+            view.getPanelLoginDosen().setVisible(false);
+            view.getPanelLoginMahasiswa().setVisible(false);
+            view.getPanelRegMahasiswa().setVisible(false);
+            view.getPanelViewDataDosen().setVisible(false);
+            view.getPanelViewDataMahasiswa().setVisible(false);
+            view.getPanelRegDosen().setVisible(true);
+        }
+        else if(source.equals(view.getMenuRegMahasiswa())) {
+            view.getPanelLoginDosen().setVisible(false);
+            view.getPanelLoginMahasiswa().setVisible(false);
+            view.getPanelRegDosen().setVisible(false);
+            view.getPanelViewDataDosen().setVisible(false);
+            view.getPanelViewDataMahasiswa().setVisible(false);
+            view.getPanelRegMahasiswa().setVisible(true);
+        }
+        else if(source.equals(view.getMenuViewDataDosen())) {
+            view.getPanelLoginDosen().setVisible(false);
+            view.getPanelLoginMahasiswa().setVisible(false);
+            view.getPanelRegDosen().setVisible(false);
+            view.getPanelRegMahasiswa().setVisible(false);
+            view.getPanelViewDataMahasiswa().setVisible(false);
+            view.getPanelViewDataDosen().setVisible(true);
+        }
+        else if(source.equals(view.getMenuViewDataMahasiswa())) {
+            view.getPanelLoginDosen().setVisible(false);
+            view.getPanelLoginMahasiswa().setVisible(false);
+            view.getPanelRegDosen().setVisible(false);
+            view.getPanelRegMahasiswa().setVisible(false);
+            view.getPanelViewDataDosen().setVisible(false);
+            view.getPanelViewDataMahasiswa().setVisible(true);
+        }
+        else if(source.equals(view.getMenuLogout())) {
+            dsn = null;
+            mhs = null;
+        }
+        
+        //GET BUTTON
         else if(source.equals(view.getBtnLoginDosen())) {
             try {
                 int id = view.getTxFieldIdDosen();
@@ -72,17 +119,6 @@ public class Controller implements ActionListener {
             } catch (Exception e) {
                 view.getPanelLoginDosen().setVisible(false);
             } 
-        }
-        else if(source.equals(view.getBtnOKSelamatDatang())) {
-            view.getDialogSelamatDatang().setVisible(false);
-        }
-        else if(source.equals(view.getMenuLoginMahasiswa())) {
-            view.getPanelLoginDosen().setVisible(false);
-            view.getPanelRegDosen().setVisible(false);
-            view.getPanelRegMahasiswa().setVisible(false);
-            view.getPanelViewDataDosen().setVisible(false);
-            view.getPanelViewDataMahasiswa().setVisible(false);
-            view.getPanelLoginMahasiswa().setVisible(true);
         }
         else if(source.equals(view.getBtnLoginMahasiswa())) {
             try {
@@ -98,13 +134,11 @@ public class Controller implements ActionListener {
                 view.getPanelLoginMahasiswa().setVisible(false);
             } 
         }
-        else if(source.equals(view.getMenuRegDosen())) {
-            view.getPanelLoginDosen().setVisible(false);
-            view.getPanelLoginMahasiswa().setVisible(false);
-            view.getPanelRegMahasiswa().setVisible(false);
-            view.getPanelViewDataDosen().setVisible(false);
-            view.getPanelViewDataMahasiswa().setVisible(false);
-            view.getPanelRegDosen().setVisible(true);
+        else if(source.equals(view.getBtnOKBerhasil())) {
+            view.getDialogBerhasil().setVisible(false);
+        }
+        else if(source.equals(view.getBtnOKSelamatDatang())) {
+            view.getDialogSelamatDatang().setVisible(false);
         }
         else if(source.equals(view.getBtnSubmitRegDosen())) {
             try {
@@ -120,20 +154,6 @@ public class Controller implements ActionListener {
             } catch (Exception e) {
             }
         }
-        else if(source.equals(view.getBtnOKBerhasil())) {
-            view.getDialogBerhasil().setVisible(false);
-        }
-        else if(source.equals(view.getBtnCancelRegDosen())) {
-            view.getPanelRegDosen().setVisible(false);
-        }
-        else if(source.equals(view.getMenuRegMahasiswa())) {
-            view.getPanelLoginDosen().setVisible(false);
-            view.getPanelLoginMahasiswa().setVisible(false);
-            view.getPanelRegDosen().setVisible(false);
-            view.getPanelViewDataDosen().setVisible(false);
-            view.getPanelViewDataMahasiswa().setVisible(false);
-            view.getPanelRegMahasiswa().setVisible(true);
-        }
         else if(source.equals(view.getBtnSubmitRegMahasiswa())) {
             try {
                 app.addMahasiswa(view.getTxFieldNamaMahasiswa(),
@@ -146,16 +166,11 @@ public class Controller implements ActionListener {
             } catch (Exception e) {
             }
         }
+        else if(source.equals(view.getBtnCancelRegDosen())) {
+            view.getPanelRegDosen().setVisible(false);
+        }
         else if(source.equals(view.getBtnCancelRegMahasiswa())) {
             view.getPanelRegMahasiswa().setVisible(false);
-        }
-        else if(source.equals(view.getMenuViewDataDosen())) {
-            view.getPanelLoginDosen().setVisible(false);
-            view.getPanelLoginMahasiswa().setVisible(false);
-            view.getPanelRegDosen().setVisible(false);
-            view.getPanelRegMahasiswa().setVisible(false);
-            view.getPanelViewDataMahasiswa().setVisible(false);
-            view.getPanelViewDataDosen().setVisible(true);
         }
         else if(source.equals(view.getBtnOKViewDataDosen())) {
             try {
@@ -168,14 +183,6 @@ public class Controller implements ActionListener {
             } catch (Exception e) {
             } 
         }
-        else if(source.equals(view.getMenuViewDataMahasiswa())) {
-            view.getPanelLoginDosen().setVisible(false);
-            view.getPanelLoginMahasiswa().setVisible(false);
-            view.getPanelRegDosen().setVisible(false);
-            view.getPanelRegMahasiswa().setVisible(false);
-            view.getPanelViewDataDosen().setVisible(false);
-            view.getPanelViewDataMahasiswa().setVisible(true);
-        }
         else if(source.equals(view.getBtnOKViewDataMahasiswa())) {
             try {
                 int id = view.getTxFieldGetIdMahasiswa();
@@ -185,9 +192,6 @@ public class Controller implements ActionListener {
                 view.setTxFieldShowStatusKP(app.getMahasiswa(id).getStatusKP());
             } catch (Exception e) {
             }  
-        }else if(source.equals(view.getMenuLogout())) {
-            dsn = null;
-            mhs = null;
         }
     }
 }
