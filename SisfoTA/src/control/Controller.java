@@ -117,6 +117,7 @@ public class Controller implements ActionListener {
                     view.getDialogSelamatDatang().setVisible(true);
                 } 
             } catch (Exception e) {
+                view.getDialogUserPswSalah().setVisible(true);
                 view.getPanelLoginDosen().setVisible(false);
             } 
         }
@@ -131,6 +132,7 @@ public class Controller implements ActionListener {
                     view.getDialogSelamatDatang().setVisible(true);
                 } 
             } catch (Exception e) {
+                view.getDialogUserPswSalah().setVisible(true);
                 view.getPanelLoginMahasiswa().setVisible(false);
             } 
         }
@@ -192,6 +194,9 @@ public class Controller implements ActionListener {
                 view.setTxFieldShowStatusKP(app.getMahasiswa(id).getStatusKP());
             } catch (Exception e) {
             }  
+        }
+        else if(source.equals(view.getBtnOKUserPswSalah())) {
+            view.getDialogUserPswSalah().setVisible(false);
         }
     }
 }
