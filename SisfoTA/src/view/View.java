@@ -49,6 +49,10 @@ public class View extends javax.swing.JFrame {
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
         btnOKUserPswSalah = new javax.swing.JButton();
+        dialogTidakDitemukan = new javax.swing.JDialog();
+        jLabel30 = new javax.swing.JLabel();
+        jLabel31 = new javax.swing.JLabel();
+        btnOKTidakDitemukan = new javax.swing.JButton();
         panelViewDataMahasiswa = new javax.swing.JPanel();
         txFieldGetIdMahasiswa = new javax.swing.JTextField();
         txFieldShowNIM = new javax.swing.JTextField();
@@ -124,6 +128,7 @@ public class View extends javax.swing.JFrame {
         menuViewDataMahasiswa = new javax.swing.JMenuItem();
         menuLogout = new javax.swing.JMenu();
 
+        dialogSelamatDatang.setLocation(new java.awt.Point(0, 0));
         dialogSelamatDatang.setResizable(false);
         dialogSelamatDatang.setSize(new java.awt.Dimension(185, 130));
         dialogSelamatDatang.setType(java.awt.Window.Type.POPUP);
@@ -280,6 +285,47 @@ public class View extends javax.swing.JFrame {
                 .addComponent(jLabel29)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnOKUserPswSalah)
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+
+        dialogTidakDitemukan.setPreferredSize(new java.awt.Dimension(181, 130));
+        dialogTidakDitemukan.setResizable(false);
+        dialogTidakDitemukan.setSize(new java.awt.Dimension(181, 130));
+
+        jLabel30.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel30.setText("DATA TIDAK");
+
+        jLabel31.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel31.setText("DITEMUKAN!!");
+
+        btnOKTidakDitemukan.setText("OK");
+
+        javax.swing.GroupLayout dialogTidakDitemukanLayout = new javax.swing.GroupLayout(dialogTidakDitemukan.getContentPane());
+        dialogTidakDitemukan.getContentPane().setLayout(dialogTidakDitemukanLayout);
+        dialogTidakDitemukanLayout.setHorizontalGroup(
+            dialogTidakDitemukanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dialogTidakDitemukanLayout.createSequentialGroup()
+                .addGap(0, 36, Short.MAX_VALUE)
+                .addComponent(jLabel31)
+                .addGap(33, 33, 33))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dialogTidakDitemukanLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel30)
+                .addGap(50, 50, 50))
+            .addGroup(dialogTidakDitemukanLayout.createSequentialGroup()
+                .addGap(66, 66, 66)
+                .addComponent(btnOKTidakDitemukan)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        dialogTidakDitemukanLayout.setVerticalGroup(
+            dialogTidakDitemukanLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dialogTidakDitemukanLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel31)
+                .addGap(18, 18, 18)
+                .addComponent(btnOKTidakDitemukan)
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
@@ -496,7 +542,7 @@ public class View extends javax.swing.JFrame {
             .addGroup(panelViewDataDosenLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelViewDataDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txFieldGetIdDosen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel22))
@@ -1132,7 +1178,10 @@ public class View extends javax.swing.JFrame {
     }
     public Object getBtnOKUserPswSalah() {
         return btnOKUserPswSalah;
-    }   
+    }
+    public Object getBtnOKTidakDitemukan() {
+        return btnOKTidakDitemukan;
+    }  
     public Object getMenuBukaFile() {
         return menuBukaFile;
     }
@@ -1184,6 +1233,10 @@ public class View extends javax.swing.JFrame {
     public JPanel getPanelViewDataMahasiswa() {
         return panelViewDataMahasiswa;
     }
+    public JDialog getDialogTidakDitemukan() {
+        return dialogTidakDitemukan;
+    }
+    
     
     //SETTER TEXT FIELD
     public void setTxFieldSelamatDatang(String nama) {
@@ -1245,6 +1298,7 @@ public class View extends javax.swing.JFrame {
         btnOKBerhasil.addActionListener(e);
         btnOKViewDataDosen.addActionListener(e);
         btnOKUserPswSalah.addActionListener(e);
+        btnOKTidakDitemukan.addActionListener(e);
         
         cmBoxStatusPembimbing.addActionListener(e);
         btnOKViewDataMahasiswa.addActionListener(e);
@@ -1258,6 +1312,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JButton btnLoginMahasiswa;
     private javax.swing.JButton btnOKBerhasil;
     private javax.swing.JButton btnOKSelamatDatang;
+    private javax.swing.JButton btnOKTidakDitemukan;
     private javax.swing.JButton btnOKUserPswSalah;
     private javax.swing.JButton btnOKViewDataDosen;
     private javax.swing.JButton btnOKViewDataMahasiswa;
@@ -1267,6 +1322,7 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmBoxStatusPembimbing;
     private javax.swing.JDialog dialogRegistrasiBerhasil;
     private javax.swing.JDialog dialogSelamatDatang;
+    private javax.swing.JDialog dialogTidakDitemukan;
     private javax.swing.JDialog dialogUserPswSalah;
     private javax.swing.JFrame frameOlahDataDosen;
     private javax.swing.JFrame frameOlahDataMahasiswa;
@@ -1293,6 +1349,8 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
+    private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

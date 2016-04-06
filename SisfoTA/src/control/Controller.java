@@ -140,6 +140,9 @@ public class Controller implements ActionListener {
         else if(source.equals(view.getBtnOKSelamatDatang())) {
             view.getDialogSelamatDatang().setVisible(false);
         }
+        else if(source.equals(view.getBtnOKTidakDitemukan())) {
+            view.getDialogTidakDitemukan().setVisible(false);
+        }
         else if(source.equals(view.getBtnSubmitRegDosen())) {
             try {
                 System.out.println(view.getCmBoxStatusPembimbing());
@@ -181,6 +184,7 @@ public class Controller implements ActionListener {
                 view.setTxFieldShowJumlahKelompokTA(app.getDosen(id).getnTopikTA());
                 view.setTxFieldShowStatusDosen(app.getDosen(id).getStatusPembimbing());
             } catch (Exception e) {
+                view.getDialogTidakDitemukan().setVisible(true);
             } 
         }
         else if(source.equals(view.getBtnOKViewDataMahasiswa())) {
@@ -191,6 +195,7 @@ public class Controller implements ActionListener {
                 view.setTxFieldShowJumlahSKS(app.getMahasiswa(id).getnSKS());
                 view.setTxFieldShowStatusKP(app.getMahasiswa(id).getStatusKP());
             } catch (Exception e) {
+                view.getDialogTidakDitemukan().setVisible(true);
             }  
         }
         else if(source.equals(view.getBtnOKUserPswSalah())) {
