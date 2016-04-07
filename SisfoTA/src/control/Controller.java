@@ -7,6 +7,7 @@ package control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
 import view.View;
 import model.Application;
 import model.FileIO;
@@ -117,7 +118,7 @@ public class Controller implements ActionListener {
                     view.getDialogSelamatDatang().setVisible(true);
                 } 
             } catch (Exception e) {
-                view.getDialogUserPswSalah().setVisible(true);
+                JOptionPane.showMessageDialog(null, "ID atau password salah", "Login gagal", 0);
             } 
         }
         else if(source.equals(view.getBtnLoginMahasiswa())) {
@@ -131,17 +132,11 @@ public class Controller implements ActionListener {
                     view.getDialogSelamatDatang().setVisible(true);
                 } 
             } catch (Exception e) {
-                view.getDialogUserPswSalah().setVisible(true);
+                JOptionPane.showMessageDialog(null, "ID atau password salah", "Login gagal", 0);
             } 
-        }
-        else if(source.equals(view.getBtnOKBerhasil())) {
-            view.getDialogBerhasil().setVisible(false);
         }
         else if(source.equals(view.getBtnOKSelamatDatang())) {
             view.getDialogSelamatDatang().setVisible(false);
-        }
-        else if(source.equals(view.getBtnOKTidakDitemukan())) {
-            view.getDialogTidakDitemukan().setVisible(false);
         }
         else if(source.equals(view.getBtnSubmitRegDosen())) {
             try {
@@ -151,10 +146,10 @@ public class Controller implements ActionListener {
                         view.getTxFieldNIP(),
                         view.getCmBoxStatusPembimbing(),
                         view.getTxFieldJumlahKelompokTA());
-                view.setTxFieldBerhasil(Integer.toString(app.listDosen.size()));
-                view.getPanelRegDosen().setVisible(false);
-                view.getDialogBerhasil().setVisible(true);
+                JOptionPane.showMessageDialog(null, "ID Anda : "
+                        +app.listDosen.size(), "Registrasi berhasil", 0);
             } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Registrasi gagal", "Peringatan", 0);
             }
         }
         else if(source.equals(view.getBtnSubmitRegMahasiswa())) {
@@ -163,10 +158,10 @@ public class Controller implements ActionListener {
                         view.getTxFieldNIM(),
                         view.getTxFieldJumlahSKS(),
                         view.getCmBoxStatusKP());
-                view.setTxFieldBerhasil(Integer.toString(app.listMahasiswa.size()));
-                view.getPanelRegMahasiswa().setVisible(false);
-                view.getDialogBerhasil().setVisible(true);
+                JOptionPane.showMessageDialog(null, "ID Anda : "
+                        +app.listMahasiswa.size(), "Registrasi berhasil", 0);
             } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Registrasi gagal", "Peringatan", 0);
             }
         }
         else if(source.equals(view.getBtnCancelRegDosen())) {
@@ -184,7 +179,7 @@ public class Controller implements ActionListener {
                 view.setTxFieldShowJumlahKelompokTA(app.getDosen(id).getnTopikTA());
                 view.setTxFieldShowStatusDosen(app.getDosen(id).getStatusPembimbing());
             } catch (Exception e) {
-                view.getDialogTidakDitemukan().setVisible(true);
+                JOptionPane.showMessageDialog(null, "Data tidak ditemukan", "Peringatan", 0);
             } 
         }
         else if(source.equals(view.getBtnOKViewDataMahasiswa())) {
@@ -195,11 +190,8 @@ public class Controller implements ActionListener {
                 view.setTxFieldShowJumlahSKS(app.getMahasiswa(id).getnSKS());
                 view.setTxFieldShowStatusKP(app.getMahasiswa(id).getStatusKP());
             } catch (Exception e) {
-                view.getDialogTidakDitemukan().setVisible(true);
+                JOptionPane.showMessageDialog(null, "Data tidak ditemukan", "Peringatan", 0);
             }  
-        }
-        else if(source.equals(view.getBtnOKUserPswSalah())) {
-            view.getDialogUserPswSalah().setVisible(false);
         }
     }
 }
