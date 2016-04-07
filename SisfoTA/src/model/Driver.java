@@ -5,7 +5,7 @@
  */
 package model;
 
-import model.FileIO;
+import control.FileIO;
 import view.ConsoleUI;
 import model.Application;
 import control.Controller;

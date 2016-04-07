@@ -7,7 +7,7 @@ package view;
 import model.Application;
 import java.util.Scanner;
 import model.Dosen;
-import model.FileIO;
+import control.FileIO;
 import model.Mahasiswa;
 
 /**

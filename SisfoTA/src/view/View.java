@@ -288,7 +288,6 @@ public class View extends javax.swing.JFrame {
                 .addContainerGap(33, Short.MAX_VALUE))
         );
 
-        dialogTidakDitemukan.setPreferredSize(new java.awt.Dimension(181, 130));
         dialogTidakDitemukan.setResizable(false);
         dialogTidakDitemukan.setSize(new java.awt.Dimension(181, 130));
 
