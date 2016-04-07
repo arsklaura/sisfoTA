@@ -120,7 +120,6 @@ public class View extends javax.swing.JFrame {
         menuView = new javax.swing.JMenu();
         menuViewDataDosen = new javax.swing.JMenuItem();
         menuViewDataMahasiswa = new javax.swing.JMenuItem();
-        menuLogout = new javax.swing.JMenu();
 
         dialogSelamatDatang.setLocation(new java.awt.Point(0, 0));
         dialogSelamatDatang.setResizable(false);
@@ -818,9 +817,6 @@ public class View extends javax.swing.JFrame {
 
         menuBar.add(menuView);
 
-        menuLogout.setText("Logout");
-        menuBar.add(menuLogout);
-
         setJMenuBar(menuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -1091,9 +1087,6 @@ public class View extends javax.swing.JFrame {
     public Object getMenuViewDataMahasiswa() {
         return menuViewDataMahasiswa;
     }
-    public Object getMenuLogout() {
-        return menuLogout;
-    }
     
     
     //GETTER PANEL AND DIALOG
@@ -1164,7 +1157,6 @@ public class View extends javax.swing.JFrame {
         menuLoginMahasiswa.addActionListener(e);
         menuLoginDosen.addActionListener(e);
         menuRegDosen.addActionListener(e);
-        menuLogout.addActionListener(e);
         menuRegMahasiswa.addActionListener(e);
         
         btnLoginDosen.addActionListener(e);
@@ -1234,7 +1226,6 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JMenu menuLogin;
     private javax.swing.JMenuItem menuLoginDosen;
     private javax.swing.JMenuItem menuLoginMahasiswa;
-    private javax.swing.JMenu menuLogout;
     private javax.swing.JMenuItem menuRegDosen;
     private javax.swing.JMenuItem menuRegMahasiswa;
     private javax.swing.JMenu menuRegistrasi;

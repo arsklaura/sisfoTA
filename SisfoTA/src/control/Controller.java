@@ -100,10 +100,6 @@ public class Controller implements ActionListener {
             view.getPanelViewDataDosen().setVisible(false);
             view.getPanelViewDataMahasiswa().setVisible(true);
         }
-        else if(source.equals(view.getMenuLogout())) {
-            dsn = null;
-            mhs = null;
-        }
         
         //GET BUTTON
         else if(source.equals(view.getBtnLoginDosen())) {
