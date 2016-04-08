@@ -108,9 +108,9 @@ public class Controller implements ActionListener {
                 String psw = view.getPswFieldDosen();
                 dsn = app.getDosen(id);
                 if(dsn != null) {
-                    view.setTxFieldSelamatDatang(dsn.nama);
+                    JOptionPane.showMessageDialog(null, "Selamat datang, "+dsn.nama, "Login berhasil",0);
                     view.getPanelLoginDosen().setVisible(false);
-                    view.getDialogSelamatDatang().setVisible(true);
+                    view.getFrameOlahDataDosen().setVisible(true);
                 } 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "ID atau password salah", "Login gagal", 0);
@@ -122,16 +122,12 @@ public class Controller implements ActionListener {
                 String psw = view.getPswFieldMahasiswa();
                 mhs = app.getMahasiswa(id);
                 if(mhs != null) {
-                    view.setTxFieldSelamatDatang(mhs.nama);
+                    JOptionPane.showMessageDialog(null, "Selamat datang, "+mhs.nama, "Login berhasil",0);
                     view.getPanelLoginMahasiswa().setVisible(false);
-                    view.getDialogSelamatDatang().setVisible(true);
                 } 
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "ID atau password salah", "Login gagal", 0);
             } 
-        }
-        else if(source.equals(view.getBtnOKSelamatDatang())) {
-            view.getDialogSelamatDatang().setVisible(false);
         }
         else if(source.equals(view.getBtnSubmitRegDosen())) {
             try {
@@ -187,6 +183,37 @@ public class Controller implements ActionListener {
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Data tidak ditemukan", "Peringatan", 0);
             }  
+        }
+        else if(source.equals(view.getBtnAddKelompokTA())) {
+            try {
+                String topik = JOptionPane.showInputDialog(null, "Judul topik TA : ", "Input", 0);
+                String jumAnggota = JOptionPane.showInputDialog(null, "Jumlah anggota : ", "Input", 0);
+                if (dsn.createKelompokTA(topik, Integer.parseInt(jumAnggota))) {
+                    JOptionPane.showMessageDialog(null, "no Kelompok : "+(dsn.getnTopikTA()-1), "Berhasil", 0);
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Sudah melebihi batas", "Gagal", 0);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Gagal");
+            }
+            
+        }
+        else if(source.equals(view.getBtnRmKelompokTA())) {
+            try {
+                String noKel = JOptionPane.showInputDialog(null, "Nomor kelompok : ", "Input", 0);
+                if (dsn.removeKelompokTA(Integer.parseInt(noKel))) {
+                    JOptionPane.showMessageDialog(null, "Berhasil");
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Kelompok tidak terdaftar", "Gagal", 0);
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Gagal");
+            }    
+        }
+        else if(source.equals(view.getBtnAddAnggota())) {
+            
         }
     }
 }

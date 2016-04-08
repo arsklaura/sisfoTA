@@ -7,6 +7,7 @@ package view;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
@@ -34,17 +35,13 @@ public class View extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        dialogSelamatDatang = new javax.swing.JDialog();
-        jLabel3 = new javax.swing.JLabel();
-        txFieldSelamatDatang = new javax.swing.JTextField();
-        btnOKSelamatDatang = new javax.swing.JButton();
         frameOlahDataDosen = new javax.swing.JFrame();
         jLabel32 = new javax.swing.JLabel();
         btnAddKelompokTA = new javax.swing.JButton();
-        btnRemoveKelompokTA = new javax.swing.JButton();
+        btnRmKelompokTA = new javax.swing.JButton();
         btnAddAnggota = new javax.swing.JButton();
-        btnRemoveAnggota = new javax.swing.JButton();
-        btnRevisiJudulTA = new javax.swing.JButton();
+        btnRmAnggota = new javax.swing.JButton();
+        btnReplacePembimbing = new javax.swing.JButton();
         btnLogoutDosen = new javax.swing.JButton();
         frameOlahDataMahasiswa = new javax.swing.JFrame();
         panelViewDataMahasiswa = new javax.swing.JPanel();
@@ -121,104 +118,84 @@ public class View extends javax.swing.JFrame {
         menuViewDataDosen = new javax.swing.JMenuItem();
         menuViewDataMahasiswa = new javax.swing.JMenuItem();
 
-        dialogSelamatDatang.setLocation(new java.awt.Point(0, 0));
-        dialogSelamatDatang.setResizable(false);
-        dialogSelamatDatang.setSize(new java.awt.Dimension(185, 130));
-        dialogSelamatDatang.setType(java.awt.Window.Type.POPUP);
-
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel3.setText("Selamat Datang");
-
-        txFieldSelamatDatang.setEditable(false);
-        txFieldSelamatDatang.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        txFieldSelamatDatang.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txFieldSelamatDatang.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        btnOKSelamatDatang.setText("OK");
-
-        javax.swing.GroupLayout dialogSelamatDatangLayout = new javax.swing.GroupLayout(dialogSelamatDatang.getContentPane());
-        dialogSelamatDatang.getContentPane().setLayout(dialogSelamatDatangLayout);
-        dialogSelamatDatangLayout.setHorizontalGroup(
-            dialogSelamatDatangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dialogSelamatDatangLayout.createSequentialGroup()
-                .addGroup(dialogSelamatDatangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(dialogSelamatDatangLayout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(jLabel3))
-                    .addGroup(dialogSelamatDatangLayout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addComponent(btnOKSelamatDatang)))
-                .addContainerGap(40, Short.MAX_VALUE))
-            .addComponent(txFieldSelamatDatang)
-        );
-        dialogSelamatDatangLayout.setVerticalGroup(
-            dialogSelamatDatangLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(dialogSelamatDatangLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(txFieldSelamatDatang, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnOKSelamatDatang)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
         frameOlahDataDosen.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        frameOlahDataDosen.setTitle("Olah Data Dosen");
+        frameOlahDataDosen.setPreferredSize(new java.awt.Dimension(244, 350));
+        frameOlahDataDosen.setResizable(false);
+        frameOlahDataDosen.setSize(new java.awt.Dimension(244, 350));
 
         jLabel32.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel32.setText("OLAH DATA DOSEN");
 
-        btnAddKelompokTA.setText("Buat Kelompok TA");
+        btnAddKelompokTA.setText("Add Kelompok TA");
 
-        btnRemoveKelompokTA.setText("Hapus Kelompok TA");
+        btnRmKelompokTA.setText("Remove Kelompok TA");
+        btnRmKelompokTA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRmKelompokTAActionPerformed(evt);
+            }
+        });
 
-        btnAddAnggota.setText("Tambah Anggota");
+        btnAddAnggota.setText("Add Anggota");
+        btnAddAnggota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddAnggotaActionPerformed(evt);
+            }
+        });
 
-        btnRemoveAnggota.setText("Hapus Anggota");
+        btnRmAnggota.setText("Remove Anggota");
 
-        btnRevisiJudulTA.setText("Revisi Judul TA");
+        btnReplacePembimbing.setText("Replace Pembimbing");
+        btnReplacePembimbing.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReplacePembimbingActionPerformed(evt);
+            }
+        });
 
         btnLogoutDosen.setText("Logout");
+        btnLogoutDosen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLogoutDosenActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout frameOlahDataDosenLayout = new javax.swing.GroupLayout(frameOlahDataDosen.getContentPane());
         frameOlahDataDosen.getContentPane().setLayout(frameOlahDataDosenLayout);
         frameOlahDataDosenLayout.setHorizontalGroup(
             frameOlahDataDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(frameOlahDataDosenLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(frameOlahDataDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnRmKelompokTA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAddKelompokTA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnAddAnggota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnRmAnggota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnReplacePembimbing, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLogoutDosen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frameOlahDataDosenLayout.createSequentialGroup()
-                .addGap(133, 133, 133)
-                .addGroup(frameOlahDataDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnRevisiJudulTA, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnAddAnggota, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnRemoveKelompokTA, javax.swing.GroupLayout.DEFAULT_SIZE, 141, Short.MAX_VALUE)
-                    .addGroup(frameOlahDataDosenLayout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(btnLogoutDosen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(btnRemoveAnggota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnAddKelompokTA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(126, 126, 126))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, frameOlahDataDosenLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(39, Short.MAX_VALUE)
                 .addComponent(jLabel32)
-                .addGap(117, 117, 117))
+                .addGap(37, 37, 37))
         );
         frameOlahDataDosenLayout.setVerticalGroup(
             frameOlahDataDosenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(frameOlahDataDosenLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel32)
                 .addGap(18, 18, 18)
+                .addComponent(jLabel32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnAddKelompokTA)
                 .addGap(18, 18, 18)
-                .addComponent(btnRemoveKelompokTA)
+                .addComponent(btnRmKelompokTA)
                 .addGap(18, 18, 18)
                 .addComponent(btnAddAnggota)
                 .addGap(18, 18, 18)
-                .addComponent(btnRemoveAnggota)
+                .addComponent(btnRmAnggota)
                 .addGap(18, 18, 18)
-                .addComponent(btnRevisiJudulTA)
+                .addComponent(btnReplacePembimbing)
                 .addGap(18, 18, 18)
                 .addComponent(btnLogoutDosen)
-                .addContainerGap(21, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout frameOlahDataMahasiswaLayout = new javax.swing.GroupLayout(frameOlahDataMahasiswa.getContentPane());
@@ -295,7 +272,7 @@ public class View extends javax.swing.JFrame {
         panelViewDataMahasiswaLayout.setHorizontalGroup(
             panelViewDataMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelViewDataMahasiswaLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(40, 40, 40)
                 .addGroup(panelViewDataMahasiswaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(panelViewDataMahasiswaLayout.createSequentialGroup()
@@ -311,7 +288,7 @@ public class View extends javax.swing.JFrame {
                     .addComponent(jLabel23, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel27, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(29, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelViewDataMahasiswaLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnOKViewDataMahasiswa)
@@ -981,11 +958,27 @@ public class View extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txFieldShowNamaMahasiswaActionPerformed
 
+    private void btnAddAnggotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddAnggotaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAddAnggotaActionPerformed
+
+    private void btnLogoutDosenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogoutDosenActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLogoutDosenActionPerformed
+
+    private void btnRmKelompokTAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRmKelompokTAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRmKelompokTAActionPerformed
+
+    private void btnReplacePembimbingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReplacePembimbingActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnReplacePembimbingActionPerformed
+
     /**
      * @param args the command line arguments
      */
     
-    //GETTER TEXT FIELD AND COMBO BOX
+    //GETTER TEXT FIELD, COMBO BOX, etc
     public int getTxFieldIdDosen() {
         return Integer.parseInt(txFieldIdDosen.getText());
     }
@@ -1035,10 +1028,7 @@ public class View extends javax.swing.JFrame {
     }
     
     
-    //GETTER MENU AND BUTTON
-    public Object getBtnOKSelamatDatang() {
-        return btnOKSelamatDatang;
-    }  
+    //GETTER MENU, BUTTON, etc
     public Object getBtnLoginDosen() {
         return btnLoginDosen;
     }
@@ -1087,18 +1077,40 @@ public class View extends javax.swing.JFrame {
     public Object getMenuViewDataMahasiswa() {
         return menuViewDataMahasiswa;
     }
+
+    public Object getBtnAddAnggota() {
+        return btnAddAnggota;
+    }
+
+    public Object getBtnAddKelompokTA() {
+        return btnAddKelompokTA;
+    }
+
+    public Object getBtnLogoutDosen() {
+        return btnLogoutDosen;
+    }
+
+    public Object getBtnReplacePembimbing() {
+        return btnReplacePembimbing;
+    }
+
+    public Object getBtnRmAnggota() {
+        return btnRmAnggota;
+    }
+
+    public Object getBtnRmKelompokTA() {
+        return btnRmKelompokTA;
+    }
     
     
-    //GETTER PANEL AND DIALOG
+    
+    //GETTER PANEL, etc
     public JPanel getPanelLoginDosen() {
         return panelLoginDosen;
     }
     public JPanel getPanelLoginMahasiswa() {
         return panelLoginMahasiswa;
     }
-    public JDialog getDialogSelamatDatang() {
-        return dialogSelamatDatang;
-    } 
     public JPanel getPanelRegDosen() {
         return panelRegDosen;
     }
@@ -1111,12 +1123,15 @@ public class View extends javax.swing.JFrame {
     public JPanel getPanelViewDataMahasiswa() {
         return panelViewDataMahasiswa;
     }
-    
-    
-    //SETTER TEXT FIELD
-    public void setTxFieldSelamatDatang(String nama) {
-        txFieldSelamatDatang.setText(nama);
+    public JFrame getFrameOlahDataDosen() {
+        return frameOlahDataDosen;
     }
+    public JFrame getFrameOlahDataMahasiswa() {
+        return frameOlahDataMahasiswa;
+    } 
+    
+    
+    //SETTER TEXT FIELD, etc
     public void setTxFieldShowNamaDosen(String nama) {
         txFieldShowNamaDosen.setText(nama);
     }
@@ -1161,12 +1176,17 @@ public class View extends javax.swing.JFrame {
         
         btnLoginDosen.addActionListener(e);
         btnLoginMahasiswa.addActionListener(e);
-        btnOKSelamatDatang.addActionListener(e);
         btnSubmitRegDosen.addActionListener(e);
         btnCancelRegDosen.addActionListener(e);
         btnCancelRegMahasiswa.addActionListener(e);
         btnSubmitRegMahasiswa.addActionListener(e);
         btnOKViewDataDosen.addActionListener(e);
+        btnAddKelompokTA.addActionListener(e);
+        btnRmKelompokTA.addActionListener(e);
+        btnAddAnggota.addActionListener(e);
+        btnRmAnggota.addActionListener(e);
+        btnReplacePembimbing.addActionListener(e);
+        btnLogoutDosen.addActionListener(e);
         
         cmBoxStatusPembimbing.addActionListener(e);
         btnOKViewDataMahasiswa.addActionListener(e);
@@ -1181,17 +1201,15 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JButton btnLoginDosen;
     private javax.swing.JButton btnLoginMahasiswa;
     private javax.swing.JButton btnLogoutDosen;
-    private javax.swing.JButton btnOKSelamatDatang;
     private javax.swing.JButton btnOKViewDataDosen;
     private javax.swing.JButton btnOKViewDataMahasiswa;
-    private javax.swing.JButton btnRemoveAnggota;
-    private javax.swing.JButton btnRemoveKelompokTA;
-    private javax.swing.JButton btnRevisiJudulTA;
+    private javax.swing.JButton btnReplacePembimbing;
+    private javax.swing.JButton btnRmAnggota;
+    private javax.swing.JButton btnRmKelompokTA;
     private javax.swing.JButton btnSubmitRegDosen;
     private javax.swing.JButton btnSubmitRegMahasiswa;
     private javax.swing.JComboBox<String> cmBoxStatusKP;
     private javax.swing.JComboBox<String> cmBoxStatusPembimbing;
-    private javax.swing.JDialog dialogSelamatDatang;
     private javax.swing.JFrame frameOlahDataDosen;
     private javax.swing.JFrame frameOlahDataMahasiswa;
     private javax.swing.JLabel jLabel1;
@@ -1212,7 +1230,6 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1251,7 +1268,6 @@ public class View extends javax.swing.JFrame {
     private javax.swing.JTextField txFieldNIP;
     private javax.swing.JTextField txFieldNamaDosen;
     private javax.swing.JTextField txFieldNamaMahasiswa;
-    private javax.swing.JTextField txFieldSelamatDatang;
     private javax.swing.JTextField txFieldShowJumlahKelompokTA;
     private javax.swing.JTextField txFieldShowJumlahSKS;
     private javax.swing.JTextField txFieldShowNIM;
