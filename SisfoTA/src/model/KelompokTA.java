@@ -23,14 +23,14 @@ public class KelompokTA implements Serializable {
     }
     
     public boolean addAnggota(Mahasiswa m) {
-        if(nAnggota < maxAnggota) {
+        if(m.getTugasAkhir() != null) {
             anggota[nAnggota] = m;
             nAnggota++; 
             return true;
         }  
         else {
             return false;
-        }
+        }  
     }
     public boolean removeAnggota(int noAnggota) {
         if(noAnggota < nAnggota) {
@@ -46,6 +46,10 @@ public class KelompokTA implements Serializable {
     }
     public int getnAnggota() {
         return nAnggota;
+    }
+
+    public String getTopik() {
+        return topik;
     }
     
     

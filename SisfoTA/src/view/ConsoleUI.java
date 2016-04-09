@@ -180,23 +180,15 @@ public class ConsoleUI {
             case 1 :
                 System.out.print("Judul Topik : ");topik = scanString.nextLine();
                 System.out.print("Jumlah Anggota : ");maxAnggota = scanAngka.nextInt();
-                if(dsn.createKelompokTA(topik, maxAnggota)) {
-                    System.out.println("Berhasil, noKelompok-"+(dsn.getnTopikTA()-1));
-                }
-                else {
-                    System.out.println("Gagal");
-                }
+                dsn.createKelompokTA(topik, maxAnggota);
+                System.out.println("Berhasil, noKelompok-"+(dsn.getnTopikTA()-1));
                 pressAnyKeyToContinue();
                 showMenuDosen();
                 break;
             case 2 :
                 System.out.print("Nomor Kelompok : ");noTopikTA = scanAngka.nextInt();
-                if(dsn.removeKelompokTA(noTopikTA)) {
-                    System.out.println("Berhasil, noKelompok-"+noTopikTA);
-                }
-                else {
-                    System.out.println("Gagal");
-                }
+                dsn.removeKelompokTA(noTopikTA);
+                System.out.println("Berhasil, noKelompok-"+noTopikTA);
                 pressAnyKeyToContinue();
                 showMenuDosen();
                 break;
@@ -230,12 +222,8 @@ public class ConsoleUI {
                 System.out.print("Nomor Anggota : ");noAnggota = scanAngka.nextInt();
                 System.out.print("Judul TA baru :");judulTA = scanString.nextLine();
                 mhs = dsn.getTopikTA(noTopikTA).getAnggota(noAnggota);
-                if(dsn.revisiJudulTA(noTopikTA, noAnggota, judulTA)) {
-                   System.out.println("Berhasil, judul TA "+mhs.nama+" telah diganti"); 
-                }
-                else {
-                    System.out.println("Gagal");
-                }
+                dsn.revisiJudulTA(noTopikTA, noAnggota, judulTA);
+                System.out.println("Berhasil, judul TA "+mhs.nama+" telah diganti"); 
                 pressAnyKeyToContinue();
                 showMenuDosen();
                 break;
@@ -243,12 +231,8 @@ public class ConsoleUI {
                 System.out.print("Nomor Kelompok :");noTopikTA = scanAngka.nextInt();
                 System.out.print("ID Dosen baru : ");id = scanAngka.nextInt();
                 newDosen = app.getDosen(id);
-                if(dsn.replacePembimbing(newDosen, noTopikTA)) {
-                    System.out.println("Berhasil, dipindah ke "+newDosen.nama);
-                }
-                else {
-                    System.out.println("Gagal");
-                }
+                dsn.replacePembimbing(newDosen, noTopikTA);
+                System.out.println("Berhasil, dipindah ke "+newDosen.nama);
                 pressAnyKeyToContinue();
                 showMenuDosen();
                 break;

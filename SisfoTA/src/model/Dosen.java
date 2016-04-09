@@ -27,20 +27,14 @@ public class Dosen extends Orang implements Serializable {
         topikTA = new KelompokTA[maxTopikTA];
     }
     
-    public boolean createKelompokTA(String topik, int maxAnggota) {
-        if(nTopikTA < maxTopikTA){
+    public void createKelompokTA(String topik, int maxAnggota) {
             topikTA[nTopikTA] = new KelompokTA(topik, maxAnggota);
             nTopikTA++;
-            return true;
-        }
-        else {
-            return false;
-        }
     }
  
     public boolean removeKelompokTA (int noTopikTA){
-        if(noTopikTA < nTopikTA) {
-           topikTA[noTopikTA] = null;
+        if(topikTA[noTopikTA] != null) {
+           topikTA[noTopikTA] = null; 
            return true;
         }
         else {
@@ -48,31 +42,15 @@ public class Dosen extends Orang implements Serializable {
         }
     }
     
-    public boolean replacePembimbing(Dosen newDosen, int noTopikTA){
-        if(newDosen.nTopikTA <= newDosen.maxTopikTA) {
+    public void replacePembimbing(Dosen newDosen, int noTopikTA){
            newDosen.topikTA[newDosen.nTopikTA] = topikTA[noTopikTA];
            newDosen.nTopikTA++;
            topikTA[noTopikTA] = null;
-           return true;
-        }
-        else {
-            return false;
-        }
     }
     
-    public boolean revisiJudulTA (int noTopikTA, int noAnggota, String judulTA){
-        if(noTopikTA <= nTopikTA) {
-            if(noAnggota <= topikTA[noTopikTA].getnAnggota()) {
-                topikTA[noTopikTA].getAnggota(noAnggota).getTugasAkhir().setJudulTA(judulTA);
-                return true;
-            }
-            else {
-                return false;
-            }
-        }
-        else {
-            return false;
-        }
+    public void revisiJudulTA (int noTopikTA, int noAnggota, String judulTA){
+        topikTA[noTopikTA].getAnggota(noAnggota).getTugasAkhir().
+                setJudulTA(judulTA);
     }
 
     @Override
@@ -95,6 +73,10 @@ public class Dosen extends Orang implements Serializable {
 
     public int getStatusPembimbing() {
         return statusPembimbing;
+    }
+
+    public int getMaxTopikTA() {
+        return maxTopikTA;
     }
     
 } 
