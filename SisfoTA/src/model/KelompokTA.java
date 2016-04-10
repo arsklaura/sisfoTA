@@ -33,7 +33,7 @@ public class KelompokTA implements Serializable {
         }  
     }
     public boolean removeAnggota(int noAnggota) {
-        if(noAnggota < nAnggota) {
+        if(anggota[noAnggota] != null) {
             anggota[noAnggota] = null;
             return true;
         }

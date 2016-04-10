@@ -173,30 +173,26 @@ public class Controller implements ActionListener {
         } else if (source.equals(view.getBtnAddKelompokTA())) {
             try {
                 String judul = JOptionPane.showInputDialog(null, "Judul Topik TA : ", "Add Kelompok TA", 0);
-                int jumlah = Integer.parseInt(JOptionPane.showInputDialog(null, "Jumlah Anggota : ", "Add Kelompok TA", 0));
-                dsn.createKelompokTA(judul, jumlah);
-                JOptionPane.showMessageDialog(null, "no Kelompok : " + (dsn.getnTopikTA() - 1), "Berhasil", 0);
-            } 
-            catch (ArrayIndexOutOfBoundsException e) {
+                if (judul != null) {
+                    int jumlah = Integer.parseInt(JOptionPane.showInputDialog(null, "Jumlah Anggota : ", "Add Kelompok TA", 0));
+                    dsn.createKelompokTA(judul, jumlah);
+                    JOptionPane.showMessageDialog(null, "no Kelompok : " + (dsn.getnTopikTA() - 1), "Berhasil", 0);
+                }
+            } catch (ArrayIndexOutOfBoundsException e) {
                 JOptionPane.showMessageDialog(null, "Sudah melebihi batas", "Gagal", 0);
-            } 
-            catch (Exception e) {
+            } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Gagal");
             }
         } else if (source.equals(view.getBtnRmKelompokTA())) {
             try {
                 int noKel = Integer.parseInt(JOptionPane.showInputDialog(null, "Nomor kelompok : ", "Remove Kelompok TA", 0));
-                if(dsn.removeKelompokTA(noKel)) {
-                   JOptionPane.showMessageDialog(null, "Berhasil"); 
-                }
-                else {
+                if (dsn.removeKelompokTA(noKel)) {
+                    JOptionPane.showMessageDialog(null, "Berhasil");
+                } else {
                     JOptionPane.showMessageDialog(null, "Kelompok masih kosong", "Gagal", 0);
                 }
-            } 
-            catch (ArrayIndexOutOfBoundsException e) {
-                JOptionPane.showMessageDialog(null, "Kelompok tidak terdaftar", "Gagal", 0);
-            } 
-            catch (Exception e) {
+
+            } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Gagal");
             }
         } else if (source.equals(view.getBtnAddAnggota())) {
@@ -210,19 +206,28 @@ public class Controller implements ActionListener {
                 }
             } catch (ArrayIndexOutOfBoundsException e) {
                 JOptionPane.showMessageDialog(null, "Sudah melebihi batas", "Gagal", 0);
-            }
-            catch (Exception e) {
+            } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Gagal");
             }
         } else if (source.equals(view.getBtnRmAnggota())) {
             try {
-                int noKel = Integer.parseInt(JOptionPane.showInputDialog(null, "Nomor kelompok :", "Add Anggota", 0));
-                int id = Integer.parseInt(JOptionPane.showInputDialog(null, "ID Mahasiswa :", "Add Anggota", 0));
-                dsn.getTopikTA(noKel).removeAnggota(id);
-            }
-            catch (Exception e) {
+                int noKel = Integer.parseInt(JOptionPane.showInputDialog(null, "Nomor kelompok :", "Remove Anggota", 0));
+                int id = Integer.parseInt(JOptionPane.showInputDialog(null, "ID Mahasiswa :", "Remove Anggota", 0));
+                if (dsn.getTopikTA(noKel).removeAnggota(id)) {
+                    JOptionPane.showMessageDialog(null, "Mahasiswa tidak terdaftar", "Gagal", 0);
+                }
+            } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Gagal");
             }
+        } else if (source.equals(view.getBtnReplacePembimbing())) {
+            try {
+
+            } catch (Exception e) {
+            }
+        } else if (source.equals(view.getBtnLogoutDosen())) {
+            dsn = null;
+            view.getFrameOlahDataDosen().setVisible(false);
         }
+
     }
 }
