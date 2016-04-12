@@ -140,16 +140,17 @@
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                          <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="btnRegTA" alignment="0" pref="155" max="32767" attributes="0"/>
                               <Component id="btnCreateTA" alignment="0" max="32767" attributes="0"/>
                               <Component id="btnLogoutMahasiswa" alignment="0" max="32767" attributes="0"/>
+                              <Component id="btnRevisiTA" max="32767" attributes="0"/>
                           </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                          <Component id="jLabel15" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="33" max="32767" attributes="0"/>
@@ -163,11 +164,13 @@
                   <Component id="jLabel15" min="-2" pref="17" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnCreateTA" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnRegTA" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="btnRevisiTA" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnLogoutMahasiswa" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="46" max="32767" attributes="0"/>
+                  <EmptySpace pref="21" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -197,6 +200,11 @@
               <Font name="Tahoma" size="14" style="0"/>
             </Property>
             <Property name="text" type="java.lang.String" value="OLAH DATA MAHASISWA"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnRevisiTA">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Revisi Judul TA"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -399,51 +407,46 @@
               </Group>
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace pref="31" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="1" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jLabel22" min="-2" pref="114" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txFieldGetIdDosen" min="-2" pref="198" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jLabel21" min="-2" pref="114" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txFieldShowNamaDosen" min="-2" pref="198" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jLabel20" min="-2" pref="114" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txFieldShowNIP" min="-2" pref="198" max="-2" attributes="0"/>
-                              </Group>
+                          <Component id="jLabel22" min="-2" pref="114" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txFieldGetIdDosen" min="-2" pref="198" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel21" min="-2" pref="114" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txFieldShowNamaDosen" min="-2" pref="198" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel20" min="-2" pref="114" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txFieldShowNIP" min="-2" pref="198" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel18" min="-2" pref="114" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="txFieldShowStatusDosen" min="-2" pref="198" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel14" min="-2" pref="114" max="-2" attributes="0"/>
+                              <Component id="jLabel19" min="-2" pref="114" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jLabel19" max="32767" attributes="0"/>
-                                      <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="txFieldKelompokTATerdaftar" max="32767" attributes="0"/>
-                                      <Component id="txFieldShowJumlahKelompokTA" pref="198" max="32767" attributes="0"/>
-                                  </Group>
+                                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                                  <Component id="btnOKViewDataDosen" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="jLabel18" min="-2" pref="114" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="txFieldShowStatusDosen" min="-2" pref="198" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="txFieldKelompokTATerdaftar" max="32767" attributes="0"/>
+                                  <Component id="txFieldShowJumlahKelompokTA" pref="198" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="btnOKViewDataDosen" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
                       </Group>
                   </Group>
+                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -482,9 +485,9 @@
                       <Component id="txFieldKelompokTATerdaftar" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel14" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="btnOKViewDataDosen" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -599,7 +602,6 @@
                           <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Component id="txFieldGetIdMahasiswa" pref="198" max="32767" attributes="0"/>
-                              <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
                               <Component id="txFieldShowNamaMahasiswa" alignment="0" pref="198" max="32767" attributes="0"/>
                               <Component id="txFieldShowNIM" alignment="0" pref="198" max="32767" attributes="0"/>
                               <Component id="txFieldShowJumlahSKS" alignment="0" pref="198" max="32767" attributes="0"/>
@@ -616,18 +618,26 @@
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
-                  <Component id="btnOKViewDataMahasiswa" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
+                  <EmptySpace pref="108" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="btnOKViewDataMahasiswa" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="jLabel26" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="unrelated" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="txFieldGetIdMahasiswa" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel17" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -1208,7 +1218,7 @@
         </Component>
         <Component class="javax.swing.JPasswordField" name="pswFieldMahasiswa">
           <Properties>
-            <Property name="text" type="java.lang.String" value="password"/>
+            <Property name="text" type="java.lang.String" value="00000"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnLoginMahasiswa">
@@ -1279,8 +1289,11 @@
         </Component>
         <Component class="javax.swing.JPasswordField" name="pswFieldDosen">
           <Properties>
-            <Property name="text" type="java.lang.String" value="password"/>
+            <Property name="text" type="java.lang.String" value="00000"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pswFieldDosenActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnLoginDosen">
           <Properties>

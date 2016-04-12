@@ -47,9 +47,11 @@ public class Controller implements ActionListener {
         if (source.equals(view.getMenuBukaFile())) {
             io.readFileDosen();
             io.readFileMahasiswa();
+            JOptionPane.showMessageDialog(null, "Berhasil dibuka");
         } else if (source.equals(view.getMenuSimpanFile())) {
             io.saveFileDosen();
             io.saveFileMahasiswa();
+            JOptionPane.showMessageDialog(null, "Berhasil disimpan");
         } else if (source.equals(view.getMenuLoginDosen())) {
             view.getPanelLoginMahasiswa().setVisible(false);
             view.getPanelRegDosen().setVisible(false);
@@ -134,8 +136,8 @@ public class Controller implements ActionListener {
             try {
                 System.out.println(view.getCmBoxStatusPembimbing());
                 view.getPanelRegDosen().setVisible(false);
-                app.addDosen(view.getTxFieldNamaDosen(),
-                        view.getTxFieldPswDosen(),
+                app.addDosen(view.getTxFieldPswDosen(),
+                        view.getTxFieldNamaDosen(),
                         view.getTxFieldNIP(),
                         view.getCmBoxStatusPembimbing(),
                         view.getTxFieldJumlahKelompokTA());
@@ -146,8 +148,8 @@ public class Controller implements ActionListener {
             }
         } else if (source.equals(view.getBtnSubmitRegMahasiswa())) {
             try {
-                app.addMahasiswa(view.getTxFieldNamaMahasiswa(),
-                        view.getTxFieldPswMahasiswa(),
+                app.addMahasiswa(view.getTxFieldPswMahasiswa(),
+                        view.getTxFieldNamaMahasiswa(),
                         view.getTxFieldNIM(),
                         view.getTxFieldJumlahSKS(),
                         view.getCmBoxStatusKP());
@@ -189,9 +191,9 @@ public class Controller implements ActionListener {
                     }
                 }
                 else {
-                    view.setTxFieldJudulTA("Kosong");
-                    view.setTxFieldPemb1("Kosong");
-                    view.setTxFieldPemb2("Kosong");
+                    view.setTxFieldJudulTA("Belum ada TA");
+                    view.setTxFieldPemb1("");
+                    view.setTxFieldPemb2("");
                 }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Data tidak ditemukan", "Peringatan", 0);
@@ -289,6 +291,25 @@ public class Controller implements ActionListener {
                 }
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(null, "Gagal");
+            }
+        }
+        else if (source.equals(view.getBtnRevisiTA())) {
+            try {
+                if(mhs.getTugasAkhir() != null) {
+                    String judul = JOptionPane.showInputDialog(null, "Judul TA baru: ");
+                    if(!judul.equals("")) {
+                        mhs.getTugasAkhir().setJudulTA(judul);
+                        JOptionPane.showMessageDialog(null, "Judul TA berhasil direvisi");
+                    }
+                    else {
+                        JOptionPane.showMessageDialog(null, "Judul tidak boleh kosong", "Gagal", 0);
+                    }
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Belum punya TA", "Gagal", 0);
+                }
+                
+            } catch (Exception e) {
             }
         }
         else if(source.equals(view.getBtnLogoutMahasiswa())) {

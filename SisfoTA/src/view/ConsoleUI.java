@@ -171,7 +171,7 @@ public class ConsoleUI {
         System.out.println("2. Hapus Kelompok TA");
         System.out.println("3. Tambah Anggota");
         System.out.println("4. Hapus Anggota");
-        System.out.println("5. Revisi Judul TA");
+//        System.out.println("5. Revisi Judul TA");
         System.out.println("6. Ganti Pembimbing");
         System.out.println("7. Kembali");
         System.out.print("Pilihan Anda  : ");
@@ -217,16 +217,16 @@ public class ConsoleUI {
                 pressAnyKeyToContinue();
                 showMenuDosen();
                 break;
-            case 5 :
-                System.out.print("Nomor Kelompok : ");noTopikTA = scanAngka.nextInt();
-                System.out.print("Nomor Anggota : ");noAnggota = scanAngka.nextInt();
-                System.out.print("Judul TA baru :");judulTA = scanString.nextLine();
-                mhs = dsn.getTopikTA(noTopikTA).getAnggota(noAnggota);
-                dsn.revisiJudulTA(noTopikTA, noAnggota, judulTA);
-                System.out.println("Berhasil, judul TA "+mhs.nama+" telah diganti"); 
-                pressAnyKeyToContinue();
-                showMenuDosen();
-                break;
+//            case 5 :
+//                System.out.print("Nomor Kelompok : ");noTopikTA = scanAngka.nextInt();
+//                System.out.print("Nomor Anggota : ");noAnggota = scanAngka.nextInt();
+//                System.out.print("Judul TA baru :");judulTA = scanString.nextLine();
+//                mhs = dsn.getTopikTA(noTopikTA).getAnggota(noAnggota);
+//                dsn.revisiJudulTA(noTopikTA, noAnggota, judulTA);
+//                System.out.println("Berhasil, judul TA "+mhs.nama+" telah diganti"); 
+//                pressAnyKeyToContinue();
+//                showMenuDosen();
+//                break;
             case 6 :
                 System.out.print("Nomor Kelompok :");noTopikTA = scanAngka.nextInt();
                 System.out.print("ID Dosen baru : ");id = scanAngka.nextInt();
@@ -253,7 +253,8 @@ public class ConsoleUI {
         System.out.println("==Menu Mahasiswa==");
         System.out.println("1. Buat Tugas Akhir");
         System.out.println("2. Daftar Tugas Akhir");
-        System.out.println("3. Kembali");
+        System.out.println("3. Revisi Judul TA");
+        System.out.println("4. Kembali");
         System.out.print("Pilihan Anda  : ");
         pil = scanAngka.nextByte();
         switch(pil) {
@@ -282,10 +283,23 @@ public class ConsoleUI {
                 showMenuMahasiswa();
                 break;
             case 3 :
+                System.out.print("Judul TA baru : ");judulTA = scanString.nextLine();
+                if(mhs.getTugasAkhir() != null) {
+                    mhs.getTugasAkhir().setJudulTA(judulTA);
+                    System.out.println("Berhasil");
+                }
+                else {
+                    System.out.println("Gagal, belum punya TA");
+                }
+            case 4 :
                 mhs = null;
                 dsn = null;
                 showMenu();
                 break;
+            default :
+                System.out.println("Pilihan salah");
+                pressAnyKeyToContinue();
+                showMenuMahasiswa();
         }
     }
     
