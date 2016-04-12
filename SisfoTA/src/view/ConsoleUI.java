@@ -107,7 +107,7 @@ public class ConsoleUI {
                 System.out.print("NIP   : ");nip = scanAngka.nextLong();
                 System.out.print("Status [1/2] : ");statusPembimbing = scanAngka.nextInt();
                 System.out.print("Jumlah Kelompok TA : ");maxTopikTA = scanAngka.nextInt();
-                app.addDosen(nama, nip, statusPembimbing, maxTopikTA);
+                app.addDosen(null, nama, nip, statusPembimbing, maxTopikTA);
                 System.out.println("Registrasi BERHASIL, DSN-"+app.listDosen.size());
                 pressAnyKeyToContinue();
                 showRegistrasi();
@@ -124,7 +124,7 @@ public class ConsoleUI {
                 else {
                     statusKP = false;
                 }
-                app.addMahasiswa(nama, nim, nSKS, statusKP);
+                app.addMahasiswa(null, nama, nim, nSKS, statusKP);
                 System.out.println("Registrasi BERHASIL, MHS-"+app.listMahasiswa.size());
                 pressAnyKeyToContinue();
                 showRegistrasi();
@@ -270,9 +270,9 @@ public class ConsoleUI {
                 break;
             case 2 :
                 System.out.print("ID Dosen : ");id = scanAngka.nextInt();
-                System.out.print("No Pembimbing [0/1] : ");noPembimbing = scanAngka.nextInt();
+                System.out.print("No Pembimbing [1/2] : ");noPembimbing = scanAngka.nextInt();
                 dsn = app.getDosen(id);
-                if(mhs.getTugasAkhir().SetPembimbing(dsn, noPembimbing)) {
+                if(mhs.getTugasAkhir().setPembimbing(dsn, noPembimbing)) {
                     System.out.println("Berhasil");
                 }
                 else {

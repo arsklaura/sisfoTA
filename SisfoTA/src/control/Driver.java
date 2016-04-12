@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package control;
 
 import control.FileIO;
 import view.ConsoleUI;
 import model.Application;
 import control.Controller;
+import model.Application;
 
 /**
  *
@@ -23,10 +24,10 @@ public class Driver {
         FileIO io = new FileIO(app);
         Controller control = new Controller(app, io);
         
-        app.addDosen("alim", 1234, 2, 5);
-        app.addDosen("zul", 4321, 1, 4);
-        app.addMahasiswa("agung", 1301144142, 100, true);
-        app.addMahasiswa("budi", 1441231, 90, false);
+        app.addDosen("1234","alim", 1234, 2, 5);
+        app.addDosen("1234","zul", 4321, 1, 4);
+        app.addMahasiswa("0000","agung", 1301144142, 100, true);
+        app.addMahasiswa("0000","budi", 1441231, 90, false);
                
 //        ConsoleUI ui = new ConsoleUI(app, io);
 //        ui.showMenu();

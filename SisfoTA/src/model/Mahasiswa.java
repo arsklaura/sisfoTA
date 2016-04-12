@@ -16,7 +16,8 @@ public class Mahasiswa extends Orang implements Serializable {
     private boolean statusKP = false;
     private final long nim;
     
-    public Mahasiswa(String nama, long nim, int nSKS, boolean statusKP) {
+    public Mahasiswa(String password, String nama, long nim, int nSKS, boolean statusKP) {
+        this.password = password;
         this.nama = nama;
         this.nim = nim;
         this.nSKS = nSKS;

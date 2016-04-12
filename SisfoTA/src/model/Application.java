@@ -21,12 +21,12 @@ public class Application {
         listDosen = new ArrayList();
     }
     
-    public void addDosen(String nama, long nip, int statusPembimbing,int maxTopikTA) {
-        listDosen.add(new Dosen(nama, nip, statusPembimbing, maxTopikTA));
+    public void addDosen(String password, String nama, long nip, int statusPembimbing,int maxTopikTA) {
+        listDosen.add(new Dosen(password, nama, nip, statusPembimbing, maxTopikTA));
     }
     
-    public void addMahasiswa(String nama, long nim, int nSKS, boolean statusKP) {
-        listMahasiswa.add(new Mahasiswa(nama, nim, nSKS, statusKP));
+    public void addMahasiswa(String password, String nama, long nim, int nSKS, boolean statusKP) {
+        listMahasiswa.add(new Mahasiswa(password, nama, nim, nSKS, statusKP));
     }
     
     public Dosen getDosen(int idDosen) {

@@ -17,7 +17,8 @@ public class Dosen extends Orang implements Serializable {
     private int statusPembimbing = 0;
     private final long nip;
    
-    public Dosen(String nama, long nip, int statusPembimbing,int maxTopikTA) {
+    public Dosen(String password, String nama, long nip, int statusPembimbing,int maxTopikTA) {
+        this.password = password;
         this.nama = nama;
         this.nip = nip;
         this.maxTopikTA = maxTopikTA;
