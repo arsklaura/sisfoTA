@@ -5,10 +5,7 @@
  */
 package control;
 
-import control.FileIO;
 import view.ConsoleUI;
-import model.Application;
-import control.Controller;
 import model.Application;
 
 /**
@@ -22,7 +19,7 @@ public class Driver {
     public static void main(String[] args) {
         Application app = new Application();
         FileIO io = new FileIO(app);
-        Controller control = new Controller(app, io);
+        NewController control = new NewController(app, io);
         
         app.addDosen("1234","alim", 1234, 2, 5);
         app.addDosen("1234","zul", 4321, 1, 4);
