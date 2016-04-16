@@ -34,7 +34,7 @@
                   </Group>
                   <Component id="txFieldId" alignment="1" max="32767" attributes="0"/>
                   <Component id="jLabel2" alignment="1" max="32767" attributes="0"/>
-                  <Component id="pswFieldPassword" alignment="1" max="32767" attributes="0"/>
+                  <Component id="pswField" alignment="1" max="32767" attributes="0"/>
               </Group>
               <EmptySpace pref="47" max="32767" attributes="0"/>
           </Group>
@@ -48,7 +48,7 @@
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="txFieldId" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="pswFieldPassword" min="-2" max="-2" attributes="0"/>
+              <Component id="pswField" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="btnLogin" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -65,7 +65,7 @@
         <Property name="text" type="java.lang.String" value="ID Mahasiswa"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JPasswordField" name="pswFieldPassword">
+    <Component class="javax.swing.JPasswordField" name="pswField">
       <Properties>
         <Property name="text" type="java.lang.String" value="00000"/>
       </Properties>

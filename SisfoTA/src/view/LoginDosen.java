@@ -32,7 +32,7 @@ public class LoginDosen extends javax.swing.JFrame implements View {
 
         jLabel1 = new javax.swing.JLabel();
         txFieldId = new javax.swing.JTextField();
-        pswFieldPassword = new javax.swing.JPasswordField();
+        pswField = new javax.swing.JPasswordField();
         btnLogin = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
 
@@ -44,10 +44,10 @@ public class LoginDosen extends javax.swing.JFrame implements View {
 
         txFieldId.setText("ID Dosen");
 
-        pswFieldPassword.setText("00000");
-        pswFieldPassword.addActionListener(new java.awt.event.ActionListener() {
+        pswField.setText("00000");
+        pswField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pswFieldPasswordActionPerformed(evt);
+                pswFieldActionPerformed(evt);
             }
         });
 
@@ -66,7 +66,7 @@ public class LoginDosen extends javax.swing.JFrame implements View {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txFieldId, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(pswFieldPassword, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addComponent(pswField, javax.swing.GroupLayout.Alignment.TRAILING)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(39, 39, 39)
                         .addComponent(btnLogin)
@@ -82,7 +82,7 @@ public class LoginDosen extends javax.swing.JFrame implements View {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(pswFieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pswField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLogin)
@@ -93,9 +93,9 @@ public class LoginDosen extends javax.swing.JFrame implements View {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void pswFieldPasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pswFieldPasswordActionPerformed
+    private void pswFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pswFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_pswFieldPasswordActionPerformed
+    }//GEN-LAST:event_pswFieldActionPerformed
 
     /**
      * @param args the command line arguments
@@ -109,19 +109,18 @@ public class LoginDosen extends javax.swing.JFrame implements View {
         return btnCancel;
     }
     
-    
     public int getTxFieldId() {
         return Integer.parseInt(txFieldId.getText());
     }
-    public String getPswFieldPassword() {
-        return pswFieldPassword.getText();
+    public String getPswField() {
+        return pswField.getText();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnLogin;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPasswordField pswFieldPassword;
+    private javax.swing.JPasswordField pswField;
     private javax.swing.JTextField txFieldId;
     // End of variables declaration//GEN-END:variables
 

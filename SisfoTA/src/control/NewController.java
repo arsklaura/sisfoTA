@@ -147,7 +147,7 @@ public class NewController implements ActionListener {
             if (source.equals(x.getBtnLogin())) {
                 try {
                     idDosen = x.getTxFieldId();
-                    String psw = x.getPswFieldPassword();
+                    String psw = x.getPswField();
                     dsn = app.getDosen(idDosen);
                     if (dsn != null) {
                         nama = dsn.nama;
@@ -172,7 +172,7 @@ public class NewController implements ActionListener {
             if (source.equals(x.getBtnLogin())) {
                 try {
                     int id = x.getTxFieldId();
-                    String psw = x.getPswFieldPassword();
+                    String psw = x.getPswField();
                     mhs = app.getMahasiswa(id);
                     if (mhs != null) {
                         nama = mhs.nama;
@@ -399,10 +399,14 @@ public class NewController implements ActionListener {
                     x.setTxFieldStatus(app.getDosen(id).getStatusPembimbing());
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null, "Data tidak ditemukan", "Peringatan", 0);
+                    x.clear();
                 }
             } else if (source.equals(x.getBtnBack())) {
                 gotoMenuUtama();
                 x.dispose();
+            }
+            else if(source.equals(x.getBtnClear())) {
+                x.clear();
             }
 
         } else if (view instanceof LihatDataMahasiswa) {
@@ -429,10 +433,14 @@ public class NewController implements ActionListener {
                     }
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null, "Data tidak ditemukan", "Peringatan", 0);
+                    x.clear();
                 }
             } else if (source.equals(x.getBtnBack())) {
                 gotoMenuUtama();
                 x.dispose();
+            }
+            else if(source.equals(x.getBtnClear())) {
+                x.clear();
             }
         }
     }

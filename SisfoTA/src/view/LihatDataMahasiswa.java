@@ -49,6 +49,7 @@ public class LihatDataMahasiswa extends javax.swing.JFrame implements View {
         jLabel23 = new javax.swing.JLabel();
         txFieldPemb1 = new javax.swing.JTextField();
         btnBack = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Lihat Data Mahasiswa");
@@ -136,6 +137,8 @@ public class LihatDataMahasiswa extends javax.swing.JFrame implements View {
 
         btnBack.setText("Back");
 
+        btnClear.setText("Clear");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -146,11 +149,6 @@ public class LihatDataMahasiswa extends javax.swing.JFrame implements View {
                 .addGap(112, 112, 112))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnOK)
-                        .addGap(110, 110, 110)
-                        .addComponent(btnBack))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(40, 40, 40)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -173,7 +171,15 @@ public class LihatDataMahasiswa extends javax.swing.JFrame implements View {
                                     .addComponent(txFieldStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
                                     .addComponent(txFieldJudulTA)
                                     .addComponent(txFieldPemb1)
-                                    .addComponent(txFieldPemb2))))))
+                                    .addComponent(txFieldPemb2))))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnOK)
+                        .addGap(101, 101, 101)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnBack, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnClear, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -181,7 +187,7 @@ public class LihatDataMahasiswa extends javax.swing.JFrame implements View {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel26)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel17))
@@ -213,13 +219,12 @@ public class LihatDataMahasiswa extends javax.swing.JFrame implements View {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txFieldPemb2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel29))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(btnBack))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(btnOK)))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnClear)
+                    .addComponent(btnOK))
+                .addGap(3, 3, 3)
+                .addComponent(btnBack)
                 .addContainerGap())
         );
 
@@ -269,8 +274,23 @@ public class LihatDataMahasiswa extends javax.swing.JFrame implements View {
     public JButton getBtnBack() {
         return btnBack;
     }
-    
 
+    public JButton getBtnClear() {
+        return btnClear;
+    }
+    
+    
+    public void clear() {
+        txFieldNSKS.setText("");
+        txFieldNIM.setText("");
+        txFieldNama.setText("");
+        txFieldStatus.setText("");
+        txFieldJudulTA.setText("");
+        txFieldPemb1.setText("");
+        txFieldPemb2.setText("");
+        txFieldId.setText("");
+    }
+    
     public void setTxFieldNSKS(int jumlahSKS) {
         txFieldNSKS.setText(Integer.toString(jumlahSKS));
     }
@@ -311,6 +331,7 @@ public class LihatDataMahasiswa extends javax.swing.JFrame implements View {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnClear;
     private javax.swing.JButton btnOK;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel23;
@@ -335,5 +356,6 @@ public class LihatDataMahasiswa extends javax.swing.JFrame implements View {
     public void addListener(ActionListener e) {
         btnOK.addActionListener(e);
         btnBack.addActionListener(e);
+        btnClear.addActionListener(e);
     }
 }

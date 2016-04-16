@@ -31,7 +31,7 @@ public class LoginMahasiswa extends javax.swing.JFrame implements View{
     private void initComponents() {
 
         txFieldId = new javax.swing.JTextField();
-        pswFieldPassword = new javax.swing.JPasswordField();
+        pswField = new javax.swing.JPasswordField();
         btnLogin = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         btnCancel = new javax.swing.JButton();
@@ -41,7 +41,7 @@ public class LoginMahasiswa extends javax.swing.JFrame implements View{
 
         txFieldId.setText("ID Mahasiswa");
 
-        pswFieldPassword.setText("00000");
+        pswField.setText("00000");
 
         btnLogin.setText("Login");
 
@@ -63,7 +63,7 @@ public class LoginMahasiswa extends javax.swing.JFrame implements View{
                         .addComponent(btnCancel))
                     .addComponent(txFieldId, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pswFieldPassword, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(pswField, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -74,7 +74,7 @@ public class LoginMahasiswa extends javax.swing.JFrame implements View{
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txFieldId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(pswFieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pswField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLogin)
@@ -97,12 +97,11 @@ public class LoginMahasiswa extends javax.swing.JFrame implements View{
         return btnCancel;
     }
     
-    
     public int getTxFieldId() {
         return Integer.parseInt(txFieldId.getText());
     }
-    public String getPswFieldPassword() {
-        return pswFieldPassword.getText();
+    public String getPswField() {
+        return pswField.getText();
     }
     
 
@@ -110,7 +109,7 @@ public class LoginMahasiswa extends javax.swing.JFrame implements View{
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnLogin;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPasswordField pswFieldPassword;
+    private javax.swing.JPasswordField pswField;
     private javax.swing.JTextField txFieldId;
     // End of variables declaration//GEN-END:variables
 

@@ -45,6 +45,7 @@ public class LihatDataDosen extends javax.swing.JFrame implements View {
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         btnBack = new javax.swing.JButton();
+        btnClear = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Lihat Data Dosen");
@@ -109,6 +110,8 @@ public class LihatDataDosen extends javax.swing.JFrame implements View {
 
         btnBack.setText("Back");
 
+        btnClear.setText("clear");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -122,9 +125,6 @@ public class LihatDataDosen extends javax.swing.JFrame implements View {
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(136, 136, 136)
                                         .addComponent(jLabel6))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(173, 173, 173)
-                                        .addComponent(btnOK))
                                     .addGroup(layout.createSequentialGroup()
                                         .addContainerGap()
                                         .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -163,7 +163,12 @@ public class LihatDataDosen extends javax.swing.JFrame implements View {
                         .addGap(0, 36, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(btnBack)))
+                        .addComponent(btnBack))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnOK)
+                        .addGap(107, 107, 107)
+                        .addComponent(btnClear)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -195,9 +200,11 @@ public class LihatDataDosen extends javax.swing.JFrame implements View {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txFieldTerdaftar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14))
-                .addGap(28, 28, 28)
-                .addComponent(btnOK)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnOK)
+                    .addComponent(btnClear))
+                .addGap(7, 7, 7)
                 .addComponent(btnBack)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -237,6 +244,20 @@ public class LihatDataDosen extends javax.swing.JFrame implements View {
         return btnBack;
     }
 
+    public JButton getBtnClear() {
+        return btnClear;
+    }
+    
+    
+
+    public void clear() {
+        txFieldNama.setText("");
+        txFieldNIP.setText("");
+        txFieldStatus.setText("");
+        txFieldNKelompok.setText("");
+        txFieldTerdaftar.setText("");
+        txFieldId.setText("");
+    }
     
     public int getTxFieldId() {
         return Integer.parseInt(txFieldId.getText());
@@ -263,6 +284,7 @@ public class LihatDataDosen extends javax.swing.JFrame implements View {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBack;
+    private javax.swing.JButton btnClear;
     private javax.swing.JButton btnOK;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel18;
@@ -283,5 +305,6 @@ public class LihatDataDosen extends javax.swing.JFrame implements View {
     public void addListener(ActionListener e) {
         btnOK.addActionListener(e);
         btnBack.addActionListener(e);
+        btnClear.addActionListener(e);
     }
 }
