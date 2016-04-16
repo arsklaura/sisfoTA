@@ -132,7 +132,7 @@ public class OlahDataMahasiswa extends javax.swing.JFrame implements View {
     }
 
     public void setTxFieldNama(String s) {
-        txFieldNama.setText(s);
+        txFieldNama.setText("Hai, "+s);
     }
     
     

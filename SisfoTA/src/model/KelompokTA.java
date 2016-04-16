@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package model;
+
 import java.io.Serializable;
 
 /**
@@ -11,39 +12,41 @@ import java.io.Serializable;
  * @author agungrb
  */
 public class KelompokTA implements Serializable {
+
     private String topik;
     private Mahasiswa[] anggota;
     private final int maxAnggota;
     private int nAnggota;
-    
+
     public KelompokTA(String topik, int maxAnggota) {
         this.maxAnggota = maxAnggota;
         this.topik = topik;
         anggota = new Mahasiswa[maxAnggota];
     }
-    
+
     public boolean addAnggota(Mahasiswa m) {
-        if(m.getTugasAkhir() != null) {
+        if (m.getTugasAkhir() != null) {
             anggota[nAnggota] = m;
-            nAnggota++; 
+            nAnggota++;
             return true;
-        }  
-        else {
+        } else {
             return false;
-        }  
+        }
     }
+
     public boolean removeAnggota(int noAnggota) {
-        if(anggota[noAnggota] != null) {
+        if (anggota[noAnggota] != null) {
             anggota[noAnggota] = null;
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
+
     public Mahasiswa getAnggota(int noAnggota) {
         return anggota[noAnggota];
     }
+
     public int getnAnggota() {
         return nAnggota;
     }
@@ -51,6 +54,5 @@ public class KelompokTA implements Serializable {
     public String getTopik() {
         return topik;
     }
-    
-    
+
 }

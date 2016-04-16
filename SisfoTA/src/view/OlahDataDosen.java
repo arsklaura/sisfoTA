@@ -68,6 +68,7 @@ public class OlahDataDosen extends javax.swing.JFrame implements View {
         txFieldNama.setEditable(false);
         txFieldNama.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         txFieldNama.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txFieldNama.setText("Hai,");
         txFieldNama.setBorder(null);
 
         jLabel32.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -82,7 +83,7 @@ public class OlahDataDosen extends javax.swing.JFrame implements View {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 46, Short.MAX_VALUE)
                 .addComponent(jLabel32)
                 .addGap(41, 41, 41))
             .addGroup(layout.createSequentialGroup()
@@ -90,7 +91,7 @@ public class OlahDataDosen extends javax.swing.JFrame implements View {
                 .addComponent(txFieldNama)
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addGap(45, 45, 45)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnRmKelompokTA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnAddKelompokTA, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -98,7 +99,7 @@ public class OlahDataDosen extends javax.swing.JFrame implements View {
                     .addComponent(btnRmAnggota, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnReplacePembimbing, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(btnLogout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -140,7 +141,6 @@ public class OlahDataDosen extends javax.swing.JFrame implements View {
     /**
      * @param args the command line arguments
      */
-
     public JButton getBtnAddAnggota() {
         return btnAddAnggota;
     }

@@ -28,12 +28,14 @@ import view.View;
  */
 public class NewController implements ActionListener {
 
-    Application app;
-    View view;
-    FileIO file;
+    private Application app;
+    private View view;
+    private FileIO file;
 
-    Mahasiswa mhs;
-    Dosen dsn;
+    private Mahasiswa mhs;
+    private Dosen dsn;
+    private String nama;
+    private int idDosen;
 
     public NewController(Application app, FileIO file) {
         this.app = app;
@@ -92,6 +94,7 @@ public class NewController implements ActionListener {
 
     public void gotoOlahDataMahasiswa() {
         OlahDataMahasiswa x = new OlahDataMahasiswa();
+        x.setTxFieldNama(nama);
         x.setVisible(true);
         x.addListener(this);
         view = x;
@@ -99,6 +102,7 @@ public class NewController implements ActionListener {
 
     public void gotoOlahDataDosen() {
         OlahDataDosen x = new OlahDataDosen();
+        x.setTxFieldNama(nama);
         x.setVisible(true);
         x.addListener(this);
         view = x;
@@ -142,10 +146,11 @@ public class NewController implements ActionListener {
             LoginDosen x = (LoginDosen) view;
             if (source.equals(x.getBtnLogin())) {
                 try {
-                    int id = x.getTxFieldId();
+                    idDosen = x.getTxFieldId();
                     String psw = x.getPswFieldPassword();
-                    dsn = app.getDosen(id);
+                    dsn = app.getDosen(idDosen);
                     if (dsn != null) {
+                        nama = dsn.nama;
                         if (dsn.password.equals(psw)) {
                             JOptionPane.showMessageDialog(null, "Selamat datang, " + dsn.nama, "Login berhasil", 0);
                             gotoOlahDataDosen();
@@ -157,8 +162,7 @@ public class NewController implements ActionListener {
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null, "ID atau password salah", "Login gagal", 0);
                 }
-            }
-            else if(source.equals(x.getBtnCancel())) {
+            } else if (source.equals(x.getBtnCancel())) {
                 gotoMenuUtama();
                 x.dispose();
             }
@@ -171,6 +175,7 @@ public class NewController implements ActionListener {
                     String psw = x.getPswFieldPassword();
                     mhs = app.getMahasiswa(id);
                     if (mhs != null) {
+                        nama = mhs.nama;
                         if (mhs.password.equals(psw)) {
                             JOptionPane.showMessageDialog(null, "Selamat datang, " + mhs.nama, "Login berhasil", 0);
                             gotoOlahDataMahasiswa();
@@ -182,8 +187,7 @@ public class NewController implements ActionListener {
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null, "ID atau password salah", "Login gagal", 0);
                 }
-            }
-            else if(source.equals(x.getBtnCancel())) {
+            } else if (source.equals(x.getBtnCancel())) {
                 gotoMenuUtama();
                 x.dispose();
             }
@@ -229,14 +233,24 @@ public class NewController implements ActionListener {
 
         } else if (view instanceof OlahDataDosen) {
             OlahDataDosen x = (OlahDataDosen) view;
+            x.setTxFieldNama(dsn.nama);
             if (source.equals(x.getBtnAddAnggota())) {
                 try {
                     int noKel = Integer.parseInt(JOptionPane.showInputDialog(null, "Nomor kelompok :", "Add Anggota", 0));
-                    int id = Integer.parseInt(JOptionPane.showInputDialog(null, "ID Mahasiswa :", "Add Anggota", 0));
-                    if (dsn.getTopikTA(noKel).addAnggota(app.getMahasiswa(id))) {
-                        JOptionPane.showMessageDialog(null, "Nama : " + app.getMahasiswa(id).nama, "Berhasil", 0);
+                    if (dsn.getTopikTA(noKel) != null) {
+                        int id = Integer.parseInt(JOptionPane.showInputDialog(null, "ID Mahasiswa :", "Add Anggota", 0));
+                        if (app.getMahasiswa(id) != null) {
+                            if (dsn.getTopikTA(noKel).addAnggota(app.getMahasiswa(id))) {
+                                JOptionPane.showMessageDialog(null, "Nama : " + app.getMahasiswa(id).nama, "Berhasil", 0);
+                            } else {
+                                JOptionPane.showMessageDialog(null, "Mahasiswa belum punya TA", "Gagal", 0);
+                            }
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Mahasiswa tidak terdaftar", "Gagal", 0);
+                        }
+
                     } else {
-                        JOptionPane.showMessageDialog(null, "Mahasiswa belum punya TA", "Gagal", 0);
+                        JOptionPane.showMessageDialog(null, "Kelompok tidak terdaftar", "Gagal", 0);
                     }
                 } catch (ArrayIndexOutOfBoundsException e) {
                     JOptionPane.showMessageDialog(null, "Sudah melebihi batas", "Gagal", 0);
@@ -245,12 +259,19 @@ public class NewController implements ActionListener {
                 }
             } else if (source.equals(x.getBtnRmAnggota())) {
                 try {
-                    int noKel = Integer.parseInt(JOptionPane.showInputDialog(null, "Nomor kelompok :", "Remove Anggota", 0));
-                    int id = Integer.parseInt(JOptionPane.showInputDialog(null, "ID Mahasiswa :", "Remove Anggota", 0));
-                    if (dsn.getTopikTA(noKel).removeAnggota(id)) {
-                        JOptionPane.showMessageDialog(null, "Nama : " + app.getMahasiswa(id).nama, "Berhasil", 0);
+                    int noKel = Integer.parseInt(JOptionPane.showInputDialog(null, "Nomor kelompok :"));
+                    if (dsn.getTopikTA(noKel) != null) {
+                        int id = Integer.parseInt(JOptionPane.showInputDialog(null, "Nomor anggota :"));
+                        if (dsn.getTopikTA(noKel).removeAnggota(id)) {
+                            JOptionPane.showMessageDialog(null, "Nama : " + app.getMahasiswa(id).nama, "Berhasil", 0);
+                        }
+                        else {
+                            JOptionPane.showMessageDialog(null, "Mahasiswa tidak terdaftar", "Gagal", 0);
+                        }
                     }
-                    JOptionPane.showMessageDialog(null, "Mahasiswa tidak terdaftar", "Gagal", 0);
+                    else {
+                        JOptionPane.showMessageDialog(null, "Kelompok tidak terdaftar", "Gagal", 0);
+                    }
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null, "Gagal");
                 }
@@ -282,6 +303,24 @@ public class NewController implements ActionListener {
                     JOptionPane.showMessageDialog(null, "Gagal");
                 }
             } else if (source.equals(x.getBtnReplacePembimbing())) {
+                try {
+                    int id = Integer.parseInt(JOptionPane.showInputDialog(null, "ID Dosen baru : "));
+                    if (id != idDosen) {
+                        int nokel = Integer.parseInt(JOptionPane.showInputDialog(null, "No kelompok : "));
+                        if (dsn.replacePembimbing(app.getDosen(id), nokel)) {
+                            JOptionPane.showMessageDialog(null, "Berhasil");
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Kelompok tidak terdaftar", "Gagal", 0);
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Masukkan ID dosen lain!!", "Gagal", 0);
+                    }
+
+                } catch (ArrayIndexOutOfBoundsException e) {
+                    JOptionPane.showMessageDialog(null, "Dosen atau kelompok\ntidak terdaftar", "Gagal", 0);
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(null, "Gagal");
+                }
 
             } else if (source.equals(x.getBtnLogout())) {
                 dsn = null;
@@ -291,6 +330,7 @@ public class NewController implements ActionListener {
 
         } else if (view instanceof OlahDataMahasiswa) {
             OlahDataMahasiswa x = (OlahDataMahasiswa) view;
+            x.setTxFieldNama(mhs.nama);
             if (source.equals(x.getBtnCreateTA())) {
                 try {
                     String judul = JOptionPane.showInputDialog(null, "Judul TA : ", "Buat tugas akhir", 0);
@@ -308,13 +348,19 @@ public class NewController implements ActionListener {
                 }
             } else if (source.equals(x.getBtnRegTA())) {
                 try {
-                    int no = Integer.parseInt(JOptionPane.showInputDialog(null, "No pembimbing (1/2) :"));
-                    int id = Integer.parseInt(JOptionPane.showInputDialog(null, "ID dosen :"));
-                    if (mhs.getTugasAkhir().setPembimbing(app.getDosen(id), no)) {
-                        JOptionPane.showMessageDialog(null, "Dosen : " + app.getDosen(id).nama, "Berhasil", 0);
+                    if (mhs.getTugasAkhir() != null) {
+                        int no = Integer.parseInt(JOptionPane.showInputDialog(null, "No pembimbing (1/2) :"));
+                        int id = Integer.parseInt(JOptionPane.showInputDialog(null, "ID dosen :"));
+
+                        if (mhs.getTugasAkhir().setPembimbing(app.getDosen(id), no)) {
+                            JOptionPane.showMessageDialog(null, "Dosen : " + app.getDosen(id).nama, "Berhasil", 0);
+                        } else {
+                            JOptionPane.showMessageDialog(null, "Dosen tidak terdaftar");
+                        }
                     } else {
-                        JOptionPane.showMessageDialog(null, "Dosen tidak terdaftar");
+                        JOptionPane.showMessageDialog(null, "Belum punya TA", "Gagal", 0);
                     }
+
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null, "Gagal");
                 }
@@ -349,7 +395,7 @@ public class NewController implements ActionListener {
                     x.setTxFieldNama(app.getDosen(id).nama);
                     x.setTxFieldNIP(app.getDosen(id).getNip());
                     x.setTxFieldNKelompok(app.getDosen(id).getMaxTopikTA());
-                    x.setTxFieldTerdaftar(app.getDosen(id).getnTopikTA());
+                    x.setTxFieldTerdaftar(app.getDosen(id).getnTopikTA2());
                     x.setTxFieldStatus(app.getDosen(id).getStatusPembimbing());
                 } catch (Exception e) {
                     JOptionPane.showMessageDialog(null, "Data tidak ditemukan", "Peringatan", 0);
